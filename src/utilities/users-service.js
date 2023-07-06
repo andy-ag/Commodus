@@ -37,11 +37,18 @@ export async function login(credentials){
     localStorage.setItem('token', token)
     return getUser()
   } catch (error) {
-    console.log(error)
+    console.log(error.message)
+    return { error: error.message } 
   }  
 }
 
 export async function checkToken() {
-  const dateStr = await usersAPI.checkToken();
-  return new Date(dateStr);
+  try {
+    const dateStr = await usersAPI.checkToken();
+    return new Date(dateStr);
+  } catch (error) {
+    console.log(error.message)
+    return { error: error.message } 
+  }
+  
 }
