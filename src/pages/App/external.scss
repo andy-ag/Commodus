@@ -1,0 +1,23 @@
+// npx sass --style=compressed src/pages/App/external.scss src/pages/App/external.css
+
+$theme-colors: (
+  "primary": #6B95BF,
+  "secondary": #34558A,
+  "accent": #007F9D,
+  "success": #56E39F,
+  "info": #83A7C9,
+  "warning": #FA8334,
+  "danger": #CE2D4F,
+  "light": white,
+  "dark": black,
+);
+
+.navbar {
+    --bs-nav-link-hover-color: #007F9D;
+}
+
+$btn-border-radius: 0;
+$input-border-radius: 0;
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");

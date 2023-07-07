@@ -45,7 +45,8 @@
   --blue-3: #6B95BF;
   --blue-4: #4A7FAB;
   --deepblue: #34558A;
-  --text-light: black;
+  --accent: #007F9D;
+  --text-light: white;
   --text-dark: black;
 }
 
@@ -55,15 +56,17 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family:'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--blue-4);
+  background-color: var(--white);
   padding-top: 70px; /* height of your navbar */
   padding-bottom: 50px; /* height of your footer */
   height: 100vh;
+}
+
+main{
+  color: var(--accent)
 }
 
 code {
@@ -110,7 +113,7 @@ code {
   justify-content: space-around;
   align-items: center;
   background-color: var(blue-1);
-  color: var(--text-dark);
+  color: var(--text-light);
   border: .1vmin solid var(--blue-3);
   border-radius: 1vmin;
   padding: .6vmin;

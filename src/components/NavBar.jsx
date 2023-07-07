@@ -9,7 +9,7 @@ export default function NavBar({user, setUser}){
     }
 
     return (
-      <nav className="navbar navbar-expand-md navbar-light bg-light px-3">
+      <nav className="navbar navbar-expand-md px-3">
         <div className="container-fluid">
           <span className="navbar-brand mb-0 h1">Commodus</span>
           <button
@@ -45,7 +45,7 @@ export default function NavBar({user, setUser}){
               {user && (
                 <li className="nav-item d-flex align-self-center align-items-center user-greeting me-2">
                   <div>
-                    Hello, {user.name}
+                    Hello, {user.name}!
                   </div>
                 </li>
               )}
