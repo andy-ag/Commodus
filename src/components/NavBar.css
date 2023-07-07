@@ -1,0 +1,15 @@
+/* Bootstrap -md breakpoint */
+@media (max-width: 767px) {
+    .navbar-collapsed-content {
+      flex-direction: column;
+    }
+  
+    .user-greeting {
+      align-self: flex-start;
+    }
+  
+    .nav-links, .user-links {
+      justify-content: space-around;
+    }
+}
+  

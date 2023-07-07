@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import * as userService from '../utilities/users-service';
+import './NavBar.css'
 
 export default function NavBar({user, setUser}){
     function handleLogOut(){
@@ -8,48 +9,74 @@ export default function NavBar({user, setUser}){
     }
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container-fluid d-flex justify-content-between">
-            <div className="d-flex align-items-center">
-              <span className="navbar-brand mb-0 h1 mr-3">Name</span>
-              <div className="border-right pr-3 mr-3"></div>
-              <div className="navbar-nav">
+      <nav className="navbar navbar-expand-md navbar-light bg-light">
+        <div className="container-fluid">
+          <span className="navbar-brand mb-0 h1">Commodus</span>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav me-auto d-flex justify-content-around nav-links">
+              <li className="nav-item">
                 <Link className="nav-link" to="/">
-                    Home
+                  Home
                 </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/items">
-                    Items
+                  Items
                 </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/items/new">
-                    New Item
+                  New Item
                 </Link>
-              </div>
-            </div>
-            <div className="d-flex align-items-center">
-              <div className="navbar-nav">
-                {user && (
-                  <div className="d-flex align-items-center mr-5">Hello, {user.name}</div>
-                )}
+              </li>
+            </ul>
+            <ul className="navbar-nav">
+              {user && (
+                <li className="nav-item d-flex align-self-center align-items-center user-greeting me-2">
+                  <div>
+                    Hello, {user.name}
+                  </div>
+                </li>
+              )}
+              <li className="nav-item">
                 <Link className="nav-link" to="/settings">
-                    Settings
+                  Settings
                 </Link>
-                {user ? (
+              </li>
+              {user ? (
+                <li className="nav-item">
                   <Link className="nav-link" to="" onClick={handleLogOut}>
-                        Sign Out
+                    Sign Out
                   </Link>
-                ) : (
-                  <>
+                </li>
+              ) : (
+                <>
+                  <li className="nav-item">
                     <Link className="nav-link" to="/register">
-                        Register
+                      Register
                     </Link>
+                  </li>
+                  <li className="nav-item">
                     <Link className="nav-link" to="/signin">
-                        Sign In
+                      Sign In
                     </Link>
-                  </>
-                )}
-              </div>
-            </div>
+                  </li>
+                </>
+              )}
+            </ul>
           </div>
-        </nav>
-      );
+        </div>
+      </nav>
+    );
 }
