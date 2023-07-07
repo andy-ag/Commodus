@@ -9,7 +9,7 @@ export default function NavBar({user, setUser}){
     }
 
     return (
-      <nav className="navbar navbar-expand-md navbar-light bg-light">
+      <nav className="navbar navbar-expand-md navbar-light bg-light px-3">
         <div className="container-fluid">
           <span className="navbar-brand mb-0 h1">Commodus</span>
           <button
@@ -31,13 +31,13 @@ export default function NavBar({user, setUser}){
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/items">
-                  Items
+                <Link className="nav-link" to="/dashboard">
+                  Dashboard
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/items/new">
-                  New Item
+                <Link className="nav-link" to="/commodity">
+                  Commodity
                 </Link>
               </li>
             </ul>

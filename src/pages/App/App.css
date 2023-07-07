@@ -61,7 +61,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--blue-4);
-  padding: 2vmin;
+  padding-top: 70px; /* height of your navbar */
+  padding-bottom: 50px; /* height of your footer */
   height: 100vh;
 }
 
