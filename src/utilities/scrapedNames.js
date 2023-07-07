@@ -2,7 +2,6 @@
 const varNames = {
     'Gold, London A.M. Fixing': 'LBMA/GOLD',
     'Gold, London P.M. Fixing': 'BMA/GOLD',
-    'Gold, Engelhard industrial bullion': '',
     'Gold, World Gold Council': 'WGC/GOLD_DAILY_USD',
     'Gold, Bundesbank': 'BUNDESBANK/BBK01_WT5511',
     'Gold, COMEX Gold Futures': 'CHRIS/CME_GC1',
@@ -160,4 +159,8 @@ const varNames = {
     'Raw materials Index, 2000=100': 'WORLDBANK/WLD_IRAW_MATERIAL',
     '2 Oth raw materials Index, 2000=100': 'WORLDBANK/WLD_IOTHERRAWMAT',
     'Other food Index, 2000=100': 'WORLDBANK/WLD_IOTHERFOOD'
+}
+
+module.exports = {
+    varNames
 }

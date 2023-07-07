@@ -49,7 +49,7 @@ module.exports = {
 };
 
 // Example usage:
-const url = 'https://blog.data.nasdaq.com/api-for-commodity-data'; // replace this with the URL of the page you want to scrape
+const url = 'https://blog.data.nasdaq.com/api-for-commodity-data';
 scrapeTables(url).then((data) => {
     console.log(data);
 }).catch((error) => {
