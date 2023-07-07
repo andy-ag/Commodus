@@ -20,8 +20,8 @@ export default function App() {
           <Route path="/items/new" element={<NewItemPage/>}/>
           <Route path="/items" element={<ItemListPage/>}/>
           <Route path="/settings" element={<SettingsPage/>}/>
-          <Route path="/signin" element={<AuthPage/>}/>
-          <Route path="/register" element={<AuthPage/>}/>
+          <Route path="/signin" element={<AuthPage user={user} setUser={setUser}/>}/>
+          <Route path="/register" element={<AuthPage user={user} setUser={setUser}/>}/>
         </Routes> 
       </> 
     </main>
