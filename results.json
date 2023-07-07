@@ -1,0 +1,797 @@
+[
+  {
+    "name": "Gold, London A.M. Fixing",
+    "apiParams": "LBMA/GOLD",
+    "frequency": "daily"
+  },
+  {
+    "name": "Gold, London P.M. Fixing",
+    "apiParams": "BMA/GOLD",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Gold, World Gold Council",
+    "apiParams": "WGC/GOLD_DAILY_USD",
+    "frequency": "daily"
+  },
+  {
+    "name": "Gold, Bundesbank",
+    "apiParams": "BUNDESBANK/BBK01_WT5511",
+    "frequency": "daily"
+  },
+  {
+    "name": "Gold, COMEX Gold Futures",
+    "apiParams": "CHRIS/CME_GC1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Gold, Shanghai Gold Futures",
+    "apiParams": "SHFE/AUV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Gold, World Bank",
+    "apiParams": "WORLDBANK/WLD_GOLD",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Silver, London fixing, USD equivalent",
+    "apiParams": "LBMA/SILVER",
+    "frequency": "daily"
+  },
+  {
+    "name": "Silver, Shanghai Silver Futures",
+    "apiParams": "SHFE/AGV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Silver, COMEX Silver Futures",
+    "apiParams": "CHRIS/CME_SI1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Silver, World Bank",
+    "apiParams": "WORLDBANK/WLD_SILVER",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Platinum, Johnson Mathey London",
+    "apiParams": "JOHNMATT/PLAT",
+    "frequency": "daily"
+  },
+  {
+    "name": "Platinum, NYMEX Platinum Futures",
+    "apiParams": "CHRIS/CME_PL1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Palladium, Johnson Mathey London",
+    "apiParams": "JOHNMATT/PALL",
+    "frequency": "daily"
+  },
+  {
+    "name": "Palladium, NYMEX Palladium Futures",
+    "apiParams": "CHRIS/CME_PA1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Iridium",
+    "apiParams": "JOHNMATT/IRID",
+    "frequency": "daily"
+  },
+  {
+    "name": "Rhodium",
+    "apiParams": "JOHNMATT/RHOD",
+    "frequency": "daily"
+  },
+  {
+    "name": "Ruthenium",
+    "apiParams": "JOHNMATT/RUTH",
+    "frequency": "daily"
+  },
+  {
+    "name": "Aluminum, LME",
+    "apiParams": "LME/PR_AL",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Aluminum, ODA",
+    "apiParams": "ODA/PALUM_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Shanghai Aluminum Futures",
+    "apiParams": "SHFE/ALV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Cobalt, LME",
+    "apiParams": "LME/PR_CO",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Copper, LME",
+    "apiParams": "LME/PR_CU",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Copper, ODA",
+    "apiParams": "ODA/PCOPP_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Copper Futures",
+    "apiParams": "CHRIS/CME_HG1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Shanghai Copper Futures",
+    "apiParams": "SHFE/CUV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Iron Ore, Tianjin (ODA)",
+    "apiParams": "ODA/PIORECR_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Lead, LME",
+    "apiParams": "LME/PR_PB",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Lead, ODA",
+    "apiParams": "ODA/PLEAD_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Shanghai Lead Futures",
+    "apiParams": "SHFE/PBV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Molybdenum, LME",
+    "apiParams": "LME/PR_MO",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Nickel, LME",
+    "apiParams": "LME/PR_NI",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Nickel, ODA",
+    "apiParams": "ODA/PNICK_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Steel Billet, LME",
+    "apiParams": "LME/PR_FM",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Steel Wire",
+    "apiParams": "WORLDBANK/WLD_STL_JP_WIROD",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Shanghai Steel Rebar Futures",
+    "apiParams": "SHFE/RBV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Shanghai Steel Wire Futures",
+    "apiParams": "SHFE/WRV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Tin, LME",
+    "apiParams": "LME/PR_TN",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Tin, ODA",
+    "apiParams": "ODA/PTIN_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Zinc, LME",
+    "apiParams": "LME/PR_ZI",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Zinc, ODA",
+    "apiParams": "ODA/PZINC_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Shanghai Zinc Futures",
+    "apiParams": "SHFE/ZNV2013",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Barley, Western Canada (ODA)",
+    "apiParams": "ODA/PBARL_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Barley, Western Canada (WB)",
+    "apiParams": "WORLDBANK/WLD_BARLEY",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Corn, Top Flight Grain Co-op",
+    "apiParams": "TFGRAIN/CORN",
+    "frequency": "daily"
+  },
+  {
+    "name": "Corn, CBOT Corn Futures",
+    "apiParams": "CHRIS/CME_C1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Corn, U.S. Gulf Imports",
+    "apiParams": "WORLDBANK/WLD_MAIZE",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Oats, CBOT Oats Futures",
+    "apiParams": "CHRIS/CME_O1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Rice, Thailand (ODA)",
+    "apiParams": "ODA/PRICENPQ_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Rice, CBOT Rice Futures",
+    "apiParams": "CHRIS/CME_RR1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Rice, Top Flight Grain Co-op",
+    "apiParams": "TFGRAIN/SOYBEANS",
+    "frequency": "daily"
+  },
+  {
+    "name": "Soybean, CBOT Soybean Futures",
+    "apiParams": "CHRIS/CME_S1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Soybean, CBOT Soybean Meal Futures",
+    "apiParams": "CHRIS/CME_SM1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Wheat, Soybean Oil",
+    "apiParams": "WORLDBANK/WLD_SOYBEAN_OIL",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Wheat, CBOT Soybean Oil Futures",
+    "apiParams": "CHRIS/CME_BO1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Wheat, Gulf of Mexico",
+    "apiParams": "ODA/PWHEAMT_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Wheat, CBOT Wheat Futures",
+    "apiParams": "CHRIS/CME_W1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Dairy, CME Milk Futures",
+    "apiParams": "CHRIS/CME_DA1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Cattle, Beef (ODA)",
+    "apiParams": "ODA/PBEEF_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Cattle, CME Live Cattle Futures",
+    "apiParams": "CHRIS/CME_LC1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Cattle, CME Feeder Cattle Futures",
+    "apiParams": "CHRIS/CME_FC1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Cattle, Hides, Chicago (ODA)",
+    "apiParams": "ODA/PHIDE_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Poultry, Chicken, Georgia (ODA)",
+    "apiParams": "ODA/PPOULT_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Pork, Pork, Chicago (ODA)",
+    "apiParams": "ODA/PPORK_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Pork, CME Lean Hog Futures",
+    "apiParams": "CHRIS/CME_LN1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Fats, Lamb",
+    "apiParams": "ODA/PLAMB_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Wool",
+    "apiParams": "ODA/PWOOLC_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Salmon",
+    "apiParams": "ODA/PSALM_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Shrimp",
+    "apiParams": "ODA/PSHRI_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Fishmeal",
+    "apiParams": "ODA/PFISH_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "NYMEX RBOB Gasoline Futures",
+    "apiParams": "CHRIS/CME_RB1",
+    "frequency": "daily"
+  },
+  {
+    "name": "NYMEX Crude Oil Futures",
+    "apiParams": "CHRIS/CME_CL1",
+    "frequency": "daily"
+  },
+  {
+    "name": "ICE Brent Crude Oil Futures",
+    "apiParams": "CHRIS/ICE_B1",
+    "frequency": "daily"
+  },
+  {
+    "name": "U.S. Landed Costs of Canadian Light Sour Blend Crude Oil",
+    "apiParams": "DOE/I19263000008",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Los Angeles Reformulated RBOB Regular Gasoline Spot",
+    "apiParams": "DOE/EER_EPMRR_PF4_Y05LA_DPG",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "WTI Crude Oil Spot Cushing, OK FOB",
+    "apiParams": "DOE/RWTC",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Europe Brent Crude Oil Spot FOB",
+    "apiParams": "DOE/RBRTE",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "U.S. FOB Costs of Non-OPEC Countries Crude Oil",
+    "apiParams": "DOE/I070000004",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "U.S. FOB Costs of OPEC Countries Crude Oil",
+    "apiParams": "DOE/I060000004",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Crude Oils from 1861",
+    "apiParams": "BRP/CRUDE_OIL_PRICES",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "OPEC Reference Basket",
+    "apiParams": "OPEC/ORB",
+    "frequency": "daily"
+  },
+  {
+    "name": "Dubai Crude Oil",
+    "apiParams": "ODA/POILDUB_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Blended Crude Oil",
+    "apiParams": "ODA/POILAPSP_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "WTI Crude Oil",
+    "apiParams": "ODA/POILWTI_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Brent Crude Oil",
+    "apiParams": "ODA/POILBRE_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Europe & Central Asia (all income levels): Pump for gasoline (US$ per liter)",
+    "apiParams": "WORLDBANK/ECS_EP_PMP_SGAS_CD",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "US Midgrade Conventional Gas",
+    "apiParams": "FRED/GASMIDCOVW",
+    "frequency": "weekly"
+  },
+  {
+    "name": "Conventional Gasolines: New York Harbor, Regular",
+    "apiParams": "FRED/DGASNYH",
+    "frequency": "daily"
+  },
+  {
+    "name": "US Regular Conventional Gas",
+    "apiParams": "FRED/GASREGCOVW",
+    "frequency": "weekly"
+  },
+  {
+    "name": "Conventional Gasolines: U.S. Gulf Coast, Regular",
+    "apiParams": "FRED/DGASUSGULF",
+    "frequency": "daily"
+  },
+  {
+    "name": "Consumer Index for All Urban Consumers: Gasoline (all types)",
+    "apiParams": "FRED/CUUR0000SETB01",
+    "frequency": "monthly"
+  },
+  {
+    "name": "US All Grades Conventional Gas",
+    "apiParams": "FRED/GASALLCOVW",
+    "frequency": "weekly"
+  },
+  {
+    "name": "US Premium Conventional Gas",
+    "apiParams": "FRED/GASPRMCOVW",
+    "frequency": "weekly"
+  },
+  {
+    "name": "NYMEX Natural Gas Futures",
+    "apiParams": "CHRIS/CME_NG1",
+    "frequency": "daily"
+  },
+  {
+    "name": "ICE UK Natural Gas Futures",
+    "apiParams": "CHRIS/ICE_M1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Natural Gas (vs. Crude)",
+    "apiParams": "BRP/GAS_PRICES",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Germany Natural Gas",
+    "apiParams": "ODA/PNGASEU_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Henry Hub Natural Gas",
+    "apiParams": "ODA/PNGASUS_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Japan Natural Gas",
+    "apiParams": "ODA/PNGASJP_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Natural Gas: Henry Hub, LA",
+    "apiParams": "FRED/GASPRICE",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Import (End Use): Gas-natural",
+    "apiParams": "FRED/IR10110",
+    "frequency": "monthly"
+  },
+  {
+    "name": "U.S. Coals, 1949-2005",
+    "apiParams": "EPI/152",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "US Coals by Region",
+    "apiParams": "DOE/COAL",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Coals",
+    "apiParams": "BRP/COAL_PRICES",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Coal, South African export Monthly",
+    "apiParams": "INDEXMUNDI/COMMODITY_COALSOUTHAFRICANEXPORTPRICE",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Coal",
+    "apiParams": "ODA/PCOALAU_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Coal, Australia",
+    "apiParams": "WORLDBANK/WLD_COAL_AUS",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Coal Exports for Great Britain",
+    "apiParams": "FRED/M04111GBM318NNBR",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Wholesale of Coal for Essen, Germany",
+    "apiParams": "FRED/M04I1ADE00ESSM372NNBR",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Arabica Coffee",
+    "apiParams": "ODA/PCOFFOTM_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Robusta Coffee",
+    "apiParams": "ODA/PCOFFROB_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Coffee Futures",
+    "apiParams": "CHRIS/ICE_KC1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Cocoa beans",
+    "apiParams": "ODA/PCOCO_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Cocoa Futures",
+    "apiParams": "CHRIS/ICE_CC1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Tobacco",
+    "apiParams": "WORLDBANK/WLD_TOBAC_US",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Tea",
+    "apiParams": "ODA/PTEA_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Tea, Mombasa auctions",
+    "apiParams": "WORLDBANK/WLD_TEA_MOMBASA",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "US Imports Sugar",
+    "apiParams": "ODA/PSUGAUSA_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Sugar No. 11 Futures",
+    "apiParams": "CHRIS/ICE_SB1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Groundnuts (Peanuts)",
+    "apiParams": "ODA/PGNUTS_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Oranges",
+    "apiParams": "ODA/PORANG_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Orange Juice Futures",
+    "apiParams": "CHRIS/ICE_OJ1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Bananas",
+    "apiParams": "ODA/PBANSOP_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Bananas, US",
+    "apiParams": "WORLDBANK/WLD_BANANA_US",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Rapeseed Oil",
+    "apiParams": "ODA/PROIL_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Sunflower Oil",
+    "apiParams": "ODA/PSUNO_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Olive Oil",
+    "apiParams": "ODA/POLVOIL_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Palm Oil",
+    "apiParams": "ODA/PPOIL_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Palmkernal oil",
+    "apiParams": "WORLDBANK/WLD_PLMKRNL_OIL",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Groundnut oil",
+    "apiParams": "WORLDBANK/WLD_GRNUT_OIL",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Hard Logs",
+    "apiParams": "ODA/PLOGSK_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Soft Logs",
+    "apiParams": "ODA/PLOGORE_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Copra",
+    "apiParams": "WORLDBANK/WLD_COPRA",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Soft Sawnwood",
+    "apiParams": "ODA/PSAWORE_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Hard Sawnwood",
+    "apiParams": "ODA/PSAWMAL_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Woodpulp",
+    "apiParams": "WORLDBANK/WLD_WOODPULP",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Plywood",
+    "apiParams": "WORLDBANK/WLD_PLYWOOD",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Lumber Futures",
+    "apiParams": "CHRIS/CME_LB1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Rubber",
+    "apiParams": "ODA/PRUBB_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Cotton",
+    "apiParams": "ODA/PCOTTIND_USD",
+    "frequency": "monthly"
+  },
+  {
+    "name": "Cotton No. 2 Futures",
+    "apiParams": "CHRIS/ICE_CT1",
+    "frequency": "daily"
+  },
+  {
+    "name": "Urea, E. Europe, bulk",
+    "apiParams": "WORLDBANK/WLD_UREA_EE_BULK",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Phosphate rock Pric",
+    "apiParams": "WORLDBANK/WLD_PHOSROCK",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Potash (Potassium Chloride)",
+    "apiParams": "WORLDBANK/WLD_POTASH",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "TSP",
+    "apiParams": "WORLDBANK/WLD_TSP",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "DAP",
+    "apiParams": "WORLDBANK/WLD_DAP",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Fertilizers Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IFERTILIZERS",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Food Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IFOOD",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "1 Timber Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_ITIMBER",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Metals and minerals Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IMETMIN",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Beverages Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IBEVERAGES",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Energy Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IENERGY",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Non-energy commodities Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_INONFUEL",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Fats and oils Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IFATS_OILS",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Agriculture Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IAGRICULTURE",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Grains Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IGRAINS",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Raw materials Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IRAW_MATERIAL",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "2 Oth raw materials Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IOTHERRAWMAT",
+    "error": "Invalid response data format"
+  },
+  {
+    "name": "Other food Index, 2000=100",
+    "apiParams": "WORLDBANK/WLD_IOTHERFOOD",
+    "error": "Invalid response data format"
+  }
+]

@@ -161,6 +161,4 @@ const varNames = {
     'Other food Index, 2000=100': 'WORLDBANK/WLD_IOTHERFOOD'
 }
 
-module.exports = {
-    varNames
-}
+module.exports = varNames

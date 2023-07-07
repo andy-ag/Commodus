@@ -1,8 +1,14 @@
 require('dotenv').config();
-const varNames = require('./path/to/scrapedNames')
+const varNames = require('./scrapedNames.js')
+const fs = require('fs')
+console.log(varNames)
 
-async function getCommodityData(key){
-    const url = `https://data.nasdaq.com/api/v3/datasets/${key}/data.json?api_key=${process.env.NASDAQ_API}&start_date=2022-07-06`
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getCommodityData(variable, params){
+    const url = `https://data.nasdaq.com/api/v3/datasets/${params}/data.json?api_key=${process.env.NASDAQ_API}&start_date=2022-07-06`
     console.log(url)
     try {
         const res = await fetch(url)
@@ -10,23 +16,46 @@ async function getCommodityData(key){
 
         if (data && data.dataset_data) {
             const freq = data.dataset_data.frequency
-            return { [key]: freq }
+            return {
+                name: variable,
+                apiParams: params,
+                frequency: freq
+            };
         } else {
-            console.error('Invalid response data format')
-            return null
+            console.error(`Invalid response data format for ${params}`);
+            console.log(data); // Log the response data to see what's wrong
+            return {
+                name: variable,
+                apiParams: params,
+                error: 'Invalid response data format'
+            };
         }
         
     } catch (error) {
-        console.error('An error occurred while fetching the data:', error);
-        return null; 
+        console.error(`An error occurred while fetching the data for ${params}:`, error);
+        return {
+            name: variable,
+            apiParams: params,
+            error: error.message
+        };
     }
 }
 
 (async () => {
     try {
-        const result = await getCommodityData('ODA/PLOGORE_USD');
-        console.log(result);
+        const commodities = [];
+        for (const [variable, params] of Object.entries(varNames)) {
+            const data = await getCommodityData(variable, params);
+            commodities.push(data);
+            await sleep(2000)
+        }
+        // Write the result to a JSON file
+        fs.writeFileSync('results.json', JSON.stringify(commodities, null, 2));
+        console.log('Results saved to results.json');
+
     } catch (error) {
         console.error('An error occurred:', error);
     }
 })();
+
+
