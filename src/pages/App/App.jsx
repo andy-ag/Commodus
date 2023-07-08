@@ -16,6 +16,7 @@ import Footer from '../../components/Footer'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
+  const [commodities, setCommodities] = useState([])
   return (
     <main className="App">
       <>

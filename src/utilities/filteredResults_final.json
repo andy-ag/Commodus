@@ -1,0 +1,469 @@
+[
+  {
+    "name": "Gold, London A.M. Fixing",
+    "apiParams": "LBMA/GOLD",
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "USD (AM)",
+      "USD (PM)",
+      "GBP (AM)",
+      "GBP (PM)",
+      "EURO (AM)",
+      "EURO (PM)"
+    ],
+    "endDate": "2023-07-07"
+  },
+  {
+    "name": "Silver, London fixing, USD equivalent",
+    "apiParams": "LBMA/SILVER",
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "USD",
+      "GBP",
+      "EURO"
+    ],
+    "endDate": "2023-07-07"
+  },
+  {
+    "name": "Aluminum, ODA",
+    "apiParams": "ODA/PALUM_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Copper, ODA",
+    "apiParams": "ODA/PCOPP_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Iron Ore, Tianjin (ODA)",
+    "apiParams": "ODA/PIORECR_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Lead, ODA",
+    "apiParams": "ODA/PLEAD_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Nickel, ODA",
+    "apiParams": "ODA/PNICK_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Tin, ODA",
+    "apiParams": "ODA/PTIN_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Zinc, ODA",
+    "apiParams": "ODA/PZINC_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Barley, Western Canada (ODA)",
+    "apiParams": "ODA/PBARL_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Rice, Thailand (ODA)",
+    "apiParams": "ODA/PRICENPQ_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Wheat, Gulf of Mexico",
+    "apiParams": "ODA/PWHEAMT_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Cattle, Beef (ODA)",
+    "apiParams": "ODA/PBEEF_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Cattle, Hides, Chicago (ODA)",
+    "apiParams": "ODA/PHIDE_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Poultry, Chicken, Georgia (ODA)",
+    "apiParams": "ODA/PPOULT_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Pork, Pork, Chicago (ODA)",
+    "apiParams": "ODA/PPORK_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Fats, Lamb",
+    "apiParams": "ODA/PLAMB_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Wool",
+    "apiParams": "ODA/PWOOLC_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Salmon",
+    "apiParams": "ODA/PSALM_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Shrimp",
+    "apiParams": "ODA/PSHRI_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "OPEC Reference Basket",
+    "apiParams": "OPEC/ORB",
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-07-06"
+  },
+  {
+    "name": "Dubai Crude Oil",
+    "apiParams": "ODA/POILDUB_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "WTI Crude Oil",
+    "apiParams": "ODA/POILWTI_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Brent Crude Oil",
+    "apiParams": "ODA/POILBRE_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Germany Natural Gas",
+    "apiParams": "ODA/PNGASEU_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Henry Hub Natural Gas",
+    "apiParams": "ODA/PNGASUS_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Japan Natural Gas",
+    "apiParams": "ODA/PNGASJP_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Coal",
+    "apiParams": "ODA/PCOALAU_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Arabica Coffee",
+    "apiParams": "ODA/PCOFFOTM_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Robusta Coffee",
+    "apiParams": "ODA/PCOFFROB_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Cocoa beans",
+    "apiParams": "ODA/PCOCO_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Tea",
+    "apiParams": "ODA/PTEA_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "US Imports Sugar",
+    "apiParams": "ODA/PSUGAUSA_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Groundnuts (Peanuts)",
+    "apiParams": "ODA/PGNUTS_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Oranges",
+    "apiParams": "ODA/PORANG_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Bananas",
+    "apiParams": "ODA/PBANSOP_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Rapeseed Oil",
+    "apiParams": "ODA/PROIL_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Sunflower Oil",
+    "apiParams": "ODA/PSUNO_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Olive Oil",
+    "apiParams": "ODA/POLVOIL_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Palm Oil",
+    "apiParams": "ODA/PPOIL_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Hard Logs",
+    "apiParams": "ODA/PLOGSK_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Soft Logs",
+    "apiParams": "ODA/PLOGORE_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Soft Sawnwood",
+    "apiParams": "ODA/PSAWORE_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Hard Sawnwood",
+    "apiParams": "ODA/PSAWMAL_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Rubber",
+    "apiParams": "ODA/PRUBB_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  },
+  {
+    "name": "Cotton",
+    "apiParams": "ODA/PCOTTIND_USD",
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
+  }
+]

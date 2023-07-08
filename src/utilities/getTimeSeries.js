@@ -1,15 +1,5 @@
-require('dotenv').config();
-const varNames = require('./scrapedNames.js')
-const fs = require('fs')
-console.log(varNames)
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function getCommodityData(variable, params){
+async function getTimeSeries(variable, params){
     const url = `https://data.nasdaq.com/api/v3/datasets/${params}/data.json?api_key=${process.env.NASDAQ_API}&start_date=2022-07-06`
-    console.log(url)
     try {
         const res = await fetch(url)
         const data = await res.json()
@@ -18,12 +8,15 @@ async function getCommodityData(variable, params){
             const freq = data.dataset_data.frequency
             const colNames = data.dataset_data.column_names
             const endDate = data.dataset_data.end_date
+            const ts = data.dataset_data.data
             return {
                 name: variable,
                 apiParams: params,
                 frequency: freq,
                 colNames: colNames,
                 endDate: endDate,
+                timeSeries: ts,
+
             };
         } else {
             console.error(`Invalid response data format for ${params}`);
@@ -45,21 +38,4 @@ async function getCommodityData(variable, params){
     }
 }
 
-(async () => {
-    try {
-        const commodities = [];
-        for (const [variable, params] of Object.entries(varNames)) {
-            const data = await getCommodityData(variable, params);
-            commodities.push(data);
-            await sleep(2000)
-        }
-        // Write the result to a JSON file
-        fs.writeFileSync('results_rich.json', JSON.stringify(commodities, null, 2));
-        console.log('Results saved to results_rich.json');
-
-    } catch (error) {
-        console.error('An error occurred:', error);
-    }
-})();
-
-
+module.exports = getTimeSeries

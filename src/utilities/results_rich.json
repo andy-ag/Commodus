@@ -2,7 +2,17 @@
   {
     "name": "Gold, London A.M. Fixing",
     "apiParams": "LBMA/GOLD",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "USD (AM)",
+      "USD (PM)",
+      "GBP (AM)",
+      "GBP (PM)",
+      "EURO (AM)",
+      "EURO (PM)"
+    ],
+    "endDate": "2023-07-07"
   },
   {
     "name": "Gold, London P.M. Fixing",
@@ -12,17 +22,39 @@
   {
     "name": "Gold, World Gold Council",
     "apiParams": "WGC/GOLD_DAILY_USD",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2020-03-13"
   },
   {
     "name": "Gold, Bundesbank",
     "apiParams": "BUNDESBANK/BBK01_WT5511",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2016-04-18"
   },
   {
     "name": "Gold, COMEX Gold Futures",
     "apiParams": "CHRIS/CME_GC1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Gold, Shanghai Gold Futures",
@@ -37,7 +69,14 @@
   {
     "name": "Silver, London fixing, USD equivalent",
     "apiParams": "LBMA/SILVER",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "USD",
+      "GBP",
+      "EURO"
+    ],
+    "endDate": "2023-07-07"
   },
   {
     "name": "Silver, Shanghai Silver Futures",
@@ -47,7 +86,19 @@
   {
     "name": "Silver, COMEX Silver Futures",
     "apiParams": "CHRIS/CME_SI1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Silver, World Bank",
@@ -57,37 +108,101 @@
   {
     "name": "Platinum, Johnson Mathey London",
     "apiParams": "JOHNMATT/PLAT",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Hong Kong 8:30",
+      "Hong Kong 14:00",
+      "London 09:00",
+      "New York 9:30"
+    ],
+    "endDate": "2021-06-21"
   },
   {
     "name": "Platinum, NYMEX Platinum Futures",
     "apiParams": "CHRIS/CME_PL1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-04-28"
   },
   {
     "name": "Palladium, Johnson Mathey London",
     "apiParams": "JOHNMATT/PALL",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Hong Kong 8:30",
+      "Hong Kong 14:00",
+      "London 09:00",
+      "New York 9:30"
+    ],
+    "endDate": "2021-06-21"
   },
   {
     "name": "Palladium, NYMEX Palladium Futures",
     "apiParams": "CHRIS/CME_PA1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-28"
   },
   {
     "name": "Iridium",
     "apiParams": "JOHNMATT/IRID",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Hong Kong 8:30",
+      "Hong Kong 14:00",
+      "London 09:00",
+      "New York 9:30"
+    ],
+    "endDate": "2021-06-21"
   },
   {
     "name": "Rhodium",
     "apiParams": "JOHNMATT/RHOD",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Hong Kong 8:30",
+      "Hong Kong 14:00",
+      "London 09:00",
+      "New York 9:30"
+    ],
+    "endDate": "2021-06-21"
   },
   {
     "name": "Ruthenium",
     "apiParams": "JOHNMATT/RUTH",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Hong Kong 8:30",
+      "Hong Kong 14:00",
+      "London 09:00",
+      "New York 9:30"
+    ],
+    "endDate": "2021-06-21"
   },
   {
     "name": "Aluminum, LME",
@@ -97,7 +212,12 @@
   {
     "name": "Aluminum, ODA",
     "apiParams": "ODA/PALUM_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Shanghai Aluminum Futures",
@@ -117,12 +237,29 @@
   {
     "name": "Copper, ODA",
     "apiParams": "ODA/PCOPP_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Copper Futures",
     "apiParams": "CHRIS/CME_HG1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Shanghai Copper Futures",
@@ -132,7 +269,12 @@
   {
     "name": "Iron Ore, Tianjin (ODA)",
     "apiParams": "ODA/PIORECR_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Lead, LME",
@@ -142,7 +284,12 @@
   {
     "name": "Lead, ODA",
     "apiParams": "ODA/PLEAD_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Shanghai Lead Futures",
@@ -162,7 +309,12 @@
   {
     "name": "Nickel, ODA",
     "apiParams": "ODA/PNICK_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Steel Billet, LME",
@@ -192,7 +344,12 @@
   {
     "name": "Tin, ODA",
     "apiParams": "ODA/PTIN_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Zinc, LME",
@@ -202,7 +359,12 @@
   {
     "name": "Zinc, ODA",
     "apiParams": "ODA/PZINC_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Shanghai Zinc Futures",
@@ -212,7 +374,12 @@
   {
     "name": "Barley, Western Canada (ODA)",
     "apiParams": "ODA/PBARL_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Barley, Western Canada (WB)",
@@ -222,12 +389,32 @@
   {
     "name": "Corn, Top Flight Grain Co-op",
     "apiParams": "TFGRAIN/CORN",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Cash Price",
+      "Basis",
+      "Fall Price",
+      "Fall Basis"
+    ],
+    "endDate": "2020-11-20"
   },
   {
     "name": "Corn, CBOT Corn Futures",
     "apiParams": "CHRIS/CME_C1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Corn, U.S. Gulf Imports",
@@ -237,32 +424,93 @@
   {
     "name": "Oats, CBOT Oats Futures",
     "apiParams": "CHRIS/CME_O1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Rice, Thailand (ODA)",
     "apiParams": "ODA/PRICENPQ_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Rice, CBOT Rice Futures",
     "apiParams": "CHRIS/CME_RR1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-05-14"
   },
   {
     "name": "Rice, Top Flight Grain Co-op",
     "apiParams": "TFGRAIN/SOYBEANS",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Cash Price",
+      "Basis",
+      "Fall Price",
+      "Fall Basis"
+    ],
+    "endDate": "2020-11-20"
   },
   {
     "name": "Soybean, CBOT Soybean Futures",
     "apiParams": "CHRIS/CME_S1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Soybean, CBOT Soybean Meal Futures",
     "apiParams": "CHRIS/CME_SM1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Wheat, Soybean Oil",
@@ -272,97 +520,258 @@
   {
     "name": "Wheat, CBOT Soybean Oil Futures",
     "apiParams": "CHRIS/CME_BO1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Wheat, Gulf of Mexico",
     "apiParams": "ODA/PWHEAMT_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Wheat, CBOT Wheat Futures",
     "apiParams": "CHRIS/CME_W1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Dairy, CME Milk Futures",
     "apiParams": "CHRIS/CME_DA1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Cattle, Beef (ODA)",
     "apiParams": "ODA/PBEEF_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Cattle, CME Live Cattle Futures",
     "apiParams": "CHRIS/CME_LC1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Cattle, CME Feeder Cattle Futures",
     "apiParams": "CHRIS/CME_FC1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-03-25"
   },
   {
     "name": "Cattle, Hides, Chicago (ODA)",
     "apiParams": "ODA/PHIDE_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Poultry, Chicken, Georgia (ODA)",
     "apiParams": "ODA/PPOULT_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Pork, Pork, Chicago (ODA)",
     "apiParams": "ODA/PPORK_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Pork, CME Lean Hog Futures",
     "apiParams": "CHRIS/CME_LN1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Fats, Lamb",
     "apiParams": "ODA/PLAMB_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Wool",
     "apiParams": "ODA/PWOOLC_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Salmon",
     "apiParams": "ODA/PSALM_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Shrimp",
     "apiParams": "ODA/PSHRI_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Fishmeal",
     "apiParams": "ODA/PFISH_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2017-06-30"
   },
   {
     "name": "NYMEX RBOB Gasoline Futures",
     "apiParams": "CHRIS/CME_RB1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "NYMEX Crude Oil Futures",
     "apiParams": "CHRIS/CME_CL1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "ICE Brent Crude Oil Futures",
     "apiParams": "CHRIS/ICE_B1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Settle",
+      "Change",
+      "Wave",
+      "Volume",
+      "Prev. Day Open Interest",
+      "EFP Volume",
+      "EFS Volume",
+      "Block Volume"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "U.S. Landed Costs of Canadian Light Sour Blend Crude Oil",
@@ -402,27 +811,52 @@
   {
     "name": "OPEC Reference Basket",
     "apiParams": "OPEC/ORB",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-07-06"
   },
   {
     "name": "Dubai Crude Oil",
     "apiParams": "ODA/POILDUB_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Blended Crude Oil",
     "apiParams": "ODA/POILAPSP_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2017-06-30"
   },
   {
     "name": "WTI Crude Oil",
     "apiParams": "ODA/POILWTI_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Brent Crude Oil",
     "apiParams": "ODA/POILBRE_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Europe & Central Asia (all income levels): Pump for gasoline (US$ per liter)",
@@ -432,47 +866,109 @@
   {
     "name": "US Midgrade Conventional Gas",
     "apiParams": "FRED/GASMIDCOVW",
-    "frequency": "weekly"
+    "frequency": "weekly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-07-11"
   },
   {
     "name": "Conventional Gasolines: New York Harbor, Regular",
     "apiParams": "FRED/DGASNYH",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-05-23"
   },
   {
     "name": "US Regular Conventional Gas",
     "apiParams": "FRED/GASREGCOVW",
-    "frequency": "weekly"
+    "frequency": "weekly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-07-11"
   },
   {
     "name": "Conventional Gasolines: U.S. Gulf Coast, Regular",
     "apiParams": "FRED/DGASUSGULF",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-05-23"
   },
   {
     "name": "Consumer Index for All Urban Consumers: Gasoline (all types)",
     "apiParams": "FRED/CUUR0000SETB01",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-01-01"
   },
   {
     "name": "US All Grades Conventional Gas",
     "apiParams": "FRED/GASALLCOVW",
-    "frequency": "weekly"
+    "frequency": "weekly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-07-11"
   },
   {
     "name": "US Premium Conventional Gas",
     "apiParams": "FRED/GASPRMCOVW",
-    "frequency": "weekly"
+    "frequency": "weekly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-07-11"
   },
   {
     "name": "NYMEX Natural Gas Futures",
     "apiParams": "CHRIS/CME_NG1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "ICE UK Natural Gas Futures",
     "apiParams": "CHRIS/ICE_M1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Settle",
+      "Change",
+      "Wave",
+      "Volume",
+      "Prev. Day Open Interest",
+      "EFP Volume",
+      "EFS Volume",
+      "Block Volume"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Natural Gas (vs. Crude)",
@@ -482,27 +978,52 @@
   {
     "name": "Germany Natural Gas",
     "apiParams": "ODA/PNGASEU_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Henry Hub Natural Gas",
     "apiParams": "ODA/PNGASUS_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Japan Natural Gas",
     "apiParams": "ODA/PNGASJP_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Natural Gas: Henry Hub, LA",
     "apiParams": "FRED/GASPRICE",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "DATE",
+      "VALUE"
+    ],
+    "endDate": "2014-02-01"
   },
   {
     "name": "Import (End Use): Gas-natural",
     "apiParams": "FRED/IR10110",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2022-01-01"
   },
   {
     "name": "U.S. Coals, 1949-2005",
@@ -527,7 +1048,12 @@
   {
     "name": "Coal",
     "apiParams": "ODA/PCOALAU_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Coal, Australia",
@@ -537,37 +1063,92 @@
   {
     "name": "Coal Exports for Great Britain",
     "apiParams": "FRED/M04111GBM318NNBR",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "DATE",
+      "VALUE"
+    ],
+    "endDate": "1913-12-01"
   },
   {
     "name": "Wholesale of Coal for Essen, Germany",
     "apiParams": "FRED/M04I1ADE00ESSM372NNBR",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "DATE",
+      "VALUE"
+    ],
+    "endDate": "1919-12-01"
   },
   {
     "name": "Arabica Coffee",
     "apiParams": "ODA/PCOFFOTM_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Robusta Coffee",
     "apiParams": "ODA/PCOFFROB_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Coffee Futures",
     "apiParams": "CHRIS/ICE_KC1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Settle",
+      "Change",
+      "Wave",
+      "Volume",
+      "Prev. Day Open Interest",
+      "EFP Volume",
+      "EFS Volume",
+      "Block Volume"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Cocoa beans",
     "apiParams": "ODA/PCOCO_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Cocoa Futures",
     "apiParams": "CHRIS/ICE_CC1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Settle",
+      "Change",
+      "Wave",
+      "Volume",
+      "Prev. Day Open Interest",
+      "EFP Volume",
+      "EFS Volume",
+      "Block Volume"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Tobacco",
@@ -577,7 +1158,12 @@
   {
     "name": "Tea",
     "apiParams": "ODA/PTEA_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Tea, Mombasa auctions",
@@ -587,32 +1173,82 @@
   {
     "name": "US Imports Sugar",
     "apiParams": "ODA/PSUGAUSA_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Sugar No. 11 Futures",
     "apiParams": "CHRIS/ICE_SB1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Settle",
+      "Change",
+      "Wave",
+      "Volume",
+      "Prev. Day Open Interest",
+      "EFP Volume",
+      "EFS Volume",
+      "Block Volume"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Groundnuts (Peanuts)",
     "apiParams": "ODA/PGNUTS_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Oranges",
     "apiParams": "ODA/PORANG_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Orange Juice Futures",
     "apiParams": "CHRIS/ICE_OJ1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Settle",
+      "Change",
+      "Wave",
+      "Volume",
+      "Prev. Day Open Interest",
+      "EFP Volume",
+      "EFS Volume",
+      "Block Volume"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Bananas",
     "apiParams": "ODA/PBANSOP_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Bananas, US",
@@ -622,22 +1258,42 @@
   {
     "name": "Rapeseed Oil",
     "apiParams": "ODA/PROIL_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Sunflower Oil",
     "apiParams": "ODA/PSUNO_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Olive Oil",
     "apiParams": "ODA/POLVOIL_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Palm Oil",
     "apiParams": "ODA/PPOIL_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Palmkernal oil",
@@ -652,12 +1308,22 @@
   {
     "name": "Hard Logs",
     "apiParams": "ODA/PLOGSK_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Soft Logs",
     "apiParams": "ODA/PLOGORE_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Copra",
@@ -667,12 +1333,22 @@
   {
     "name": "Soft Sawnwood",
     "apiParams": "ODA/PSAWORE_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Hard Sawnwood",
     "apiParams": "ODA/PSAWMAL_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Woodpulp",
@@ -687,22 +1363,59 @@
   {
     "name": "Lumber Futures",
     "apiParams": "CHRIS/CME_LB1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Last",
+      "Change",
+      "Settle",
+      "Volume",
+      "Previous Day Open Interest"
+    ],
+    "endDate": "2021-05-14"
   },
   {
     "name": "Rubber",
     "apiParams": "ODA/PRUBB_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Cotton",
     "apiParams": "ODA/PCOTTIND_USD",
-    "frequency": "monthly"
+    "frequency": "monthly",
+    "colNames": [
+      "Date",
+      "Value"
+    ],
+    "endDate": "2023-05-31"
   },
   {
     "name": "Cotton No. 2 Futures",
     "apiParams": "CHRIS/ICE_CT1",
-    "frequency": "daily"
+    "frequency": "daily",
+    "colNames": [
+      "Date",
+      "Open",
+      "High",
+      "Low",
+      "Settle",
+      "Change",
+      "Wave",
+      "Volume",
+      "Prev. Day Open Interest",
+      "EFP Volume",
+      "EFS Volume",
+      "Block Volume"
+    ],
+    "endDate": "2021-06-29"
   },
   {
     "name": "Urea, E. Europe, bulk",
