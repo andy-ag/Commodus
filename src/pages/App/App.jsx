@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service';
 import HomePage from '../HomePage/HomePage'
@@ -17,12 +17,29 @@ import Footer from '../../components/Footer'
 export default function App() {
   const [user, setUser] = useState(getUser())
   const [commodities, setCommodities] = useState([])
+
+  useEffect(() => {
+    async function fetchCommodities() {
+        try {
+            const response = await fetch('/api/commodities');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            setCommodities(data);
+        } catch (error) {
+            console.error('Fetching commodities failed:', error);
+        }
+    };
+    fetchCommodities();
+}, []);
+
   return (
     <main className="App">
       <>
         <NavBar user={user} setUser={setUser}/>
         <Routes>
-          <Route path="/" element={<HomePage/>}/>
+          <Route path="/" element={<HomePage commodities={commodities}/>}/>
           <Route path="/commodity" element={<CommodityPage/>}/>
           <Route path="/dashboard" element={<CommodityListPage/>}/>
           <Route path="/settings" element={<SettingsPage/>}/>

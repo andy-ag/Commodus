@@ -1,7 +1,9 @@
 import './CommodityPage.css';
+import Plot from '../../components/Plot.jsx'
+import Table from '../../components/Table.jsx'
 
 export default function CommodityPage() {
     return(
-        <h1>Commodity detail</h1>
+        <Plot />
     ) 
 }
