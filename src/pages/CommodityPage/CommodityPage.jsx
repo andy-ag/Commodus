@@ -47,8 +47,10 @@ export default function CommodityPage() {
                     <option value="all">all time</option>
                 </select>
             </div>
-            <Plot data={data}/>
-            <Table data={data}/>    
+            <Plot data={data.raw_time_series} plotId="rawPlot"/>   
+            <Plot data={data.acf_plot} plotId="acfPlot"/>   
+            <Plot data={data.pacf_plot} plotId="pacfPlot"/>   
+            <Plot data={data.ma_smoothed} plotId="maPlot"/>   
         </>
     ) 
 }

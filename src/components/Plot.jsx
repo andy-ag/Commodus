@@ -1,21 +1,18 @@
 import { useState, useEffect } from 'react'
 import Plotly from 'plotly.js-dist'
 
-export default function Plot({data}) {
-    const [plotData, setPlotData] = useState(null);
-
+export default function Plot({data, plotId}) {
     useEffect(() => {
         if (data) {
-            setPlotData(data);
-
-            const rawTimeSeriesData = [{
-                x: data.raw_time_series.dates,
-                y: data.raw_time_series.values,
+            const keys = Object.keys(data);
+            const plotData = [{
+                x: data[keys[0]],
+                y: data[keys[1]],
                 type: 'scatter'
             }];
-            Plotly.newPlot('plotDiv', rawTimeSeriesData);
+            Plotly.newPlot(plotId, plotData);
         }
-    }, [data]);
+    }, [data, plotId]);
 
-    return <div id="plotDiv" />;
+    return <div id={plotId} />;
 };
