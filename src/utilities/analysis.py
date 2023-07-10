@@ -3,15 +3,29 @@ import numpy as np
 import json
 import sys
 from statsmodels.tsa.stattools import acf, pacf, adfuller
-from statsmodels.tsa.seasonal import seasonal_decompose
 
 # Read input data from standard input
 data = json.load(sys.stdin)
+print(f'Data: {data}', file=sys.stderr)
+
+# Extract column names and data rows
+column_names = data['colNames']
+data_rows = data['timeSeries']
 
 # Convert to DataFrame
-df = pd.DataFrame(data["timeSeries"], columns=["Date", "Value"])
+df = pd.DataFrame(data_rows, columns=column_names)
 df["Date"] = pd.to_datetime(df["Date"])
-df = df.set_index("Date").sort_index()
+
+# If more than two columns, select the first one that contains 'USD'
+if len(df.columns) > 2:
+    value_cols = [col for col in df.columns if 'USD' in col]
+    if value_cols:
+        df['Value'] = df[value_cols[0]]
+    else:
+        print('No column with "USD" found. Using the second column as "Value".')
+        df['Value'] = df.iloc[:, 1]
+
+df = df[["Date", "Value"]].set_index("Date").sort_index()
 
 # Compute MA smoothed time series
 df['MA_Smoothed'] = df['Value'].rolling(window=3).mean()
@@ -19,12 +33,10 @@ df['MA_Smoothed'] = df['Value'].rolling(window=3).mean()
 # Compute ACF and PACF
 nobs = len(df["Value"])
 # Package calculates lag ceiling using nobs // 2, for strict inequality -1 is always needed
-lags = (nobs // 2) - 1   
+# Going above 16 lags isnt particularly informative
+lags = min((nobs // 2) - 1, 16)   
 acf_values = acf(df["Value"], nlags=lags)
 pacf_values = pacf(df["Value"], nlags=lags)
-
-# Perform time series decomposition
-decomposition = seasonal_decompose(df['Value'], model='additive', period=1)
 
 # Compute statistics
 mean = df['Value'].mean()
@@ -58,14 +70,7 @@ output_data = {
         "dates": df.index.strftime('%Y-%m-%d').tolist(),
         "values": df["MA_Smoothed"].tolist()
     },
-    "decomposition_data": {
-        "dates": df.index.strftime('%Y-%m-%d').tolist(),
-        "observed": decomposition.observed.tolist(),
-        "trend": decomposition.trend.tolist(),
-        "seasonal": decomposition.seasonal.tolist(),
-        "residual": decomposition.resid.tolist()
-    },
-    "statistics": statistics
+    "statistics": statistics,
 }
 
 # Write output data
