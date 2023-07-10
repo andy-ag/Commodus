@@ -17,7 +17,7 @@ import Footer from '../../components/Footer'
 
 export default function App() {
   const [user, setUser] = useState(getUser())
-  const [commodities, setCommodities] = useState([])
+  const [commodities, setCommodities] = useState(null)
 
   useEffect(() => {
     async function fetchCommodities() {
