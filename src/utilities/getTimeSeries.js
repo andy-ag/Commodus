@@ -1,5 +1,8 @@
-async function getTimeSeries(variable, params){
+const varNames = require('./scrapedNames') 
+
+async function getTimeSeries(params){
     const url = `https://data.nasdaq.com/api/v3/datasets/${params}/data.json?api_key=${process.env.NASDAQ_API}&start_date=2022-07-06`
+    const variable = Object.keys(varNames).find(key => varNames[key] === params)
     try {
         const res = await fetch(url)
         const data = await res.json()

@@ -5,6 +5,6 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 // GET /api/commodities
 router.get('/index', commoditiesCtrl.index);
-router.get('/analyse/:name', commoditiesCtrl.analyse);
+router.get('/:params', commoditiesCtrl.analyse);
 
 module.exports = router;

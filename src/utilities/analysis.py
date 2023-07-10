@@ -8,14 +8,6 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 # Read input data from standard input
 data = json.load(sys.stdin)
 
-# Read command-line arguments
-input_file_path = sys.argv[1]
-output_file_path = sys.argv[2]
-
-# Read input data
-with open(input_file_path, 'r') as f:
-    data = json.load(f)
-
 # Convert to DataFrame
 df = pd.DataFrame(data["timeSeries"], columns=["Date", "Value"])
 df["Date"] = pd.to_datetime(df["Date"])
@@ -25,8 +17,11 @@ df = df.set_index("Date").sort_index()
 df['MA_Smoothed'] = df['Value'].rolling(window=3).mean()
 
 # Compute ACF and PACF
-acf_values = acf(df["Value"], nlags=9)
-pacf_values = pacf(df["Value"], nlags=9)
+nobs = len(df["Value"])
+# Package calculates lag ceiling using nobs // 2, for strict inequality -1 is always needed
+lags = (nobs // 2) - 1   
+acf_values = acf(df["Value"], nlags=lags)
+pacf_values = pacf(df["Value"], nlags=lags)
 
 # Perform time series decomposition
 decomposition = seasonal_decompose(df['Value'], model='additive', period=1)
@@ -41,6 +36,9 @@ statistics = {
     "ADF Statistic": adf_result[0],
     "p-value": adf_result[1]
 }
+
+#Fill NaN values for JSON compatibility
+df.fillna(0, inplace=True)
 
 # Prepare output data
 output_data = {

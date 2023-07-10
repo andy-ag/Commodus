@@ -21,7 +21,7 @@ export default function App() {
   useEffect(() => {
     async function fetchCommodities() {
         try {
-            const response = await fetch('/api/commodities');
+            const response = await fetch('/api/commodities/index');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -40,7 +40,7 @@ export default function App() {
         <NavBar user={user} setUser={setUser}/>
         <Routes>
           <Route path="/" element={<HomePage commodities={commodities}/>}/>
-          <Route path="/commodity" element={<CommodityPage/>}/>
+          <Route path="/commodities/:params" element={<CommodityPage/>}/>
           <Route path="/dashboard" element={<CommodityListPage/>}/>
           <Route path="/settings" element={<SettingsPage/>}/>
           <Route path="/signin" element={<AuthPage user={user} setUser={setUser}/>}/>
