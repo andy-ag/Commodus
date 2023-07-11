@@ -1,6 +1,13 @@
 .header-box {
     border: 3px solid var(--accent);
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-top: 6px;
+    position: relative;
+}
+
+.toggleSaveCommodity {
+    position: absolute; 
+    top: 2px;
+    right: 2px;
 }

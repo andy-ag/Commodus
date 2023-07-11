@@ -40,8 +40,8 @@ export default function CommodityPage() {
     
     return(
         <>
-            <HeaderBox text={variable} add={false} fav={false}/>
-            <div className="d-flex justify-content-around my-2 gap-2">
+            <HeaderBox text={variable} add={true} fav={false}/>
+            <div className="d-flex justify-content-around mt-4 mb-2 gap-2">
                 <select className="form-select" value={selectedTimeSeries} onChange={e => {
                     setSelectedTimeSeries(e.target.value)
                     setCurrentIndex(PLOT_ORDER.indexOf(e.target.value))
