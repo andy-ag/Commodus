@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Plot from '../../components/Plot.jsx'
 import Table from '../../components/Table.jsx'
+import HeaderBox from '../../components/HeaderBox.jsx'
 const varNames = require('../../utilities/scrapedNames') 
 
 export default function CommodityPage() {
@@ -32,7 +33,7 @@ export default function CommodityPage() {
     
     return(
         <>
-            <h1>{variable}</h1>
+            <HeaderBox text={variable} add={false} fav={false}/>
             <div className="d-flex justify-content-around my-2 gap-2">
                 <select className="form-select" value={selectedTimeSeries} onChange={e => setSelectedTimeSeries(e.target.value)}>
                     <option value="raw">raw time series</option>

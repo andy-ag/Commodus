@@ -1,0 +1,7 @@
+.table-link, td, th {
+    color: var(--accent) !important
+}
+
+.table-link:hover {
+    color: var(--deepblue) !important
+}

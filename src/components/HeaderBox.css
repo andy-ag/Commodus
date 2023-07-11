@@ -1,0 +1,6 @@
+.header-box {
+    border: 3px solid var(--accent);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 6px;
+}
