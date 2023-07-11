@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import './Carousel.css'
 
-export default function Carousel({children}) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function Carousel({children, currentIndex, setCurrentIndex, handleIndexChange }) {
 
   function goToPrevPlot() {
     setCurrentIndex(oldIndex => {
-      if (oldIndex === 0) return children.length - 1;
-      return oldIndex - 1;
+        let newIndex = oldIndex === 0 ? children.length - 1 : oldIndex - 1;
+        handleIndexChange(newIndex)
+        return newIndex;
     });
   }
 
   function goToNextPlot() {
-    setCurrentIndex(oldIndex => (oldIndex + 1) % children.length);
+    setCurrentIndex(oldIndex => {
+        let newIndex = (oldIndex + 1) % children.length;
+        handleIndexChange(newIndex)
+        return newIndex;
+    })
   }
 
   return (

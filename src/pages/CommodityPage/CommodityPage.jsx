@@ -10,9 +10,15 @@ const varNames = require('../../utilities/scrapedNames')
 export default function CommodityPage() {
     const { params } = useParams();  // Get the commodity code from the URL parameters
     const variable = Object.keys(varNames).find(key => varNames[key] === params)
+    const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
     const [data, setData] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedTimeSeries, setSelectedTimeSeries] = useState('raw');
     const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
+
+    function handleIndexChange(newIndex) {
+        setSelectedTimeSeries(PLOT_ORDER[newIndex])
+    }
 
     useEffect(() => {
         const fetchCommodityAnalysis = async () => {
@@ -36,24 +42,29 @@ export default function CommodityPage() {
         <>
             <HeaderBox text={variable} add={false} fav={false}/>
             <div className="d-flex justify-content-around my-2 gap-2">
-                <select className="form-select" value={selectedTimeSeries} onChange={e => setSelectedTimeSeries(e.target.value)}>
+                <select className="form-select" value={selectedTimeSeries} onChange={e => {
+                    setSelectedTimeSeries(e.target.value)
+                    setCurrentIndex(PLOT_ORDER.indexOf(e.target.value))
+                }}>
                     <option value="raw">raw time series</option>
                     <option value="ma">moving average</option>
                     <option value="acf">acf</option>
                     <option value="pacf">pacf</option>
                 </select>
-                <select className="form-select" value={selectedTimePeriod} onChange={e => setSelectedTimePeriod(e.target.value)}>
+                <select className="form-select" value={selectedTimePeriod} onChange={e => {
+                    setSelectedTimePeriod(e.target.value)
+                }}>
                     <option value="week">past week</option>
                     <option value="month">past month</option>
                     <option value="year">past year</option>
                     <option value="all">all time</option>
                 </select>
             </div>
-            <Carousel>
+            <Carousel currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} handleIndexChange={handleIndexChange}>
                 <Plot data={data.raw_time_series} plotId="rawPlot"/>   
+                <Plot data={data.ma_smoothed} plotId="maPlot"/>   
                 <Plot data={data.acf_plot} plotId="acfPlot"/>   
                 <Plot data={data.pacf_plot} plotId="pacfPlot"/>   
-                <Plot data={data.ma_smoothed} plotId="maPlot"/>   
             </Carousel>
         </>
     ) 
