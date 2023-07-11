@@ -17,9 +17,9 @@ export default function Carousel({children}) {
 
   return (
     <div className="carousel-container">
-      <button onClick={goToPrevPlot}>Prev</button>
+      <button className="triangle triangle-left" onClick={goToPrevPlot}></button>
       <div className="carousel-plot">{children[currentIndex]}</div>
-      <button onClick={goToNextPlot}>Next</button>
+      <button className="triangle triangle-right" onClick={goToNextPlot}></button>
     </div>
   );
 }

@@ -8,3 +8,18 @@
 .carousel-plot {
     flex-grow: 1;
 }
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px;
+    border-color: transparent transparent transparent var(--accent);
+    background: none;
+    padding: 0;
+    outline: none;
+  }
+  
+  .triangle-left {
+    transform: rotate(180deg);
+  }
