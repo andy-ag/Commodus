@@ -18,7 +18,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
         minLength: 3
-    }
+    },
+    commodities: {
+        type: Array,
+        required: false
+    },
 }, {
     timestamps: true,
     toJSON: {
