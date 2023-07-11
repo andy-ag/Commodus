@@ -23,3 +23,7 @@
   .triangle-left {
     transform: rotate(180deg);
   }
+
+  .form-select {
+    width: 180px;
+  }
