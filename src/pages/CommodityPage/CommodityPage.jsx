@@ -1,6 +1,7 @@
 import './CommodityPage.css';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Carousel from '../../components/Carousel.jsx'
 import Plot from '../../components/Plot.jsx'
 import Table from '../../components/Table.jsx'
 import HeaderBox from '../../components/HeaderBox.jsx'
@@ -48,10 +49,12 @@ export default function CommodityPage() {
                     <option value="all">all time</option>
                 </select>
             </div>
-            <Plot data={data.raw_time_series} plotId="rawPlot"/>   
-            <Plot data={data.acf_plot} plotId="acfPlot"/>   
-            <Plot data={data.pacf_plot} plotId="pacfPlot"/>   
-            <Plot data={data.ma_smoothed} plotId="maPlot"/>   
+            <Carousel>
+                <Plot data={data.raw_time_series} plotId="rawPlot"/>   
+                <Plot data={data.acf_plot} plotId="acfPlot"/>   
+                <Plot data={data.pacf_plot} plotId="pacfPlot"/>   
+                <Plot data={data.ma_smoothed} plotId="maPlot"/>   
+            </Carousel>
         </>
     ) 
 }
