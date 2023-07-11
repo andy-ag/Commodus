@@ -3,6 +3,7 @@ const commodityList = require('../../src/utilities/filteredResults_final.json')
 const { spawn } = require('child_process');
 const path = require('path');
 const pythonScriptPath = path.join(__dirname, '../../src/utilities/analysis.py');
+const User = require('../../models/user.js')
 
 
 async function index(req, res){
@@ -57,8 +58,51 @@ async function analyse(req, res){
     }});
 }
 
+async function favourite(req, res) {
+    try {
+        console.log(req.user)
+        console.log(req.body)
+        const user = await User.findOne({email: req.user.email})
+        const commodity = req.body
+
+        const index = user.commodities.findIndex(c => c === commodity.apiParams)
+        if (index !== -1) {
+            // The commodity already exists, remove it
+            user.commodities.splice(index, 1);
+            await user.save();
+            res.json('removed');
+        } else {
+            // The commodity doesn't exist, add it
+            user.commodities.unshift(commodity);
+            await user.save();
+            res.json('added');
+        }
+    } catch (error) {
+        console.error(`Error manipulating favourites: ${error.message}`)
+        res.status(500).json({error: 'An error occurred while manipulating favourites'});
+    }
+}
+
+async function isFavourite(req, res) {
+    try {
+        const user = await User.findOne({email: req.user.email})
+        const commodity = req.body
+
+        const index = user.commodities.findIndex(c => c === commodity.apiParams)
+        if (index !== -1) {
+            res.json('true')
+        } else {
+            res.json('false')
+        } 
+    } catch (error) {
+        console.error(`Error checking favourites: ${error.message}`)
+        res.status(500).json({error: 'An error occurred while checking favourites'});
+    }
+}
 
 module.exports = {
     index,
     analyse,
+    favourite,
+    isFavourite
 }

@@ -10,8 +10,10 @@ const varNames = require('../../utilities/scrapedNames')
 export default function CommodityPage() {
     const { params } = useParams();  // Get the commodity code from the URL parameters
     const variable = Object.keys(varNames).find(key => varNames[key] === params)
+    const token = localStorage.getItem('token')
     const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
     const [data, setData] = useState(null);
+    const [isFav, setFav] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedTimeSeries, setSelectedTimeSeries] = useState('raw');
     const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
@@ -19,6 +21,26 @@ export default function CommodityPage() {
     function handleIndexChange(newIndex) {
         setSelectedTimeSeries(PLOT_ORDER[newIndex])
     }
+
+    useEffect(() => {
+        const checkFav = async () => {
+            try {
+                const response = await fetch(`/api/commodities/${encodeURIComponent(params)}/isfavourite`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + token,
+                    },
+                });
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const favStatus = await response.json();
+                setFav(favStatus === 'true');
+            } catch (error) {
+                console.error(`Error checking favourite status: ${error.message}`);
+            }
+        };
+        checkFav();
+    }, [params, token]);
 
     useEffect(() => {
         const fetchCommodityAnalysis = async () => {
@@ -40,7 +62,7 @@ export default function CommodityPage() {
     
     return(
         <>
-            <HeaderBox text={variable} add={true} fav={false}/>
+            <HeaderBox text={variable} add={true} fav={isFav} apiParams={params}/>
             <div className="d-flex justify-content-around mt-4 mb-2 gap-2">
                 <select className="form-select" value={selectedTimeSeries} onChange={e => {
                     setSelectedTimeSeries(e.target.value)
