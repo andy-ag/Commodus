@@ -1,7 +1,7 @@
 import './CommodityPage.css';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Carousel from '../../components/Carousel.jsx'
+import { Carousel } from 'react-responsive-carousel'
 import Plot from '../../components/Plot.jsx'
 import Table from '../../components/Table.jsx'
 import HeaderBox from '../../components/HeaderBox.jsx'
@@ -75,7 +75,6 @@ export default function CommodityPage({ params: externalParams = null, data: ext
                     <select className="form-select" value={selectedTimeSeries} onChange={e => {
                         const newTimeSeries = e.target.value;
                         setSelectedTimeSeries(newTimeSeries);
-                        setCurrentIndex(PLOT_ORDER.indexOf(newTimeSeries.split('-')[1]));
                     }}>
                         <option value={`${params}-raw`}>raw time series</option>
                         <option value={`${params}-ma`}>moving average</option>
@@ -91,7 +90,12 @@ export default function CommodityPage({ params: externalParams = null, data: ext
                         <option value="all">all time</option>
                     </select>
                 </div>
-                <Carousel handleIndexChange={handleIndexChange}>
+                <Carousel 
+                    showThumbs={false}
+                    showStatus={false}
+                    selectedItem={currentIndex}
+                    onChange={handleIndexChange}
+                >
                     <Plot data={data.raw_time_series} plotId="rawPlot"/>   
                     <Plot data={data.ma_smoothed} plotId="maPlot"/>   
                     <Plot data={data.acf_plot} plotId="acfPlot"/>   
