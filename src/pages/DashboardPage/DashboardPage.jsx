@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import CommodityPage from '../CommodityPage/CommodityPage';
 import './DashboardPage.css';
+import HeaderBox from '../../components/HeaderBox';
 
 export default function DashboardPage() {
   const token = localStorage.getItem('token');
@@ -32,6 +33,8 @@ export default function DashboardPage() {
   }
 
   return (
+    <>
+    <HeaderBox text={'Your dashboard'} add={false} fav={false} apiParams={null}/>
     <div className="container-fluid">
         {commodities.map((commodity, index) => (
           <div className="row justify-content-center" key={index}>
@@ -45,5 +48,6 @@ export default function DashboardPage() {
           </div>
         ))}
     </div>
+    </>
   );
 }
