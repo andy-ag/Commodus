@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast'
 import HomePage from '../HomePage/HomePage'
 import AuthPage from '../AuthPage/AuthPage'
 import CommodityPage from '../CommodityPage/CommodityPage'
-import CommodityListPage from '../CommodityListPage/CommodityListPage'
+import DashboardPage from '../DashboardPage/DashboardPage'
 import CommoditiesContext from '../../components/commoditiesContext'
 import SettingsPage from '../SettingsPage/SettingsPage'
 import ContactPage from '../ContactPage/ContactPage'
@@ -50,7 +50,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage commodities={commodities}/>}/>
             <Route path="/commodities/:params" element={<CommodityPage/>}/>
-            <Route path="/dashboard" element={<CommodityListPage/>}/>
+            <Route path="/dashboard" element={<DashboardPage/>}/>
             <Route path="/settings" element={<SettingsPage/>}/>
             <Route path="/signin" element={<AuthPage user={user} setUser={setUser}/>}/>
             <Route path="/register" element={<AuthPage user={user} setUser={setUser}/>}/>

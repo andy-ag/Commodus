@@ -35,11 +35,6 @@ export default function NavBar({user, setUser}){
                   Dashboard
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/commodity">
-                  Commodity
-                </Link>
-              </li>
             </ul>
             <ul className="navbar-nav">
               {user && (

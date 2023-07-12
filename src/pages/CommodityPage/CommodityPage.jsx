@@ -7,8 +7,11 @@ import Table from '../../components/Table.jsx'
 import HeaderBox from '../../components/HeaderBox.jsx'
 const varNames = require('../../utilities/scrapedNames') 
 
-export default function CommodityPage() {
-    const { params } = useParams();  // Get the commodity code from the URL parameters
+export default function CommodityPage({ params: externalParams = null, checkFav = true }) {
+    // If commodity code passed down, use that, else get from query params
+    const { params: routeParams } = useParams();
+    const params = externalParams || routeParams;
+
     const variable = Object.keys(varNames).find(key => varNames[key] === params)
     const token = localStorage.getItem('token')
     const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
@@ -23,6 +26,7 @@ export default function CommodityPage() {
     }
 
     useEffect(() => {
+        if (checkFav) {
         const checkFav = async () => {
             try {
                 const response = await fetch(`/api/commodities/${encodeURIComponent(params)}/isfavourite`, {
@@ -40,7 +44,7 @@ export default function CommodityPage() {
             }
         };
         checkFav();
-    }, [params, token]);
+    }}, [params, token, checkFav]);
 
     useEffect(() => {
         const fetchCommodityAnalysis = async () => {

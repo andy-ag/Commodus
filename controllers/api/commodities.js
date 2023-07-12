@@ -101,9 +101,20 @@ async function isFavourite(req, res) {
     }
 }
 
+async function getFavourites(req, res) {
+    try {
+      const user = await User.findOne({email: req.user.email})
+      res.json(user.commodities);
+    } catch (error) {
+      console.error(`Error fetching favourites: ${error.message}`)
+      res.status(500).json({error: 'An error occurred while fetching favourites'});
+    }
+  }
+
 module.exports = {
     index,
     analyse,
     favourite,
-    isFavourite
+    isFavourite,
+    getFavourites,
 }

@@ -6,8 +6,9 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 //! Add protected routes
 // GET /api/commodities
 router.get('/index', commoditiesCtrl.index);
+router.get('/favourites', ensureLoggedIn, commoditiesCtrl.getFavourites)
 router.get('/:params', commoditiesCtrl.analyse);
-router.get('/:params/isfavourite', commoditiesCtrl.isFavourite);
+router.get('/:params/isfavourite', ensureLoggedIn, commoditiesCtrl.isFavourite);
 
 // POST /api/commodities
 router.post('/:params/favourite', commoditiesCtrl.favourite);
