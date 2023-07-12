@@ -2,7 +2,7 @@ import './TermsPage.css';
 
 export default function TermsPage() {
     return (
-      <div className="container my-5">
+      <div className="container my-4">
             <div className="row">
             <div className="col text-start">
                     <h1 className="mb-4 text-center">Terms of Service</h1>
