@@ -1,0 +1,14 @@
+.commodityPage {
+    max-width: 800px;  /* Adjust this value to your preferred width */
+    width: 100%;
+  }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 800px;  
+    width: 100%;
+}
+  
+  

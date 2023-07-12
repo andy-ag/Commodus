@@ -4,7 +4,6 @@ import './DashboardPage.css';
 
 export default function DashboardPage() {
   const token = localStorage.getItem('token');
-  console.log('Token:', token);
   const [commodities, setCommodities] = useState(null);
 
   useEffect(() => {
@@ -33,13 +32,16 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="d-flex flex-column align-items-center">
+    <div className="container-fluid">
         {commodities.map((commodity, index) => (
-          <div key={index}>
-            <CommodityPage
-              params={commodity.apiParams}
-              checkFav={false}
-            />
+          <div className="row justify-content-center" key={index}>
+                <div className="commodityPage my-4">
+                    <CommodityPage
+                    params={commodity.apiParams}
+                    checkFav={false}
+                    index={index}
+                    />
+                </div>
           </div>
         ))}
     </div>

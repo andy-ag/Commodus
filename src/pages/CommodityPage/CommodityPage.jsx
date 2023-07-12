@@ -7,7 +7,7 @@ import Table from '../../components/Table.jsx'
 import HeaderBox from '../../components/HeaderBox.jsx'
 const varNames = require('../../utilities/scrapedNames') 
 
-export default function CommodityPage({ params: externalParams = null, checkFav = true }) {
+export default function CommodityPage({ params: externalParams = null, data: externalData = null, checkFav = true, index }) {
     // If commodity code passed down, use that, else get from query params
     const { params: routeParams } = useParams();
     const params = externalParams || routeParams;
@@ -15,7 +15,7 @@ export default function CommodityPage({ params: externalParams = null, checkFav 
     const variable = Object.keys(varNames).find(key => varNames[key] === params)
     const token = localStorage.getItem('token')
     const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
-    const [data, setData] = useState(null);
+    const [data, setData] = useState(externalData);
     const [isFav, setFav] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedTimeSeries, setSelectedTimeSeries] = useState('raw');
@@ -57,8 +57,9 @@ export default function CommodityPage({ params: externalParams = null, checkFav 
             }
         };
 
-        fetchCommodityAnalysis();
-    }, [params]);
+        const delay = 100*index
+        setTimeout(fetchCommodityAnalysis, delay)
+    }, [params, index]);
 
     if (data === null) {
         return <div>Loading...</div>;  // Show a loading message while the data is being fetched
@@ -66,32 +67,36 @@ export default function CommodityPage({ params: externalParams = null, checkFav 
     
     return(
         <>
-            <HeaderBox text={variable} add={true} fav={isFav} apiParams={params}/>
-            <div className="d-flex justify-content-around mt-4 mb-2 gap-2">
-                <select className="form-select" value={selectedTimeSeries} onChange={e => {
-                    setSelectedTimeSeries(e.target.value)
-                    setCurrentIndex(PLOT_ORDER.indexOf(e.target.value))
-                }}>
-                    <option value="raw">raw time series</option>
-                    <option value="ma">moving average</option>
-                    <option value="acf">acf</option>
-                    <option value="pacf">pacf</option>
-                </select>
-                <select className="form-select" value={selectedTimePeriod} onChange={e => {
-                    setSelectedTimePeriod(e.target.value)
-                }}>
-                    <option value="week">past week</option>
-                    <option value="month">past month</option>
-                    <option value="year">past year</option>
-                    <option value="all">all time</option>
-                </select>
+            <div className="grid-container">
+                <div className="header-wrapper">
+                    <HeaderBox text={variable} add={true} fav={isFav} apiParams={params}/>
+                </div>
+                <div className="d-flex justify-content-center mt-4 gap-2">
+                    <select className="form-select" value={selectedTimeSeries} onChange={e => {
+                        setSelectedTimeSeries(e.target.value)
+                        setCurrentIndex(PLOT_ORDER.indexOf(e.target.value))
+                    }}>
+                        <option value="raw">raw time series</option>
+                        <option value="ma">moving average</option>
+                        <option value="acf">acf</option>
+                        <option value="pacf">pacf</option>
+                    </select>
+                    <select className="form-select" value={selectedTimePeriod} onChange={e => {
+                        setSelectedTimePeriod(e.target.value)
+                    }}>
+                        <option value="week">past week</option>
+                        <option value="month">past month</option>
+                        <option value="year">past year</option>
+                        <option value="all">all time</option>
+                    </select>
+                </div>
+                <Carousel currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} handleIndexChange={handleIndexChange}>
+                    <Plot data={data.raw_time_series} plotId="rawPlot"/>   
+                    <Plot data={data.ma_smoothed} plotId="maPlot"/>   
+                    <Plot data={data.acf_plot} plotId="acfPlot"/>   
+                    <Plot data={data.pacf_plot} plotId="pacfPlot"/>   
+                </Carousel>
             </div>
-            <Carousel currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} handleIndexChange={handleIndexChange}>
-                <Plot data={data.raw_time_series} plotId="rawPlot"/>   
-                <Plot data={data.ma_smoothed} plotId="maPlot"/>   
-                <Plot data={data.acf_plot} plotId="acfPlot"/>   
-                <Plot data={data.pacf_plot} plotId="pacfPlot"/>   
-            </Carousel>
         </>
     ) 
 }

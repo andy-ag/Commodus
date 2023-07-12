@@ -16,3 +16,8 @@
     cursor: pointer;
 }
 
+.header-wrapper {
+    width: max-content;
+    margin: auto;
+}
+
