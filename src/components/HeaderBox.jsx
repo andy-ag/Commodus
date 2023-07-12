@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons'
 import './HeaderBox.css'
 import { useState } from 'react'
+import { toast } from 'react-hot-toast'
 
 export default function HeaderBox({ text, add, fav, apiParams }) {
     const [isFav, setFav] = useState(fav)
@@ -21,8 +22,20 @@ export default function HeaderBox({ text, add, fav, apiParams }) {
             // Update the state based on the server response
             if (res === 'added') {
                 setFav(true);
+                toast.success('Added to favourites', {
+                    iconTheme: {
+                      primary: 'var(--accent)',
+                      secondary: 'white',
+                    },
+                  });
             } else if (res === 'removed') {
                 setFav(false);
+                toast.error('Removed from favourites', {
+                    iconTheme: {
+                      primary: '#CE2D4F',
+                      secondary: 'white',
+                    },
+                  });
             }
         } catch (error) {
             console.error(`Error adding commodity to favourites: ${error.message}`);

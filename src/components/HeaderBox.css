@@ -11,3 +11,8 @@
     top: 2px;
     right: 2px;
 }
+
+.toggleSaveCommodity:hover {
+    cursor: pointer;
+}
+

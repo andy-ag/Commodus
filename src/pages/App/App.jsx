@@ -1,7 +1,8 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { getUser } from '../../utilities/users-service';
+import { getUser } from '../../utilities/users-service'
+import { Toaster } from 'react-hot-toast'
 import HomePage from '../HomePage/HomePage'
 import AuthPage from '../AuthPage/AuthPage'
 import CommodityPage from '../CommodityPage/CommodityPage'
@@ -40,6 +41,10 @@ export default function App() {
   return (
     <CommoditiesContext.Provider value={commodities}> 
       <main className="App">
+        <Toaster containerStyle={{
+          top: 5,
+          height: '30px'
+        }}/>  
         <div className="d-flex flex-column align-items-center">
           <NavBar user={user} setUser={setUser}/>
           <Routes>
