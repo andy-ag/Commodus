@@ -65,7 +65,7 @@ async function favourite(req, res) {
         const user = await User.findOne({email: req.user.email})
         const commodity = req.body
 
-        const index = user.commodities.findIndex(c => c === commodity.apiParams)
+        const index = user.commodities.findIndex(c => c.apiParams === commodity.apiParams)
         if (index !== -1) {
             // The commodity already exists, remove it
             user.commodities.splice(index, 1);
@@ -87,8 +87,9 @@ async function isFavourite(req, res) {
     try {
         const user = await User.findOne({email: req.user.email})
         const commodity = req.body
+        console.log(req.body)
 
-        const index = user.commodities.findIndex(c => c === commodity.apiParams)
+        const index = user.commodities.findIndex(c => c.apiParams === commodity.apiParams)
         if (index !== -1) {
             res.json('true')
         } else {

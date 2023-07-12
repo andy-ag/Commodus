@@ -6,7 +6,6 @@ from statsmodels.tsa.stattools import acf, pacf, adfuller
 
 # Read input data from standard input
 data = json.load(sys.stdin)
-print(f'Data: {data}', file=sys.stderr)
 
 # Extract column names and data rows
 column_names = data['colNames']
