@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import Plotly from 'plotly.js-dist'
 
 export default function Plot({data, plotId}) {

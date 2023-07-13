@@ -1,12 +1,14 @@
 import './PrivacyPage.css';
+import HeaderBox from '../../components/HeaderBox.jsx'
 
 export default function PrivacyPage() {
     return (
         <div className="container my-4 w-50">
             <div className="row">
                 <div className="col text-start">
-                    <h1 className="mb-4">Privacy Policy</h1>
-
+                    <div className="d-flex justify-content-center mb-4">
+                        <HeaderBox text={'Privacy policy'} add={false} fav={false}/>
+                    </div>
                     <h2>1. Personal Information</h2>
                     <p>
                         When you register for an account on Commodus, we ask for your name and email address. This information is used to provide you with our services and to allow you to log in to your account. We will not share your personal information with third parties or sell it to other companies.

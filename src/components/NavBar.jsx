@@ -1,11 +1,18 @@
 import { Link } from 'react-router-dom'
 import * as userService from '../utilities/users-service';
 import './NavBar.css'
+import { toast } from 'react-hot-toast'
 
 export default function NavBar({user, setUser}){
     function handleLogOut(){
         userService.logOut();
         setUser(null);
+        toast.success('You have been signed out', {
+          iconTheme: {
+            primary: 'var(--accent)',
+            secondary: 'white',
+          },
+        });
     }
 
     return (
@@ -37,13 +44,6 @@ export default function NavBar({user, setUser}){
               </li>
             </ul>
             <ul className="navbar-nav">
-              {user && (
-                <li className="nav-item d-flex align-self-center align-items-center user-greeting me-2">
-                  <div>
-                    Hello, {user.name}!
-                  </div>
-                </li>
-              )}
               <li className="nav-item">
                 <Link className="nav-link" to="/settings">
                   Settings
@@ -52,7 +52,7 @@ export default function NavBar({user, setUser}){
               {user ? (
                 <li className="nav-item">
                   <Link className="nav-link" to="" onClick={handleLogOut}>
-                    Sign Out
+                    Sign out
                   </Link>
                 </li>
               ) : (

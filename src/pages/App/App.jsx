@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
 import { Toaster } from 'react-hot-toast'
 import HomePage from '../HomePage/HomePage'
-import AuthPage from '../AuthPage/AuthPage'
 import CommodityPage from '../CommodityPage/CommodityPage'
 import DashboardPage from '../DashboardPage/DashboardPage'
 import CommoditiesContext from '../../components/commoditiesContext'
@@ -15,6 +14,8 @@ import FaqPage from '../FaqPage/FaqPage'
 import TermsPage from '../TermsPage/TermsPage'
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
+import RegisterPage from '../RegisterPage/RegisterPage';
+import SigninPage from '../SigninPage/SigninPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -52,8 +53,8 @@ export default function App() {
             <Route path="/commodities/:params" element={<CommodityPage/>}/>
             <Route path="/dashboard" element={<DashboardPage/>}/>
             <Route path="/settings" element={<SettingsPage/>}/>
-            <Route path="/signin" element={<AuthPage user={user} setUser={setUser}/>}/>
-            <Route path="/register" element={<AuthPage user={user} setUser={setUser}/>}/>
+            <Route path="/signin" element={<SigninPage user={user} setUser={setUser}/>}/>
+            <Route path="/register" element={<RegisterPage user={user} setUser={setUser}/>}/>
             <Route path="/faq" element={<FaqPage/>}/>
             <Route path="/privacy" element={<PrivacyPage/>}/>
             <Route path="/ToS" element={<TermsPage/>}/>

@@ -22,7 +22,7 @@ export default function HeaderBox({ text, add, fav, apiParams, removeFromFavouri
             // Update the state based on the server response
             if (res === 'added') {
                 setFav(true);
-                toast.success('Added to favourites', {
+                toast.success('Added to dashboard', {
                     iconTheme: {
                       primary: 'var(--accent)',
                       secondary: 'white',
@@ -30,7 +30,7 @@ export default function HeaderBox({ text, add, fav, apiParams, removeFromFavouri
                   });
             } else if (res === 'removed') {
                 setFav(false);
-                toast.error('Removed from favourites', {
+                toast.error('Removed from dashboard', {
                     iconTheme: {
                         primary: '#CE2D4F',
                         secondary: 'white',
@@ -39,7 +39,13 @@ export default function HeaderBox({ text, add, fav, apiParams, removeFromFavouri
                 if (removeFromFavourites) removeFromFavourites(apiParams)
             }
         } catch (error) {
-            console.error(`Error adding commodity to favourites: ${error.message}`);
+            console.error(`Error adding commodity to dashboard: ${error.message}`);
+            toast.error('Error adding commodity to dashboard', {
+                iconTheme: {
+                    primary: '#CE2D4F',
+                    secondary: 'white',
+                },
+            });
         }
     }
     

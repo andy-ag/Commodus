@@ -1,0 +1,19 @@
+.auth-container {
+    padding: 50px;
+    background-color: var(--blue-1);
+    border: 2px solid var(--accent);
+  }
+
+  .auth-container form button {
+    background-color: var(--accent) !important; /* Change button color */
+    border-radius: 0; /* Make button corners sharp */
+    color: white; /* Change button text color for better contrast, if needed */
+}
+
+.auth-container form label {
+    color: white !important;
+  }
+
+.auth-container form input {
+    border-radius: 0px;
+  }

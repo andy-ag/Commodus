@@ -1,11 +1,14 @@
 import './FaqPage.css';
+import HeaderBox from '../../components/HeaderBox.jsx'
 
 export default function FaqPage() {
     return (
       <div className="container my-4 w-50">
             <div className="row">
             <div className="col text-start">
-                    <h1 className="mb-4">FAQ</h1>
+                    <div className="d-flex justify-content-center mb-4">
+                        <HeaderBox text={'FAQ'} add={false} fav={false}/>
+                    </div> 
                     <h2>What is the purpose of the Commodus app?</h2>
                     <p>
                       The Commodus app serves as a resource for basic commodity price analytics and quick trend monitoring. It is designed to be used as a precursor to deeper analysis, providing a suite of strong core insights into the commodity markets. Additionally, the app aims to make analysis accessible to a wider audience. By offering an easy-to-use interface, less technically oriented users can access relatively complex data analysis tools, empowering them to create a solid platform for further independent research.

@@ -121,13 +121,6 @@ code {
   font-size: 2vmin;
 }
 
-.form-container {
-  padding: 3vmin;
-  background-color: var(--blue-1);
-  border: .1vmin solid var(--blue-3);
-  border-radius: 1vmin;
-}
-
 p.error-message {
   color: var(--deepblue);
   text-align: center;

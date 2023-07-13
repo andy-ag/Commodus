@@ -1,12 +1,14 @@
 import './TermsPage.css';
+import HeaderBox from '../../components/HeaderBox.jsx'
 
 export default function TermsPage() {
     return (
       <div className="container my-4 w-50">
             <div className="row">
             <div className="col text-start">
-                    <h1 className="mb-4">Terms of Service</h1>
-
+                    <div className="d-flex justify-content-center mb-4">
+                        <HeaderBox text={'Terms of service'} add={false} fav={false}/>
+                    </div>
                     <h2>1. Terms</h2>
                     <p>
                         By accessing the Commodus website, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
