@@ -1,10 +1,10 @@
 import './CommodityPage.css';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Carousel } from 'react-responsive-carousel'
 import Plot from '../../components/Plot.jsx'
 import Table from '../../components/Table.jsx'
 import HeaderBox from '../../components/HeaderBox.jsx'
+import Carousel from '../../components/Carousel.jsx'
 const varNames = require('../../utilities/scrapedNames') 
 
 export default function CommodityPage({ params: externalParams = null, data: externalData = null, checkFav = true, index, removeFromFavourites }) {
