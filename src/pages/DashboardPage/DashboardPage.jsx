@@ -7,7 +7,12 @@ export default function DashboardPage() {
   const token = localStorage.getItem('token');
   const [commodities, setCommodities] = useState(null);
 
+  function removeFromFavourites(commodityToRemove) {
+    setCommodities(commodities.filter(commodity => commodity !== commodityToRemove));
+  }
+
   useEffect(() => {
+    if (!token) return
     const fetchUserCommodities = async () => {
       try {
         const response = await fetch('/api/commodities/favourites', {
@@ -41,8 +46,9 @@ export default function DashboardPage() {
                 <div className="commodityPage my-4">
                     <CommodityPage
                     params={commodity.apiParams}
-                    checkFav={false}
+                    checkFav={true}
                     index={index}
+                    removeFromFavourites={() => removeFromFavourites(commodity.apiParams)}
                     />
                 </div>
           </div>

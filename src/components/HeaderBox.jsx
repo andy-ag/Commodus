@@ -4,7 +4,7 @@ import './HeaderBox.css'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
-export default function HeaderBox({ text, add, fav, apiParams }) {
+export default function HeaderBox({ text, add, fav, apiParams, removeFromFavourites }) {
     const [isFav, setFav] = useState(fav)
     const token = localStorage.getItem('token')
     async function handleFav() {
@@ -30,6 +30,7 @@ export default function HeaderBox({ text, add, fav, apiParams }) {
                   });
             } else if (res === 'removed') {
                 setFav(false);
+                removeFromFavourites()
                 toast.error('Removed from favourites', {
                     iconTheme: {
                       primary: '#CE2D4F',
