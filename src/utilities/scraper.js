@@ -1,3 +1,4 @@
+// Scrape variable names & codes from NASDAQ API variable list page
 const puppeteer = require('puppeteer');
 
 async function scrapeTables(url) {
