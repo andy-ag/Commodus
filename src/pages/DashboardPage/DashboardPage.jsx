@@ -8,8 +8,9 @@ export default function DashboardPage() {
   const [commodities, setCommodities] = useState(null);
 
   function removeFromFavourites(commodityToRemove) {
-    setCommodities(commodities.filter(commodity => commodity !== commodityToRemove));
+    setCommodities(oldCommodities => oldCommodities.filter(commodity => commodity.apiParams !== commodityToRemove));
   }
+  
 
   useEffect(() => {
     if (!token) return
@@ -48,7 +49,7 @@ export default function DashboardPage() {
                     params={commodity.apiParams}
                     checkFav={true}
                     index={index}
-                    removeFromFavourites={() => removeFromFavourites(commodity.apiParams)}
+                    removeFromFavourites={removeFromFavourites}
                     />
                 </div>
           </div>

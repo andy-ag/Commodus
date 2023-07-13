@@ -60,8 +60,6 @@ async function analyse(req, res){
 
 async function favourite(req, res) {
     try {
-        console.log(req.user)
-        console.log(req.body)
         const user = await User.findOne({email: req.user.email})
         const commodity = req.body
 
@@ -87,7 +85,6 @@ async function isFavourite(req, res) {
     try {
         const user = await User.findOne({email: req.user.email})
         const commodity = req.params.params
-        console.log(req.params.params)
 
         const index = user.commodities.findIndex(c => c.apiParams === commodity)
         if (index !== -1) {
