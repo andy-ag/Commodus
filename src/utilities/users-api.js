@@ -14,3 +14,15 @@ export function login(credentials) {
 export function checkToken() {
   return sendRequest(`${BASE_URL}${CHECK_TOKEN}`);
 }
+
+export function changeEmail(data) {
+  return sendRequest(`${BASE_URL}/email`, 'PUT', data);
+}
+
+export function changePassword(data) {
+  return sendRequest(`${BASE_URL}/password`, 'PUT', data);
+}
+
+export function deleteAccount() {
+  return sendRequest(`${BASE_URL}`, 'DELETE');
+}

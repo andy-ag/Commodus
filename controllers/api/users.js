@@ -28,6 +28,46 @@ async function login(req, res){
     }
 }
 
+async function changeEmail(req, res){
+    try {
+        const user = await User.findById(req.user._id)
+        const match = await bcrypt.compare(req.body.password, user.password);
+        if (!match) throw new Error()
+
+        user.email = req.body.newEmail
+        await user.save()
+
+        return res.json(user)
+    } catch (error) {
+        return res.status(400).json("Error changing email")
+    }
+}
+
+async function changePassword(req, res){
+    try {
+        const user = await User.findById(req.user._id)
+        const match = await bcrypt.compare(req.body.password, user.password);
+        if (!match) throw new Error()
+
+        user.password = req.body.newPassword
+        await user.save()
+
+        return res.json(user)
+    } catch (error) {
+        return res.status(400).json("Error changing password")
+    }
+}
+
+async function deleteAccount(req, res){
+    try {
+        const user = await User.findByIdAndDelete(req.user._id)
+        return res.json(user)
+    } catch (error) {
+        return res.status(400).json("Error deleting account")
+    }
+}
+
+
 function createJWT(user){
     return jwt.sign(
         {user},
@@ -46,5 +86,8 @@ function checkToken(req, res) {
 module.exports = {
     create,
     login,
-    checkToken
+    checkToken,
+    changeEmail,
+    changePassword,
+    deleteAccount
 }
