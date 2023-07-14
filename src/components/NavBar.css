@@ -26,3 +26,7 @@
   .nav-link, .navbar-brand {
     color: white;
   }
+
+  .navbar-brand:hover, a:hover{
+    color: var(--deepblue) !important;
+  }
