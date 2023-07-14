@@ -34,7 +34,7 @@ async function changeEmail(req, res){
         const match = await bcrypt.compare(req.body.password, user.password);
         if (!match) throw new Error()
 
-        user.email = req.body.newEmail
+        user.email = req.body.email
         await user.save()
 
         return res.json(user)
