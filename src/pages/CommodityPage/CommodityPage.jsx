@@ -7,7 +7,7 @@ import HeaderBox from '../../components/HeaderBox.jsx'
 import Carousel from '../../components/Carousel.jsx'
 const varNames = require('../../utilities/scrapedNames') 
 
-export default function CommodityPage({ params: externalParams = null, data: externalData = null, checkFav = true, index, removeFromFavourites }) {
+export default function CommodityPage({ params: externalParams = null, data: externalData = null, checkFav = true, index, removeFromFavourites, loading=false, onCommodityLoaded }) {
     // If commodity code passed down, use that, else get from query params
     const { params: routeParams } = useParams();
     const params = externalParams || routeParams;
@@ -16,6 +16,12 @@ export default function CommodityPage({ params: externalParams = null, data: ext
     const token = localStorage.getItem('token')
     const [data, setData] = useState(externalData);
     const [isFav, setFav] = useState(false);
+
+    useEffect(() => {
+        if (data !== null && loading) {
+            onCommodityLoaded();
+        }
+    }, [data, loading, onCommodityLoaded]);
 
     useEffect(() => {
         if (checkFav) {
@@ -54,7 +60,7 @@ export default function CommodityPage({ params: externalParams = null, data: ext
     }, [params, index]);
 
     if (data === null) {
-        return <div>Loading...</div>;  // Show a loading message while the data is being fetched
+        return null;
     }
     
     return(
