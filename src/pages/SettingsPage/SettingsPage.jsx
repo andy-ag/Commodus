@@ -1,11 +1,14 @@
-import { useState } from 'react';
-import HeaderBox from '../../components/HeaderBox.jsx';
-import './SettingsPage.css';
-import * as usersAPI from '../../utilities/users-api';
+import { useState } from 'react'
+import HeaderBox from '../../components/HeaderBox.jsx'
+import './SettingsPage.css'
+import * as usersAPI from '../../utilities/users-api'
+import * as userService from '../../utilities/users-service'
 import { toast } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
-export default function SettingsPage() {
-    const [showModal, setShowModal] = useState(false);
+export default function SettingsPage({setUser}) {
+  const navigate = useNavigate()  
+  const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
     email: '',
     confirmCurrentPassword: '',
@@ -28,6 +31,13 @@ export default function SettingsPage() {
     e.preventDefault();
     try {
         await usersAPI.changeEmail({email: formData.email, password: formData.confirmCurrentPassword});
+        setFormData({
+          email: '',
+          confirmCurrentPassword: '',
+          currentPassword: '',
+          newPassword: '',
+          confirmNewPassword: '',
+        })
         toast.success('E-mail changed successfully!', {
             iconTheme: {
               primary: 'var(--accent)',
@@ -59,6 +69,13 @@ export default function SettingsPage() {
       }
     try {
         await usersAPI.changePassword({newPassword: formData.newPassword, password: formData.currentPassword});
+        setFormData({
+          email: '',
+          confirmCurrentPassword: '',
+          currentPassword: '',
+          newPassword: '',
+          confirmNewPassword: '',
+        })
         toast.success('Password changed successfully!', {
             iconTheme: {
               primary: 'var(--accent)',
@@ -81,6 +98,9 @@ export default function SettingsPage() {
     try {
         await usersAPI.deleteAccount();
         setShowModal(false);
+        userService.logOut();
+        setUser(null);
+        navigate('/')
         toast.error('Your account has been deleted', {
             iconTheme: {
                 primary: '#CE2D4F',
@@ -121,25 +141,25 @@ export default function SettingsPage() {
                 <button type="submit">CHANGE PASSWORD</button>
             </form>
 
-            <button className="delete-button" onClick={handleDeleteAccount}>DELETE ACCOUNT</button>
+            <button className="delete-button" onClick={() => setShowModal(true)}>DELETE ACCOUNT</button>
         </div>
         <p className="error-message">&nbsp;{error}</p>
         </div>
         <div className={`modal ${showModal ? 'show d-block' : 'd-none'}`} tabIndex="-1">
         <div className="modal-dialog">
-        <div className="modal-content">
-            <div className="modal-header">
-            <h5 className="modal-title">Confirm Account Deletion</h5>
-            <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
-            </div>
-            <div className="modal-body">
-            <p>Are you sure you want to delete your account? This action cannot be undone.</p>
-            </div>
-            <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Back</button>
-            <button type="button" className="btn btn-danger" onClick={handleDeleteAccount}>Confirm</button>
-            </div>
-        </div>
+          <div className="modal-content">
+              <div className="modal-header">
+              <h5 className="modal-title">Confirm account deletion</h5>
+              <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
+              </div>
+              <div className="modal-body">
+              <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+              </div>
+              <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Back</button>
+              <button type="button" className="btn btn-danger" onClick={handleDeleteAccount}>Confirm</button>
+              </div>
+          </div>
         </div>
     </div>
     </>  

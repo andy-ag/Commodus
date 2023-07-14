@@ -52,7 +52,7 @@ export default function App() {
             <Route path="/" element={<HomePage commodities={commodities}/>}/>
             <Route path="/commodities/:params" element={<CommodityPage/>}/>
             <Route path="/dashboard" element={<DashboardPage/>}/>
-            <Route path="/settings" element={<SettingsPage/>}/>
+            <Route path="/settings" element={<SettingsPage user={user} setUser={setUser}/>}/>
             <Route path="/signin" element={<SigninPage user={user} setUser={setUser}/>}/>
             <Route path="/register" element={<RegisterPage user={user} setUser={setUser}/>}/>
             <Route path="/faq" element={<FaqPage/>}/>

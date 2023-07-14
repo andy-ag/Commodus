@@ -44,17 +44,19 @@ export default function NavBar({user, setUser}){
               </li>
             </ul>
             <ul className="navbar-nav">
-              <li className="nav-item">
+              {user ? (
+                <>
+                <li className="nav-item">
                 <Link className="nav-link" to="/settings">
                   Settings
                 </Link>
               </li>
-              {user ? (
                 <li className="nav-item">
                   <Link className="nav-link" to="" onClick={handleLogOut}>
                     Sign out
                   </Link>
                 </li>
+                </>
               ) : (
                 <>
                   <li className="nav-item">
