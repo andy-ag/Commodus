@@ -1,13 +1,15 @@
 import './CommodityPage.css';
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import Plot from '../../components/Plot.jsx'
 import Table from '../../components/Table.jsx'
 import HeaderBox from '../../components/HeaderBox.jsx'
 import Carousel from '../../components/Carousel.jsx'
+import { toast } from 'react-hot-toast';
 const varNames = require('../../utilities/scrapedNames') 
 
-export default function CommodityPage({ params: externalParams = null, data: externalData = null, checkFav = true, index, removeFromFavourites, loading=false, onCommodityLoaded }) {
+
+export default function CommodityPage({ params: externalParams = null, data: externalData = null, checkFav = true, index, removeFromFavourites, loading=false, onCommodityLoaded, isStandalone=true }) {
     // If commodity code passed down, use that, else get from query params
     const { params: routeParams } = useParams();
     const params = externalParams || routeParams;
@@ -16,12 +18,24 @@ export default function CommodityPage({ params: externalParams = null, data: ext
     const token = localStorage.getItem('token')
     const [data, setData] = useState(externalData);
     const [isFav, setFav] = useState(false);
+    const toastIdRef = useRef(null);
 
     useEffect(() => {
         if (data !== null && loading) {
             onCommodityLoaded();
         }
     }, [data, loading, onCommodityLoaded]);
+
+    useEffect(() => {
+        if (isStandalone) {
+            toastIdRef.current = toast.loading('Crunching the numbers', {
+                iconTheme: {
+                  primary: 'var(--accent)',
+                  secondary: 'white',
+                },
+            });
+        }
+    }, [isStandalone]);
 
     useEffect(() => {
         if (checkFav) {
@@ -50,6 +64,9 @@ export default function CommodityPage({ params: externalParams = null, data: ext
                 const response = await fetch(`/api/commodities/${encodeURIComponent(params)}`);
                 const data = await response.json();
                 setData(data);
+                if (isStandalone) {
+                    toast.dismiss(toastIdRef.current);
+                }
             } catch (error) {
                 console.error(`An error occurred while fetching the commodity analysis:`, error);
             }
@@ -57,7 +74,7 @@ export default function CommodityPage({ params: externalParams = null, data: ext
 
         const delay = 100*index
         setTimeout(fetchCommodityAnalysis, delay)
-    }, [params, index]);
+    }, [params, index, isStandalone]);
 
     if (data === null) {
         return null;

@@ -107,6 +107,7 @@ export default function DashboardPage() {
                     removeFromFavourites={removeFromFavourites}
                     loading={loading}
                     onCommodityLoaded={() => onCommodityLoaded(commodity)}
+                    isStandalone={false}
                     />
                 </div>
           </div>
