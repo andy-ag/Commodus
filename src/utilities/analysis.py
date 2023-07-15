@@ -24,6 +24,12 @@ if len(df.columns) > 2:
         print('No column with "USD" found. Using the second column as "Value".')
         df['Value'] = df.iloc[:, 1]
 
+# Handle nulls, coerce to numeric as a safety measure
+df['Value'] = pd.to_numeric(df['Value'], errors='coerce')
+df['Value'] = df['Value'].fillna(method='ffill')
+df['Value'] = df['Value'].fillna(method='bfill')
+df['Value'] = df['Value'].fillna(0)
+
 df = df[["Date", "Value"]].set_index("Date").sort_index()
 
 # Compute MA smoothed time series
@@ -49,7 +55,7 @@ statistics = {
 }
 
 #Fill NaN values for JSON compatibility
-df.fillna(0, inplace=True)
+df['Value'].fillna(0, inplace=True)
 
 # Prepare output data
 output_data = {
@@ -66,8 +72,8 @@ output_data = {
         "pacf_values": pacf_values.tolist()
     },
     "ma_smoothed": {
-        "dates": df.index.strftime('%Y-%m-%d').tolist(),
-        "values": df["MA_Smoothed"].tolist()
+        "dates": df[df['MA_Smoothed'].notna()].index.strftime('%Y-%m-%d').tolist(),
+        "values": df[df['MA_Smoothed'].notna()]["MA_Smoothed"].tolist()
     },
     "statistics": statistics,
 }
