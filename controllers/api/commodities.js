@@ -4,15 +4,49 @@ const { spawn } = require('child_process');
 const path = require('path');
 const pythonScriptPath = path.join(__dirname, '../../src/utilities/analysis.py');
 const User = require('../../models/user.js')
+const Commodity = require('../../models/commodity.js');
+
 
 
 async function index(req, res){
-    const commodities = [];
-    for (let commodity of commodityList) {
-        const entry = await getTimeSeries(commodity.apiParams);
-        commodities.push(entry);
+    try {
+        let commodities = await Commodity.find({})
+        console.log(commodities.length)
+        // If data is more than a day old, make API call
+        if (!commodities || commodities.length === 0 || Date.now() - new Date(commodities[0].updatedAt).getTime() > 24 * 60 * 60 * 1000) {
+            console.log('Making API call')
+            commodities = []
+            for (let commodity of commodityList) {
+                const entry = await getTimeSeries(commodity.apiParams);
+                commodities.push({
+                    apiParams: entry.apiParams,
+                    name: entry.name,
+                    frequency: entry.frequency,
+                    colNames: entry.colNames,
+                    endDate: entry.endDate,
+                    timeSeries: entry.timeSeries,
+                  });
+            }
+            await Commodity.deleteMany({});
+            await Commodity.insertMany(commodities);
+        }
+        commodities = commodities.map(commodity => {
+            return {
+                ...commodity,
+                timeSeries: commodity.timeSeries.map(series => {
+                    return [
+                        series[0], // keep date as string
+                        ...series.slice(1).map(value => parseFloat(value)), // convert remaining values to numbers
+                    ];
+                }),
+            };
+        });
+        return res.json(commodities)
+        
+    } catch (error) {
+        console.error(`Error getting commodity data: ${error.message}`);
+        res.status(500).json({error: 'An error occurred while getting commodity data'});
     }
-    return res.json(commodities)
 }
 
 async function analyse(req, res){

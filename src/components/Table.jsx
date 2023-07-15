@@ -31,7 +31,6 @@ export default function Table({commodities}) {
         }
         return '-';
     }
-    
     return (
         <table className="table table-striped my-3">
             <thead>
@@ -45,16 +44,18 @@ export default function Table({commodities}) {
                 </tr>
             </thead>
             <tbody>
-                {commodities && commodities.map((commodity, idx) => (
+                {commodities && commodities.map((commodity, idx) => {
+                console.log(`Commodity at index ${idx}:`, commodity);
+                return (
                     <tr key={idx}>
-                        <td className='text-start'><Link className="table-link" to={`/commodities/${encodeURIComponent(commodity.apiParams)}`}>{commodity.name}</ Link></td>
+                        <td className='text-start'><Link className="table-link" to={`/commodities/${encodeURIComponent(commodity._doc.apiParams)}`}>{commodity._doc.name}</ Link></td>
                         <td className='text-end'>{(commodity.timeSeries[0][1]).toFixed(2)}</td>
-                        <td className='text-end'>{getDayChange(commodity.timeSeries, commodity.frequency)}</td>
-                        <td className='text-end'>{getWeekChange(commodity.timeSeries, commodity.frequency)}</td>
-                        <td className='text-end'>{getMonthChange(commodity.timeSeries, commodity.frequency)}</td>
-                        <td className='text-end'>{getYearChange(commodity.timeSeries, commodity.frequency)}</td>
+                        <td className='text-end'>{getDayChange(commodity.timeSeries, commodity._doc.frequency)}</td>
+                        <td className='text-end'>{getWeekChange(commodity.timeSeries, commodity._doc.frequency)}</td>
+                        <td className='text-end'>{getMonthChange(commodity.timeSeries, commodity._doc.frequency)}</td>
+                        <td className='text-end'>{getYearChange(commodity.timeSeries, commodity._doc.frequency)}</td>
                     </tr>
-                ))}
+                )})}
             </tbody>
         </table>
     );
