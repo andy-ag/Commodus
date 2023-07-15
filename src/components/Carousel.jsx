@@ -11,6 +11,7 @@ export default function Carousel({children, params, frequency}) {
   const [selectedTimeSeries, setSelectedTimeSeries] = useState(`${params}-raw`);
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
   const [downloadData, setDownloadData] = useState([]);
+  const [selectedTau, setSelectedTau] = useState('1');
 
   const handleSetDownloadData = useCallback(({ index, dataForDownload, plotId, timePeriod }) => {
     console.log('handleSetDownloadData -> Carousel.jsx')
@@ -54,6 +55,11 @@ export default function Carousel({children, params, frequency}) {
   return (
       <>
         <div className="d-flex justify-content-center mt-4 gap-2">
+          <select className="form-select" value={selectedTau} onChange={e => setSelectedTau(e.target.value)} style={{display: selectedTimeSeries === `${params}-delay` ? 'block' : 'none'}}>
+              {Array.from({length: 12}, (_, i) => i + 1).map(tau =>
+                  <option value={tau} key={tau}>t = {tau}</option>
+              )}
+          </select>
           <select className="form-select" value={selectedTimeSeries} onChange={e => {
               const newTimeSeries = e.target.value;
               setSelectedTimeSeries(newTimeSeries);
@@ -91,7 +97,8 @@ export default function Carousel({children, params, frequency}) {
           timePeriod: selectedTimePeriod,
           setDownloadData: handleSetDownloadData,
           index: currentIndex,
-          frequency: frequency
+          frequency: frequency,
+          selectedTau: selectedTau
       })}</div> 
         <button className="triangle triangle-right" onClick={goToNextPlot}></button>
       </div>

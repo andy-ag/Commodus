@@ -93,7 +93,7 @@ export default function CommodityPage({ params: externalParams = null, data: ext
                     <Plot data={data.ma_smoothed} plotId={`${params}-maPlot`} frequency={data.frequency}/>   
                     <Plot data={data.acf_plot} plotId={`${params}-acfPlot`} frequency={data.frequency}/>   
                     <Plot data={data.pacf_plot} plotId={`${params}-pacfPlot`} frequency={data.frequency}/>   
-                    <Plot data={data.delay_plot} plotId={`${params}-delayPlot`} frequency={data.frequency}/>   
+                    <Plot data={data.delay_plots} plotId={`${params}-delayPlot`} frequency={data.frequency}/>   
                 </Carousel>
             </div>
         </>
