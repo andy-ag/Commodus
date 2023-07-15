@@ -6,6 +6,11 @@ export default function Carousel({children, params}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedTimeSeries, setSelectedTimeSeries] = useState(`${params}-raw`);
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
+  const [downloadData, setDownloadData] = useState(null); 
+
+  function handleDownload(format) {
+    window.handleDownload(format)
+  }
 
   function goToPrevPlot() {
     setCurrentIndex(oldIndex => {
@@ -44,12 +49,24 @@ export default function Carousel({children, params}) {
               <option value="year">past year</option>
               <option value="all">all time</option>
           </select>
+          <div className="dropdown">
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="downloadMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Download raw data
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="downloadMenuButton">
+              <li><button className="dropdown-item" onClick={() => handleDownload('json')}>JSON</button></li>
+              <li><button className="dropdown-item" onClick={() => handleDownload('csv')}>CSV</button></li>
+            </ul>
+          </div>
       </div>
       
       
       <div className="carousel-container">
         <button className="triangle triangle-left" onClick={goToPrevPlot}></button>
-        <div className="carousel-plot">{cloneElement(children[currentIndex], { timePeriod: selectedTimePeriod })}</div>
+        <div className="carousel-plot">{cloneElement(children[currentIndex], { 
+          timePeriod: selectedTimePeriod,
+          setDownloadData: setDownloadData  
+      })}</div> 
         <button className="triangle triangle-right" onClick={goToNextPlot}></button>
       </div>
     </>
