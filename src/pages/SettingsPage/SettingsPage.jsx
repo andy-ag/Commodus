@@ -128,7 +128,7 @@ export default function SettingsPage({setUser}) {
                 <input type="email" name="email" value={formData.email} onChange={handleChange} required />
                 <label className="m-2">Confirm password</label>
                 <input type="password" name="confirmCurrentPassword" value={formData.confirmCurrentPassword} onChange={handleChange} required />
-                <button type="submit">CHANGE EMAIL</button>
+                <button className="settings-button" type="submit">CHANGE EMAIL</button>
             </form> 
 
             <form className="my-4" autoComplete="off" onSubmit={handleSubmitPassword}>
@@ -138,7 +138,7 @@ export default function SettingsPage({setUser}) {
                 <input type="password" name="newPassword" value={formData.newPassword} onChange={handleChange} required />
                 <label className="m-2">Confirm</label>
                 <input type="password" name="confirmNewPassword" value={formData.confirmNewPassword} onChange={handleChange} required />
-                <button type="submit">CHANGE PASSWORD</button>
+                <button className="settings-button" type="submit">CHANGE PASSWORD</button>
             </form>
 
             <button className="delete-button" onClick={() => setShowModal(true)}>DELETE ACCOUNT</button>

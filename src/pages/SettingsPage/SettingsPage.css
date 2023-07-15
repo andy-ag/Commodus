@@ -2,3 +2,12 @@
     background-color: #CE2D4F;
     border-radius: 0px;
 }
+
+.delete-button:hover{
+    background-color: #981344;
+    border-radius: 0px;
+}
+
+.settings-button:hover{
+    background-color: var(--deepblue) !important; 
+}
