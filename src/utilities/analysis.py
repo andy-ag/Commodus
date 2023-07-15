@@ -7,7 +7,8 @@ from statsmodels.tsa.stattools import acf, pacf, adfuller
 # Read input data from standard input
 data = json.load(sys.stdin)
 
-# Extract column names and data rows
+# Extract info
+frequency = data['frequency']
 column_names = data['colNames']
 data_rows = data['timeSeries']
 
@@ -76,6 +77,7 @@ output_data = {
         "values": df[df['MA_Smoothed'].notna()]["MA_Smoothed"].tolist()
     },
     "statistics": statistics,
+    "frequency": frequency,
 }
 
 # Write output data

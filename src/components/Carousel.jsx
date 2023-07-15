@@ -5,7 +5,7 @@ import './Carousel.css'
 import { saveAs } from 'file-saver';
 import Papa from 'papaparse';
 
-export default function Carousel({children, params}) {
+export default function Carousel({children, params, frequency}) {
   const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedTimeSeries, setSelectedTimeSeries] = useState(`${params}-raw`);
@@ -89,7 +89,8 @@ export default function Carousel({children, params}) {
         <div className="carousel-plot">{cloneElement(children[currentIndex], { 
           timePeriod: selectedTimePeriod,
           setDownloadData: handleSetDownloadData,
-          index: currentIndex
+          index: currentIndex,
+          frequency: frequency
       })}</div> 
         <button className="triangle triangle-right" onClick={goToNextPlot}></button>
       </div>

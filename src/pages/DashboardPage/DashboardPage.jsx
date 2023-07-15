@@ -60,7 +60,12 @@ export default function DashboardPage() {
       } catch (error) {
         console.error(`Error fetching user commodities: ${error.message}`);
         toast.dismiss(toastIdRef.current);
-        toast.error('Error loading dashboard')
+        toast.error('Error loading dashboard', {
+          iconTheme: {
+              primary: '#CE2D4F',
+              secondary: 'white',
+          },
+      });
         dispatch({ type: 'reset' });
       }
     };
