@@ -1,16 +1,37 @@
-import { useState, cloneElement } from 'react';
+import { useState, cloneElement, useCallback } from 'react';
 import './Carousel.css'
+import { saveAs } from 'file-saver';
+import Papa from 'papaparse';
 
 export default function Carousel({children, params}) {
   const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedTimeSeries, setSelectedTimeSeries] = useState(`${params}-raw`);
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
-  const [downloadData, setDownloadData] = useState(null); 
+  const [downloadData, setDownloadData] = useState([]);
+
+  const handleSetDownloadData = useCallback(({ index, dataForDownload, plotId, timePeriod }) => {
+    console.log('handleSetDownloadData -> Carousel.jsx')
+    setDownloadData(prev => {
+      const newData = [...prev];
+      newData[index] = { dataForDownload, plotId, timePeriod };
+      return newData;
+    });
+}, []);
+
 
   function handleDownload(format) {
-    window.handleDownload(format)
+    const { dataForDownload, plotId, timePeriod } = downloadData[currentIndex];
+    if (format === 'json') {
+        const blob = new Blob([JSON.stringify(dataForDownload)], {type: "text/plain;charset=utf-8"});
+        saveAs(blob, `${plotId}_${timePeriod}.json`);
+    } else if (format === 'csv') {
+        const csv = Papa.unparse(dataForDownload);
+        const blob = new Blob([csv], {type: "text/csv;charset=utf-8"});
+        saveAs(blob, `${plotId}_${timePeriod}.csv`);
+    }
   }
+
 
   function goToPrevPlot() {
     setCurrentIndex(oldIndex => {
@@ -65,7 +86,8 @@ export default function Carousel({children, params}) {
         <button className="triangle triangle-left" onClick={goToPrevPlot}></button>
         <div className="carousel-plot">{cloneElement(children[currentIndex], { 
           timePeriod: selectedTimePeriod,
-          setDownloadData: setDownloadData  
+          setDownloadData: handleSetDownloadData,
+          index: currentIndex
       })}</div> 
         <button className="triangle triangle-right" onClick={goToNextPlot}></button>
       </div>

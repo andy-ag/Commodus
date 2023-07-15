@@ -1,9 +1,7 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import Plotly from 'plotly.js-dist'
-import { saveAs } from 'file-saver';
-import Papa from 'papaparse';
 
-export default function Plot({data, plotId, timePeriod, frequency, setDownloadData}) {
+export default function Plot({data, plotId, timePeriod, frequency, setDownloadData, index}) {
     const [dataForDownload, setDataForDownload] = useState([]);
     
     useEffect(() => {
@@ -43,26 +41,13 @@ export default function Plot({data, plotId, timePeriod, frequency, setDownloadDa
             }
         }
         drawPlot()
-    }, [data, plotId, timePeriod, frequency, setDownloadData, dataForDownload]);
-
-    const handleDownload = useCallback((format) => {
-        if (format === 'json') {
-            let blob = new Blob([JSON.stringify(dataForDownload)], {type: "text/plain;charset=utf-8"});
-            saveAs(blob, `${plotId}_${timePeriod}.json`);
-        } else if (format === 'csv') {
-            const csv = Papa.unparse(dataForDownload);
-            let blob = new Blob([csv], {type: "text/csv;charset=utf-8"});
-            saveAs(blob, `${plotId}_${timePeriod}.csv`);
-        }
-    }, [dataForDownload, plotId, timePeriod]);
+        console.log('drawPlot useEffect -> Plot.jsx')
+    }, [data, plotId, timePeriod, frequency, setDownloadData]);
 
     useEffect(() => {
-        window.handleDownload = handleDownload;  // Make function global
-    }, [handleDownload]);
-
-    useEffect(() => {
-        setDownloadData(handleDownload);
-    }, [handleDownload, setDownloadData]);
-
+        console.log('setDownloadData useEffect -> Plot.jsx')
+        setDownloadData({ index, dataForDownload, plotId, timePeriod });
+    }, [dataForDownload, plotId, timePeriod, setDownloadData, index]);
+    
     return <div id={plotId} />;
 };
