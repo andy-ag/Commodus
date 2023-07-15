@@ -1,4 +1,6 @@
 import { useState, cloneElement, useCallback } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import './Carousel.css'
 import { saveAs } from 'file-saver';
 import Papa from 'papaparse';
@@ -71,8 +73,8 @@ export default function Carousel({children, params}) {
               <option value="all">all time</option>
           </select>
           <div className="dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="downloadMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              Download raw data
+            <button className="btn btn-icon" title="Download raw data" type="button" id="downloadMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <FontAwesomeIcon icon={faDownload} style={{color: 'var(--accent)'}} title="Download raw data" />
             </button>
             <ul className="dropdown-menu" aria-labelledby="downloadMenuButton">
               <li><button className="dropdown-item" onClick={() => handleDownload('json')}>JSON</button></li>
