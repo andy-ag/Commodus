@@ -55,6 +55,14 @@ statistics = {
     "p-value": adf_result[1]
 }
 
+# Compute delay plot values
+TAU = 1  # Delay
+delay_coordinates = {
+    "x": df['Value'].tolist()[:-TAU],
+    "y": df['Value'].tolist()[TAU:]
+}
+
+
 #Fill NaN values for JSON compatibility
 df['Value'].fillna(0, inplace=True)
 
@@ -76,6 +84,7 @@ output_data = {
         "dates": df[df['MA_Smoothed'].notna()].index.strftime('%Y-%m-%d').tolist(),
         "values": df[df['MA_Smoothed'].notna()]["MA_Smoothed"].tolist()
     },
+    "delay_plot": delay_coordinates,
     "statistics": statistics,
     "frequency": frequency,
 }

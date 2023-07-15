@@ -6,7 +6,7 @@ import { saveAs } from 'file-saver';
 import Papa from 'papaparse';
 
 export default function Carousel({children, params, frequency}) {
-  const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
+  const PLOT_ORDER = ["raw", "ma", "acf", "pacf", "delay"]
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedTimeSeries, setSelectedTimeSeries] = useState(`${params}-raw`);
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
@@ -63,6 +63,7 @@ export default function Carousel({children, params, frequency}) {
               <option value={`${params}-ma`}>moving average</option>
               <option value={`${params}-acf`}>acf</option>
               <option value={`${params}-pacf`}>pacf</option>
+              <option value={`${params}-delay`}>delay plot</option>
           </select>
           <select className="form-select" value={selectedTimePeriod} onChange={e => {
               setSelectedTimePeriod(e.target.value)
