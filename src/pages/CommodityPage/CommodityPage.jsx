@@ -87,6 +87,7 @@ export default function CommodityPage({ params: externalParams = null, data: ext
                 <div className="header-wrapper">
                     <HeaderBox text={variable} add={true} fav={isFav} apiParams={params} removeFromFavourites={removeFromFavourites}/>
                 </div>
+                <p className="frequency">({data.frequency} data)</p>
                 <Carousel params={params} frequency={data.frequency}>
                     <Plot data={data.raw_time_series} plotId={`${params}-rawPlot`} frequency={data.frequency}/>   
                     <Plot data={data.ma_smoothed} plotId={`${params}-maPlot`} frequency={data.frequency}/>   

@@ -67,8 +67,8 @@ export default function Carousel({children, params, frequency}) {
           <select className="form-select" value={selectedTimePeriod} onChange={e => {
               setSelectedTimePeriod(e.target.value)
           }}>
-              <option value="week">past week</option>
-              <option value="month">past month</option>
+              {frequency === 'daily' &&<option value="week">past week</option>}
+              {frequency === 'daily' &&<option value="month">past month</option>}
               <option value="year">past year</option>
               <option value="all">all time</option>
           </select>
