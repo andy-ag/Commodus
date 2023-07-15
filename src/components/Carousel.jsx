@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, cloneElement } from 'react';
 import './Carousel.css'
 
-export default function Carousel({children, params }) {
+export default function Carousel({children, params}) {
   const PLOT_ORDER = ["raw", "ma", "acf", "pacf"]
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedTimeSeries, setSelectedTimeSeries] = useState(`${params}-raw`);
@@ -49,7 +49,7 @@ export default function Carousel({children, params }) {
       
       <div className="carousel-container">
         <button className="triangle triangle-left" onClick={goToPrevPlot}></button>
-        <div className="carousel-plot">{children[currentIndex]}</div>
+        <div className="carousel-plot">{cloneElement(children[currentIndex], { timePeriod: selectedTimePeriod })}</div>
         <button className="triangle triangle-right" onClick={goToNextPlot}></button>
       </div>
     </>
