@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast'
 import HomePage from '../HomePage/HomePage'
 import CommodityPage from '../CommodityPage/CommodityPage'
 import DashboardPage from '../DashboardPage/DashboardPage'
+import ComparePage from '../ComparePage/ComparePage'
 import CommoditiesContext from '../../components/commoditiesContext'
 import SettingsPage from '../SettingsPage/SettingsPage'
 import ContactPage from '../ContactPage/ContactPage'
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="/" element={<HomePage commodities={commodities}/>}/>
             <Route path="/commodities/:params" element={<CommodityPage/>}/>
             <Route path="/dashboard" element={<DashboardPage/>}/>
+            <Route path="/compare" element={<ComparePage/>}/>
             <Route path="/settings" element={<SettingsPage user={user} setUser={setUser}/>}/>
             <Route path="/signin" element={<SigninPage user={user} setUser={setUser}/>}/>
             <Route path="/register" element={<RegisterPage user={user} setUser={setUser}/>}/>

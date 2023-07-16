@@ -14,7 +14,6 @@ export default function Carousel({children, params, frequency}) {
   const [selectedTau, setSelectedTau] = useState('1');
 
   const handleSetDownloadData = useCallback(({ index, dataForDownload, plotId, timePeriod }) => {
-    console.log('handleSetDownloadData -> Carousel.jsx')
     setDownloadData(prev => {
       const newData = [...prev];
       newData[index] = { dataForDownload, plotId, timePeriod };

@@ -3,10 +3,10 @@ const router = express.Router();
 const commoditiesCtrl = require('../../controllers/api/commodities');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
-//! Add protected routes
 // GET /api/commodities
 router.get('/index', commoditiesCtrl.index);
 router.get('/favourites', ensureLoggedIn, commoditiesCtrl.getFavourites)
+router.get('/compare/:params', commoditiesCtrl.compare)
 router.get('/:params', commoditiesCtrl.analyse);
 router.get('/:params/isfavourite', ensureLoggedIn, commoditiesCtrl.isFavourite);
 

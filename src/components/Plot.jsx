@@ -69,11 +69,9 @@ export default function Plot({data, plotId, timePeriod, frequency, setDownloadDa
             }
         }
         drawPlot()
-        console.log('drawPlot useEffect -> Plot.jsx')
     }, [data, plotId, timePeriod, frequency, setDownloadData, selectedTau]);
 
     useEffect(() => {
-        console.log('setDownloadData useEffect -> Plot.jsx')
         setDownloadData({ index, dataForDownload, plotId, timePeriod });
     }, [dataForDownload, plotId, timePeriod, setDownloadData, index]);
     

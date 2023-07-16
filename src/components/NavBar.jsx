@@ -42,6 +42,11 @@ export default function NavBar({user, setUser}){
                   Dashboard
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/compare">
+                  Compare
+                </Link>
+              </li>
             </ul>
             <ul className="navbar-nav">
               {user ? (

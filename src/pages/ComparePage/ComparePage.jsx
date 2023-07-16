@@ -1,0 +1,96 @@
+import { useState, useEffect } from 'react';
+import ComparePlot from '../../components/ComparePlot.jsx';
+import StatsTable from '../../components/StatsTable.jsx';
+import './ComparePage.css'
+import HeaderBox from '../../components/HeaderBox';
+const commodityList = require('../../../src/utilities/filteredResults_final.json')
+
+
+export default function ComparePage() {
+    const [selectedCommodity1, setSelectedCommodity1] = useState({data: null, commName: null, freq: null, apiParams: null});
+    const [selectedCommodity2, setSelectedCommodity2] = useState({data: null, commName: null, freq: null, apiParams: null});
+    const [stats, setStats] = useState(null);
+    const [commodityData1, setCommodityData1] = useState(null);
+    const [commodityData2, setCommodityData2] = useState(null);
+
+
+    useEffect(() => {
+        async function fetchData1() {
+            if (selectedCommodity1.apiParams) {
+                const res = await fetch(`/api/commodities/${encodeURIComponent(selectedCommodity1.apiParams)}`);
+                const data = await res.json();
+                setCommodityData1(data);
+            }
+        }
+        fetchData1();
+    }, [selectedCommodity1.apiParams]);
+
+    useEffect(() => {
+        async function fetchData2() {
+            if (selectedCommodity2.apiParams) {
+                const res = await fetch(`/api/commodities/${encodeURIComponent(selectedCommodity2.apiParams)}`);
+                const data = await res.json();
+                setCommodityData2(data);
+            }
+        }
+        fetchData2();
+    }, [selectedCommodity2.apiParams]);
+
+    const handleCommodityChange1 = (e) => {
+        const commodityInfo = commodityList.find(com => com.apiParams === e.target.value);
+        setSelectedCommodity1({...selectedCommodity1, commName: commodityInfo.name, freq: commodityInfo.frequency, apiParams: e.target.value});
+    };
+
+    const handleCommodityChange2 = (e) => {
+        const commodityInfo = commodityList.find(com => com.apiParams === e.target.value);
+        setSelectedCommodity2({...selectedCommodity2, commName: commodityInfo.name, freq: commodityInfo.frequency, apiParams: e.target.value});
+    };
+
+    const handleCompareClick = async () => {
+        if (selectedCommodity1.apiParams && selectedCommodity2.apiParams) {
+            const res = await fetch(`/api/commodities/compare/${encodeURIComponent(selectedCommodity1.apiParams)},${encodeURIComponent(selectedCommodity2.apiParams)}`);
+            const data = await res.json();
+            setStats(data);
+        }
+    };
+
+    return (
+        <div>
+            <div className="d-flex justify-content-center mb-4">
+                        <HeaderBox text={'Compare'} add={false} fav={false}/>
+                    </div> 
+            <div className="d-flex justify-content-center my-4 gap-2 align-items-center">
+                <select className="form-select compare-form" onChange={handleCommodityChange1}>
+                    <option>Pick commodity</option>
+                    {commodityList.map(commodity => (
+                        commodity.apiParams !== selectedCommodity2.apiParams &&
+                        <option key={commodity.apiParams} value={commodity.apiParams}>{commodity.name}</option>
+                    ))}
+                </select>
+
+                <select className="form-select compare-form" onChange={handleCommodityChange2}>
+                    <option>Pick commodity</option>
+                    {commodityList.map(commodity => (
+                        commodity.apiParams !== selectedCommodity1.apiParams &&
+                        <option key={commodity.apiParams} value={commodity.apiParams}>{commodity.name}</option>
+                    ))}
+                </select>
+
+                <button className="compare-button d-flex align-items-center" onClick={handleCompareClick}>Analyse</button>
+            </div>
+
+            {(commodityData1 && commodityData2) && <ComparePlot 
+            data1={commodityData1.raw_time_series}
+            data2={commodityData2.raw_time_series}
+            timePeriod={'all'}
+            frequency1={selectedCommodity1.freq}
+            frequency2={selectedCommodity2.freq}
+            name1={selectedCommodity1.commName}
+            name2={selectedCommodity2.commName}
+            plotId={'compare'}
+            />}
+
+            {stats && <StatsTable stats={stats} />} 
+        </div>
+    );
+}

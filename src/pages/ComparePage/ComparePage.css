@@ -1,0 +1,15 @@
+.compare-form{
+   height: 50px; 
+}
+
+.compare-button:hover{
+    background-color: var(--deepblue) !important; 
+}
+
+.compare-button {
+    background-color: var(--accent) !important; 
+    border-radius: 5px;
+    color: white;
+    height: 50px;
+    font-size: 16px;
+}

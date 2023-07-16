@@ -23,7 +23,7 @@ async function getTimeSeries(params){
             };
         } else {
             console.error(`Invalid response data format for ${params}`);
-            console.log(data); // Log the response data to see what's wrong
+            console.log(data);
             return {
                 name: variable,
                 apiParams: params,
