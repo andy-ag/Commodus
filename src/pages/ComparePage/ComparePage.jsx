@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ComparePlot from '../../components/ComparePlot.jsx';
 import StatsTable from '../../components/StatsTable.jsx';
 import './ComparePage.css'
 import HeaderBox from '../../components/HeaderBox';
+import { toast } from 'react-hot-toast';
 const commodityList = require('../../../src/utilities/filteredResults_final.json')
 
 
@@ -12,13 +13,27 @@ export default function ComparePage() {
     const [stats, setStats] = useState(null);
     const [commodityData1, setCommodityData1] = useState(null);
     const [commodityData2, setCommodityData2] = useState(null);
-
+    const [loadingCount, setLoadingCount] = useState(0);
+    const toastId = useRef(null);
 
     useEffect(() => {
         async function fetchData1() {
             if (selectedCommodity1.apiParams) {
+                setLoadingCount((count) => count + 1);
+                if (loadingCount === 0) { // only create a new toast if there isn't one already
+                    toastId.current = toast.loading('Loading data', {
+                        iconTheme: {
+                            primary: 'var(--accent)',
+                            secondary: 'white',
+                        },
+                    });
+                }
                 const res = await fetch(`/api/commodities/${encodeURIComponent(selectedCommodity1.apiParams)}`);
                 const data = await res.json();
+                setLoadingCount((count) => count - 1);
+                if (loadingCount === 0) { // only dismiss the toast when both datasets have been fetched
+                    toast.dismiss(toastId.current);
+                }
                 setCommodityData1(data);
             }
         }
@@ -28,8 +43,21 @@ export default function ComparePage() {
     useEffect(() => {
         async function fetchData2() {
             if (selectedCommodity2.apiParams) {
+                setLoadingCount((count) => count + 1);
+                if (loadingCount === 0) { // only create a new toast if there isn't one already
+                    toastId.current = toast.loading('Loading data', {
+                        iconTheme: {
+                            primary: 'var(--accent)',
+                            secondary: 'white',
+                        },
+                    });
+                }
                 const res = await fetch(`/api/commodities/${encodeURIComponent(selectedCommodity2.apiParams)}`);
                 const data = await res.json();
+                setLoadingCount((count) => count - 1);
+                if (loadingCount === 0) { // only dismiss the toast when both datasets have been fetched
+                    toast.dismiss(toastId.current);
+                }
                 setCommodityData2(data);
             }
         }
@@ -48,9 +76,16 @@ export default function ComparePage() {
 
     const handleCompareClick = async () => {
         if (selectedCommodity1.apiParams && selectedCommodity2.apiParams) {
+            const compareToastId = toast.loading('Crunching the numbers', {
+                iconTheme: {
+                    primary: 'var(--accent)',
+                    secondary: 'white',
+                },
+            });
             const res = await fetch(`/api/commodities/compare/${encodeURIComponent(selectedCommodity1.apiParams)},${encodeURIComponent(selectedCommodity2.apiParams)}`);
             const data = await res.json();
             setStats(data);
+            toast.dismiss(compareToastId);
         }
     };
 

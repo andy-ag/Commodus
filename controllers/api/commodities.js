@@ -97,8 +97,6 @@ async function compare(req, res){
     const commodityCode2 = params[1];
     const timeSeriesData1 = await getTimeSeries(commodityCode1);
     const timeSeriesData2 = await getTimeSeries(commodityCode2);
-    console.log(timeSeriesData1.name, ' -> ',timeSeriesData1.timeSeries.length)
-    console.log(timeSeriesData2.name, ' -> ',timeSeriesData2.timeSeries.length)
     const python = spawn('/opt/homebrew/bin/python3', [compareScriptPath]);
     python.stdin.write(JSON.stringify({ data1: timeSeriesData1, data2: timeSeriesData2 }));
     python.stdin.end(); 

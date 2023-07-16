@@ -1,7 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Plotly from 'plotly.js-dist';
+import { toast } from 'react-hot-toast';
 
 export default function ComparePlot({data1, data2, plotId, timePeriod, frequency1, frequency2, name1, name2}) {
+    
     useEffect(() => {
         async function drawPlot() {    
             if (data1 && data2) {
