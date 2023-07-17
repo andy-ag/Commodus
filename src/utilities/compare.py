@@ -70,7 +70,7 @@ output_data = {
         }
     },
     "granger_causality": {
-        "test_stat": gc_test[1][0]['ssr_ftest'][0],
+        "test_stat": gc_test[5][0]['ssr_ftest'][0],
         "p": gc_test[5][0]['ssr_ftest'][1],
     },
     "mutual_information": mutual_info[0],
