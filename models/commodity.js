@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const commoditySchema = new mongoose.Schema({
     apiParams: {
         type: String,
-        requred: true,
+        required: true,
         unique: true
     },
     name: {
@@ -25,6 +25,10 @@ const commoditySchema = new mongoose.Schema({
     timeSeries: {
         type: [[String]],
         required: true,
+    },
+    analysisResult: { 
+        type: Object,  
+        default: null,
     },
 }, {
     timestamps: true,

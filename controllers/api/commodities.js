@@ -50,45 +50,65 @@ async function index(req, res){
 
 async function analyse(req, res){
     const commodityCode = decodeURIComponent(req.params.params)
-    const timeSeriesData = await getTimeSeries(commodityCode);
-    const python = spawn('/opt/homebrew/bin/python3', [pythonScriptPath]);
-    python.stdin.write(JSON.stringify(timeSeriesData));
-    python.stdin.end(); 
-    let outputData = '';
-    let errorOccurred = false;
+    let commodity = await Commodity.findOne({apiParams: commodityCode});
+    if (!commodity || !commodity.analysisResult || Date.now() - new Date(commodity.updatedAt).getTime() > 24 * 60 * 60 * 1000) {
+        const timeSeriesData = await getTimeSeries(commodityCode);
+        const python = spawn('/opt/homebrew/bin/python3', [pythonScriptPath]);
+        python.stdin.write(JSON.stringify(timeSeriesData));
+        python.stdin.end(); 
+        let outputData = '';
+        let errorOccurred = false;
 
-    python.stdout.on('data', (data) => {
-        outputData += data.toString();
-    });
+        python.stdout.on('data', (data) => {
+            outputData += data.toString();
+        });
 
-    python.stderr.on('data', (data) => {
-        console.error(`Python script error output: ${data}`);
-    });
+        python.stderr.on('data', (data) => {
+            console.error(`Python script error output: ${data}`);
+        });
 
-    python.on('error', (error) => {
-        console.error(`Error occurred in Python child process: ${error.message}`);
-        res.status(500).json({error: 'An error occurred in the Python child process'});
-        errorOccurred = true;
-    });
+        python.on('error', (error) => {
+            console.error(`Error occurred in Python child process: ${error.message}`);
+            res.status(500).json({error: 'An error occurred in the Python child process'});
+            errorOccurred = true;
+        });
 
-    python.stdout.on('error', (error) => {
-        console.error(`An error occurred while reading from stdout: ${error.message}`);
-    });
-    
-    python.stderr.on('error', (error) => {
-        console.error(`An error occurred while reading from stderr: ${error.message}`);
-    });
+        python.stdout.on('error', (error) => {
+            console.error(`An error occurred while reading from stdout: ${error.message}`);
+        });
+        
+        python.stderr.on('error', (error) => {
+            console.error(`An error occurred while reading from stderr: ${error.message}`);
+        });
 
-    python.on('close', (code) => {
-        if (!errorOccurred) {
-            try {
-                outputData = JSON.parse(outputData);
-                res.json(outputData);
-            } catch (error) {
-                console.error(`Error parsing Python child process output: ${error.message}`);
-                res.status(500).json({error: 'An error occurred while parsing the Python child process output'});
-            }
-    }});
+        python.on('close', async (code) => {
+            if (!errorOccurred) {
+                try {
+                    outputData = JSON.parse(outputData);
+                    if (commodity) {
+                        commodity.analysisResult = outputData;
+                        await commodity.save();
+                    } else {
+                        // if commodity doesn't exist, create a new one
+                        await Commodity.create({
+                            apiParams: commodityCode,
+                            name: timeSeriesData.name,
+                            frequency: timeSeriesData.frequency,
+                            colNames: timeSeriesData.colNames,
+                            endDate: timeSeriesData.endDate,
+                            timeSeries: timeSeriesData.timeSeries,
+                            analysisResult: outputData,
+                        });
+                    }
+                    res.json(outputData);
+                } catch (error) {
+                    console.error(`Error parsing Python child process output: ${error.message}`);
+                    res.status(500).json({error: 'An error occurred while parsing the Python child process output'});
+                }
+        }});
+    } else {
+        res.json(commodity.analysisResult);
+    }
 }
 
 async function compare(req, res){
