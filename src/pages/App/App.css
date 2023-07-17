@@ -62,11 +62,14 @@ body {
   background-color: var(--white);
   padding-top: 70px; /* height of your navbar */
   padding-bottom: 50px; /* height of your footer */
-  height: 100vh;
 }
 
 main{
   color: var(--accent)
+}
+
+.padding-div{
+  flex-grow: 1;
 }
 
 code {

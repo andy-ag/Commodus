@@ -62,6 +62,7 @@ export default function App() {
             <Route path="/ToS" element={<TermsPage/>}/>
             <Route path="/contact" element={<ContactPage/>}/>
           </Routes>
+          <div className="padding-div"></div>
           <Footer/>
         </div> 
       </main>

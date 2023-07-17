@@ -9,7 +9,7 @@ const statNameMapping = {
 export default function StatsTable({stats}) {
     return (
         <div>
-            <table className="table table-striped my-3">
+            <table className="table my-3">
                 <thead>
                     <tr>
                         <th colSpan="2" className='text-center'>Granger causality test</th>
@@ -27,7 +27,7 @@ export default function StatsTable({stats}) {
                 </tbody>
             </table>
 
-            <table className="table table-striped my-3">
+            <table className="table my-3">
                 <thead>
                     <tr>
                         <th colSpan="4" className='text-center'>Engle-Granger cointegration test</th>
@@ -53,7 +53,7 @@ export default function StatsTable({stats}) {
                 </tbody>
             </table>
 
-            <table className="table table-striped my-3">
+            <table className="table my-3 mb-5">
                 <thead>
                     <tr>
                         <th colSpan="2" className='text-center'>Other statistics</th>
