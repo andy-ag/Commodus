@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import * as userService from '../utilities/users-service';
 import './NavBar.css'
 import { toast } from 'react-hot-toast'
+import logo from '../pages/App/commodus_logo.png';
+
 
 export default function NavBar({user, setUser}){
     function handleLogOut(){
@@ -18,6 +20,7 @@ export default function NavBar({user, setUser}){
     return (
       <nav className="navbar navbar-expand-md px-3">
         <div className="container-fluid">
+          <img className="logo" src={logo} alt="Logo" />
           <span className="navbar-brand mb-0 h1">Commodus</span>
           <button
             className="navbar-toggler"
