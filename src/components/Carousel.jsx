@@ -8,12 +8,13 @@ import Papa from 'papaparse';
 
 export default function Carousel({children, params, frequency}) {
   const PLOT_ORDER = ["raw", "ma", "acf", "pacf", "delay"]
+  const INFO_KEYS = ["Time series", "Moving average", "Autocorrelation function", "Partial autocorrelation function", "Delay plot"]
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedTimeSeries, setSelectedTimeSeries] = useState(`${params}-raw`);
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
   const [downloadData, setDownloadData] = useState([]);
   const [selectedTau, setSelectedTau] = useState('1');
-  const selectedAnalysis = PLOT_ORDER[currentIndex];
+  const selectedAnalysis = INFO_KEYS[currentIndex];
   
   const handleSetDownloadData = useCallback(({ index, dataForDownload, plotId, timePeriod }) => {
     setDownloadData(prev => {

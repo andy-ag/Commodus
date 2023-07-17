@@ -3,6 +3,23 @@ import Plotly from 'plotly.js-dist'
 
 export default function Plot({data, plotId, timePeriod, frequency, setDownloadData, index, selectedTau}) {
     const [dataForDownload, setDataForDownload] = useState([]);
+
+    function getLayout(plotId) {
+        let layout = { autosize: true };
+    
+        if (plotId.includes('raw') || plotId.includes('ma')) {
+            layout.xaxis = { title: '' };
+            layout.yaxis = { title: 'Price, USD' };
+        } else if (plotId.includes('acf') || plotId.includes('pacf')) {
+            layout.xaxis = { title: 'Lags' };
+            layout.yaxis = { title: 'Value' };
+        } else if (plotId.includes('delay')) {
+            layout.xaxis = { title: `Price (t - ${selectedTau})` };
+            layout.yaxis = { title: 'Price (t)' };
+        }
+    
+        return layout;
+    }    
     
     function getPlotProperties(plotId) {
         if (plotId.includes('delay')) {
@@ -62,9 +79,10 @@ export default function Plot({data, plotId, timePeriod, frequency, setDownloadDa
                     mode: plotProperties.mode
                 }];
 
+                const layout = getLayout(plotId);
                 const plotDiv = document.getElementById(plotId);
                 if (plotDiv) {
-                    Plotly.newPlot(plotId, plotData);
+                    Plotly.newPlot(plotId, plotData, layout);
                 }
             }
         }

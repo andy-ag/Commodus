@@ -9,12 +9,12 @@ export default function StatsTable({stats}) {
                     <thead>
                         <tr>
                             <th colSpan="2" className='text-center'>
-                            <InfoBox selectedAnalysis="granger" /> Granger causality test
+                            <InfoBox selectedAnalysis="Granger causality" /> Granger causality test
                             </th>
                         </tr>
                         <tr>
                             <th className='text-center'>
-                            <InfoBox selectedAnalysis="statistical_testing" /> Test statistic
+                            <InfoBox selectedAnalysis="Statistical testing" /> Test statistic
                             </th>
                             <th className='text-center'>p-value</th>
                         </tr>
@@ -33,7 +33,7 @@ export default function StatsTable({stats}) {
                     <thead>
                         <tr>
                             <th colSpan="4" className='text-center'>
-                            <InfoBox selectedAnalysis="cointegration" /> Engle-Granger cointegration test
+                            <InfoBox selectedAnalysis="Cointegration" /> Engle-Granger cointegration test
                             </th>
                         </tr>
                         <tr>
@@ -72,13 +72,13 @@ export default function StatsTable({stats}) {
                     <tbody>
                         <tr>
                             <td className='text-start'>
-                            <InfoBox selectedAnalysis="correlation" /> Correlation
+                            <InfoBox selectedAnalysis="Correlation" /> Correlation
                             </td>
                             <td className='text-start'>{stats.correlation.toFixed(3)}</td>
                         </tr>
                         <tr>
                             <td className='text-start'>
-                            <InfoBox selectedAnalysis="mutual_info" /> Mutual information
+                            <InfoBox selectedAnalysis="Mutual information" /> Mutual information
                             </td>
                             <td className='text-start'>{stats.mutual_information.toFixed(3)}</td>
                         </tr>

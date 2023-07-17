@@ -24,8 +24,8 @@ export default function InfoBox({ selectedAnalysis }) {
               <h5 className="modal-title">{selectedAnalysis}</h5>
               <button type="button" className="btn-close position-absolute close-modal-btn" onClick={handleClose}></button>
             </div>
-            <div className="modal-body">
-              <p>{description}</p>
+            <div className="modal-body text-start">
+                <p dangerouslySetInnerHTML={{ __html: description }}></p>
             </div>
             <div className="modal-footer justify-content-center border-0">
               <button type="button" className="btn btn-secondary close-modal" onClick={handleClose}>

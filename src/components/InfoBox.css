@@ -25,3 +25,11 @@
   .close-modal-btn{
     right: 20px;
   }
+
+.modal-body a{
+    color: var(--deepblue) !important;
+}  
+
+.modal-body a:hover{
+    color: var(--blue-1) !important;
+}  
