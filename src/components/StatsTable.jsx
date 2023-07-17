@@ -1,29 +1,79 @@
-import './Table.css'
+import './StatsTable.css'
 
 const statNameMapping = {
     "cointegration": "Engle-Granger test for cointegration",
     "mutual_information": "Mutual information",
-    "covariance": "Covariance"
+    "correlation": "Correlation"
 };
 
 export default function StatsTable({stats}) {
     return (
-        <table className="table table-striped my-3">
-            <thead>
-                <tr>
-                    <th className='text-center'>Statistic</th>
-                    <th className='text-center'>Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                {Object.entries(stats).map(([statName, statValue]) => (
-                    statName !== 'frequency' &&
-                    <tr key={statName}>
-                        <td className='text-center'>{statNameMapping[statName] || statName}</td>
-                        <td className='text-center'>{Number.isFinite(statValue) ? statValue.toFixed(3) : statValue}</td>
+        <div>
+            <table className="table table-striped my-3">
+                <thead>
+                    <tr>
+                        <th colSpan="2" className='text-center'>Granger causality test</th>
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                    <tr>
+                        <th className='text-center'>Test statistic</th>
+                        <th className='text-center'>p-value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className='text-center'>{stats.granger_causality.test_stat.toFixed(3)}</td>
+                        <td className='text-center'>{stats.granger_causality.p.toFixed(3)}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table className="table table-striped my-3">
+                <thead>
+                    <tr>
+                        <th colSpan="4" className='text-center'>Engle-Granger cointegration test</th>
+                    </tr>
+                    <tr>
+                        <th className='text-center'>Test statistic</th>
+                        <th colSpan="3" className='text-center'>Critical values</th>
+                    </tr>
+                    <tr>
+                        <th className='text-center'></th>
+                        <th className='text-center'>1%</th>
+                        <th className='text-center'>5%</th>
+                        <th className='text-center'>10%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className='text-center'>{stats.cointegration.test_stat.toFixed(3)}</td>
+                        <td className='text-center'>{stats.cointegration.critical_values['1%'].toFixed(3)}</td>
+                        <td className='text-center'>{stats.cointegration.critical_values['5%'].toFixed(3)}</td>
+                        <td className='text-center'>{stats.cointegration.critical_values['10%'].toFixed(3)}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table className="table table-striped my-3">
+                <thead>
+                    <tr>
+                        <th colSpan="2" className='text-center'>Other statistics</th>
+                    </tr>
+                    <tr>
+                        <th className='text-center'>Statistic</th>
+                        <th className='text-center'>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className='text-center'>Correlation</td>
+                        <td className='text-center'>{stats.correlation.toFixed(3)}</td>
+                    </tr>
+                    <tr>
+                        <td className='text-center'>Mutual information</td>
+                        <td className='text-center'>{stats.mutual_information.toFixed(3)}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     );
 }

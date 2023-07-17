@@ -3,7 +3,7 @@ import numpy as np
 import json
 import sys
 from sklearn.feature_selection import mutual_info_regression
-from statsmodels.tsa.stattools import coint
+from statsmodels.tsa.stattools import coint, grangercausalitytests
 
 def preprocess_data(data):
     # Extract info
@@ -46,11 +46,14 @@ df = pd.merge(df1, df2, on='Date', how='inner')
 # Compute mutual information
 mutual_info = mutual_info_regression(df.iloc[:, 0].values.reshape(-1, 1), df.iloc[:, 1])
 
-# Compute covariance
-covariance = df.iloc[:, 0].cov(df.iloc[:, 1])
+# Compute correlation
+correlation = df.iloc[:, 0].corr(df.iloc[:, 1])
 
 # Perform Engle-Granger test for cointegration
 eg_test = coint(df.iloc[:, 0], df.iloc[:, 1])
+
+# Perform Granger causality test
+gc_test = grangercausalitytests(df, maxlag=5, verbose=False)
 
 # Prepare output data
 output_data = {
@@ -58,9 +61,20 @@ output_data = {
         "1": data['data1']['frequency'],
         "2": data['data2']['frequency'],
     },
-    "cointegration": eg_test[0],
+    "cointegration": {
+        "test_stat": eg_test[0],
+        "critical_values": {
+            "1%": eg_test[2][0],
+            "5%": eg_test[2][1],
+            "10%": eg_test[2][2],
+        }
+    },
+    "granger_causality": {
+        "test_stat": gc_test[1][0]['ssr_ftest'][0],
+        "p": gc_test[5][0]['ssr_ftest'][1],
+    },
     "mutual_information": mutual_info[0],
-    "covariance": covariance,
+    "correlation": correlation,
 }
 
 # Write output data
