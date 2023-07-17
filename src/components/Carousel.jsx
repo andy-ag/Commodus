@@ -83,7 +83,7 @@ export default function Carousel({children, params, frequency}) {
           </select>
           <div className="dropdown">
             <button className="btn btn-icon" title="Download raw data" type="button" id="downloadMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            <FontAwesomeIcon icon={faDownload} style={{color: 'var(--accent)'}} title="Download raw data" />
+            <FontAwesomeIcon icon={faDownload} style={{color: 'var(--accent)'}} title="Download data" />
             </button>
             <ul className="dropdown-menu" aria-labelledby="downloadMenuButton">
               <li><button className="dropdown-item" onClick={() => handleDownload('json')}>JSON</button></li>

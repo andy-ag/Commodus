@@ -11,7 +11,7 @@ export default function FaqPage() {
                     </div> 
                     <h2>What is the purpose of the Commodus app?</h2>
                     <p>
-                      The Commodus app serves as a resource for basic commodity price analytics and quick trend monitoring. It is designed to be used as a precursor to deeper analysis, providing a suite of strong core insights into the commodity markets. Additionally, the app aims to make analysis accessible to a wider audience. By offering an easy-to-use interface, less technically oriented users can access relatively complex data analysis tools, empowering them to create a solid platform for further independent research.
+                      The Commodus app serves as a resource for basic commodity price analytics and quick trend monitoring. It is designed to be used as a tool for exploratory data analysis, providing a suite of strong core insights into the commodity markets. Additionally, the app aims to make analysis accessible to a wider audience. By offering an easy-to-use interface, less technically oriented users can access relatively complex data analysis tools, empowering them to create a solid platform for further independent research.
                     </p>
 
                     <h2>What data sources does the Commodus app use?</h2>
@@ -21,12 +21,12 @@ export default function FaqPage() {
 
                     <h2>What kind of analysis does the Commodus app provide?</h2>
                     <p>
-                      The Commodus app integrates several core techniques of statistical time-series and applies them to commodity data. This includes moving averages, autocorrelation functions, partial autocorrelation functions, and other methods that can help users gain a better insight into the time-dependent structure of commodity prices.
+                      The Commodus app integrates several core techniques of statistical time-series analysis and applies them to commodity data. We place an increased emphasis on exploratory tools that can help users gain a better initial insight into the time-dependent structure of commodity prices.
                     </p>
 
                     <h2>Can I export the data and analysis for offline use?</h2>
                     <p>
-                    Currently, the Commodus app does not support data and analysis export for offline use. However, we recognise the value of this feature for many users and are actively exploring the possibility of adding it in a future update.
+                    Yes, the underlying data for a given commodity, as well as the data used to construct all the plots can be downloaded in either a JSON or CSV format by clicking the download icon on a commodity's detail page or on your dashboard.
                     </p>
                 </div>
           </div>

@@ -1,5 +1,6 @@
 import './PrivacyPage.css';
 import HeaderBox from '../../components/HeaderBox.jsx'
+import { Link } from 'react-router-dom'
 
 export default function PrivacyPage() {
     return (
@@ -36,7 +37,7 @@ export default function PrivacyPage() {
 
                     <h2>6. Contact Us</h2>
                     <p>
-                        If you have any questions about this Privacy Policy, please contact us.
+                        If you have any questions about this Privacy Policy, please <Link className="table-link" to={'/contact'}>contact us</Link>.
                     </p>
                 </div>
             </div>
