@@ -1,0 +1,27 @@
+.info-box {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--accent);
+  }
+  
+  .info-box:hover {
+    color: var(--deepblue);
+  }
+  
+  .modal-content.border-info {
+    border: 2px solid var(--accent) !important;
+    border-radius: 0;
+  }
+  
+  .modal-header.border-0,
+  .modal-footer.border-0 {
+    border: none;
+  }
+  
+  .close-modal{
+    border-radius: 0px;
+  }
+
+  .close-modal-btn{
+    right: 20px;
+  }

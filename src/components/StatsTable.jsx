@@ -1,10 +1,5 @@
 import './StatsTable.css'
-
-const statNameMapping = {
-    "cointegration": "Engle-Granger test for cointegration",
-    "mutual_information": "Mutual information",
-    "correlation": "Correlation"
-};
+import InfoBox from './InfoBox';
 
 export default function StatsTable({stats}) {
     return (
@@ -12,10 +7,14 @@ export default function StatsTable({stats}) {
             <table className="table my-3">
                 <thead>
                     <tr>
-                        <th colSpan="2" className='text-center'>Granger causality test</th>
+                        <th colSpan="2" className='text-center'>
+                        <InfoBox selectedAnalysis="granger" /> Granger causality test
+                        </th>
                     </tr>
                     <tr>
-                        <th className='text-center'>Test statistic</th>
+                        <th className='text-center'>
+                        <InfoBox selectedAnalysis="statistical_testing" /> Test statistic
+                        </th>
                         <th className='text-center'>p-value</th>
                     </tr>
                 </thead>
@@ -30,7 +29,9 @@ export default function StatsTable({stats}) {
             <table className="table my-3">
                 <thead>
                     <tr>
-                        <th colSpan="4" className='text-center'>Engle-Granger cointegration test</th>
+                        <th colSpan="4" className='text-center'>
+                        <InfoBox selectedAnalysis="cointegration" /> Engle-Granger cointegration test
+                        </th>
                     </tr>
                     <tr>
                         <th className='text-center'>Test statistic</th>
@@ -65,11 +66,15 @@ export default function StatsTable({stats}) {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className='text-center'>Correlation</td>
+                        <td className='text-center'>
+                        <InfoBox selectedAnalysis="correlation" /> Correlation
+                        </td>
                         <td className='text-center'>{stats.correlation.toFixed(3)}</td>
                     </tr>
                     <tr>
-                        <td className='text-center'>Mutual information</td>
+                        <td className='text-center'>
+                        <InfoBox selectedAnalysis="mutual_info" /> Mutual information
+                        </td>
                         <td className='text-center'>{stats.mutual_information.toFixed(3)}</td>
                     </tr>
                 </tbody>

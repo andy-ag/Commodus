@@ -2,6 +2,7 @@ import { useState, cloneElement, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import './Carousel.css'
+import InfoBox from './InfoBox';
 import { saveAs } from 'file-saver';
 import Papa from 'papaparse';
 
@@ -12,7 +13,8 @@ export default function Carousel({children, params, frequency}) {
   const [selectedTimePeriod, setSelectedTimePeriod] = useState('all');
   const [downloadData, setDownloadData] = useState([]);
   const [selectedTau, setSelectedTau] = useState('1');
-
+  const selectedAnalysis = PLOT_ORDER[currentIndex];
+  
   const handleSetDownloadData = useCallback(({ index, dataForDownload, plotId, timePeriod }) => {
     setDownloadData(prev => {
       const newData = [...prev];
@@ -54,11 +56,12 @@ export default function Carousel({children, params, frequency}) {
   return (
       <>
         <div className="d-flex justify-content-center mt-4 gap-2">
-          <select className="form-select" value={selectedTau} onChange={e => setSelectedTau(e.target.value)} style={{display: selectedTimeSeries === `${params}-delay` ? 'block' : 'none'}}>
+          <select className="form-select tau" value={selectedTau} onChange={e => setSelectedTau(e.target.value)} style={{display: selectedTimeSeries === `${params}-delay` ? 'block' : 'none'}}>
               {Array.from({length: 12}, (_, i) => i + 1).map(tau =>
                   <option value={tau} key={tau}>t = {tau}</option>
               )}
           </select>
+          <InfoBox selectedAnalysis={selectedAnalysis} />
           <select className="form-select" value={selectedTimeSeries} onChange={e => {
               const newTimeSeries = e.target.value;
               setSelectedTimeSeries(newTimeSeries);
