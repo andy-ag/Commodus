@@ -146,18 +146,19 @@ export default function SettingsPage({setUser}) {
         <p className="error-message">&nbsp;{error}</p>
         </div>
         <div className={`modal ${showModal ? 'show d-block' : 'd-none'}`} tabIndex="-1">
-        <div className="modal-dialog">
-          <div className="modal-content">
-              <div className="modal-header">
-              <h5 className="modal-title">Confirm account deletion</h5>
-              <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content border-info">
+              <div className="modal-header border-0 justify-content-center">
+                <h5 className="modal-title">Confirm account deletion</h5>
+                <button type="button" className="btn-close position-absolute" onClick={() => setShowModal(false)}></button>
               </div>
               <div className="modal-body">
-              <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+              <p>Are you sure you want to delete your account?</p>
+              <p>This action cannot be undone.</p>
               </div>
-              <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Back</button>
-              <button type="button" className="btn btn-danger" onClick={handleDeleteAccount}>Confirm</button>
+              <div className="modal-footer justify-content-center border-0">
+              <button type="button" className="btn btn-secondary sharp" onClick={() => setShowModal(false)}>Back</button>
+              <button type="button" className="btn btn-danger confirm-delete" onClick={handleDeleteAccount}>Confirm</button>
               </div>
           </div>
         </div>

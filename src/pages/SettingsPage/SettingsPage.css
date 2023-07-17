@@ -11,3 +11,25 @@
 .settings-button:hover{
     background-color: var(--deepblue) !important; 
 }
+
+.sharp{
+    border-radius: 0px;
+}
+
+.confirm-delete{
+    background-color: #CE2D4F;
+    border-radius: 0px;
+}
+
+.confirm-delete:hover{
+    background-color: #981344;
+}
+
+.btn-close{
+    right: 20px;
+}
+
+.modal-content{
+    border: 2px solid var(--accent) !important;
+    border-radius: 0px !important;
+}
