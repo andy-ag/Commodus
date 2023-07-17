@@ -8,6 +8,9 @@ export default function InfoBox({ selectedAnalysis }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const analysisInfo = infoMap[selectedAnalysis];
+  const description = analysisInfo ? analysisInfo.description : 'No description available';
+
   return (
     <>
       <button className="btn btn-link info-box" onClick={handleShow}>
@@ -22,7 +25,7 @@ export default function InfoBox({ selectedAnalysis }) {
               <button type="button" className="btn-close position-absolute close-modal-btn" onClick={handleClose}></button>
             </div>
             <div className="modal-body">
-              <p>{infoMap[selectedAnalysis].description}</p>
+              <p>{description}</p>
             </div>
             <div className="modal-footer justify-content-center border-0">
               <button type="button" className="btn btn-secondary close-modal" onClick={handleClose}>

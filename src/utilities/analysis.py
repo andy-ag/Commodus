@@ -46,13 +46,15 @@ pacf_values = pacf(df["Value"], nlags=lags)
 
 # Compute statistics
 mean = df['Value'].mean()
+std_dev = df['Value'].std()
 variance = df['Value'].var()
 adf_result = adfuller(df['Value'])
 statistics = {
     "Mean": mean,
+    "Standard deviation": std_dev,
     "Variance": variance,
-    "ADF Statistic": adf_result[0],
-    "p-value": adf_result[1]
+    "ADF test statistic": adf_result[0],
+    "ADF test p-value": adf_result[1]
 }
 
 # Compute delay plot values

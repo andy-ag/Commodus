@@ -37,6 +37,21 @@ const techniques = {
     "statistical_testing": {
       "description": "Statistical testing - placeholder",
     },
+    "Mean": {
+      "description": "Mean - placeholder",
+    },
+    "Standard deviation": {
+      "description": "Standard deviation - placeholder",
+    },
+    "Variance": {
+      "description": "Variance - placeholder",
+    },
+    "ADF test statistic": {
+      "description": "ADF test statistic - placeholder",
+    },
+    "ADF test p-value": {
+      "description": "ADF test p-value - placeholder",
+    },
   }
 
 module.exports = techniques  

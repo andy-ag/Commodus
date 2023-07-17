@@ -2,9 +2,9 @@ import './CommodityPage.css';
 import { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import Plot from '../../components/Plot.jsx'
-import Table from '../../components/Table.jsx'
 import HeaderBox from '../../components/HeaderBox.jsx'
 import Carousel from '../../components/Carousel.jsx'
+import CommodityTable from '../../components/CommodityTable.jsx';
 import { toast } from 'react-hot-toast';
 const varNames = require('../../utilities/scrapedNames') 
 
@@ -95,6 +95,7 @@ export default function CommodityPage({ params: externalParams = null, data: ext
                     <Plot data={data.pacf_plot} plotId={`${params}-pacfPlot`} frequency={data.frequency}/>   
                     <Plot data={data.delay_plots} plotId={`${params}-delayPlot`} frequency={data.frequency}/>   
                 </Carousel>
+                <CommodityTable statistics={data.statistics} rawTimeSeries={data.raw_time_series}/>
             </div>
         </>
     ) 
