@@ -80,7 +80,6 @@ export default function CommodityPage({ params: externalParams = null, data: ext
         return null;
     }
     
-    console.log(data)
     return(
         <>
             <div className="grid-container">

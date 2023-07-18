@@ -1,7 +1,6 @@
 require('dotenv').config();
 const varNames = require('./scrapedNames.js')
 const fs = require('fs')
-console.log(varNames)
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
