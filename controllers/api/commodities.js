@@ -56,7 +56,7 @@ async function analyse(req, res){
     if (!commodity || !commodity.analysisResult || Date.now() - new Date(commodity.updatedAt).getTime() > 24 * 60 * 60 * 1000) {
         console.log('API path')
         const timeSeriesData = await getTimeSeries(commodityCode);
-        const python = spawn('/opt/homebrew/bin/python3', [pythonScriptPath]);
+        const python = spawn('python', [pythonScriptPath]);
         python.stdin.write(JSON.stringify(timeSeriesData));
         python.stdin.end(); 
         let outputData = '';
@@ -120,7 +120,7 @@ async function compare(req, res){
     const commodityCode2 = params[1];
     const timeSeriesData1 = await getTimeSeries(commodityCode1);
     const timeSeriesData2 = await getTimeSeries(commodityCode2);
-    const python = spawn('/opt/homebrew/bin/python3', [compareScriptPath]);
+    const python = spawn('python', [compareScriptPath]);
     python.stdin.write(JSON.stringify({ data1: timeSeriesData1, data2: timeSeriesData2 }));
     python.stdin.end(); 
 
