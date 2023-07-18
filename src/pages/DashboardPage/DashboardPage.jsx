@@ -38,13 +38,6 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!token) return
-    setLoading(true);
-    toastIdRef.current = toast.loading('Constructing dashboard', {
-      iconTheme: {
-        primary: 'var(--accent)',
-        secondary: 'white',
-      },
-    })
     const fetchUserCommodities = async () => {
       try {
         const response = await fetch('/api/commodities/favourites', {
@@ -56,6 +49,20 @@ export default function DashboardPage() {
         });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const userCommodities = await response.json();
+        console.log('Commodities -> ', userCommodities)
+        if (userCommodities != null){
+          if (userCommodities.length > 0) {
+            setLoading(true);
+            toastIdRef.current = toast.loading('Constructing dashboard', {
+              iconTheme: {
+                primary: 'var(--accent)',
+                secondary: 'white',
+              },
+            })
+          }
+        } else {
+          onCommodityLoaded();
+        }
         setCommodities(userCommodities);
       } catch (error) {
         console.error(`Error fetching user commodities: ${error.message}`);
