@@ -42,7 +42,7 @@ const techniques = {
       "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test'>Augmented Dickey–Fuller (ADF) test</a> is used to check whether a time series is stationary (i.e. its properties do not depend on the time at which the series is observed).",
     },
     "ADF test p-value": {
-      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/P-value'>p-value</a> in the ADF test provides information about the time series' stationarity. If the p-value is less than a chosen significance level (e.g. 0.05), we reject the null hypothesis of the presence of a unit root. This means we can consider the time series to be stationary. The p-value is an important concept in statistical hypothesis testing",
+      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/P-value'>p-value</a> is a statistical measure that helps us understand the significance of our results. It is used in the context of hypothesis testing to help us make decisions - if the p-value is less than a chosen significance level (e.g., 0.05), we reject the null hypothesis. The smaller the p-value, the stronger the evidence that we should reject the null hypothesis. It is a critical concept in statistical hypothesis testing.",
     },
   }
   

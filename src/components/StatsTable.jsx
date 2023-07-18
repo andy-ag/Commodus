@@ -16,7 +16,9 @@ export default function StatsTable({stats}) {
                             <th className='text-center'>
                             <InfoBox selectedAnalysis="Statistical testing" /> Test statistic
                             </th>
-                            <th className='text-center'>p-value</th>
+                            <th className='text-center'>
+                            <InfoBox selectedAnalysis="p-value" /> p-value
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

@@ -8,7 +8,7 @@ export default function CommodityTable({ statistics, rawTimeSeries }) {
     "Variance": 0,
     "Standard deviation": 2,
     "ADF test statistic": 3,
-    "ADF test p-value": 3
+    "p-value": 3
   };
 
   return (
