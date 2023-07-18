@@ -15,6 +15,10 @@ export default function Carousel({children, params, frequency}) {
   const [downloadData, setDownloadData] = useState([]);
   const [selectedTau, setSelectedTau] = useState('1');
   const selectedAnalysis = INFO_KEYS[currentIndex];
+
+  function isTimePeriodDisabled(selectedTimeSeries) {
+    return selectedTimeSeries.includes('acf') || selectedTimeSeries.includes('pacf');
+  }
   
   const handleSetDownloadData = useCallback(({ index, dataForDownload, plotId, timePeriod }) => {
     setDownloadData(prev => {
@@ -66,7 +70,10 @@ export default function Carousel({children, params, frequency}) {
           <select className="form-select" value={selectedTimeSeries} onChange={e => {
               const newTimeSeries = e.target.value;
               setSelectedTimeSeries(newTimeSeries);
-              setCurrentIndex(PLOT_ORDER.indexOf(newTimeSeries.split('-')[1]));
+              setCurrentIndex(PLOT_ORDER.indexOf(newTimeSeries.split('-')[1]))
+              if (isTimePeriodDisabled(newTimeSeries)) {
+                setSelectedTimePeriod('all');
+              };
           }}>
               <option value={`${params}-raw`}>raw time series</option>
               <option value={`${params}-ma`}>moving average</option>
@@ -74,7 +81,7 @@ export default function Carousel({children, params, frequency}) {
               <option value={`${params}-pacf`}>pacf</option>
               <option value={`${params}-delay`}>delay plot</option>
           </select>
-          <select className="form-select" value={selectedTimePeriod} onChange={e => {
+          <select className="form-select" value={selectedTimePeriod} disabled={isTimePeriodDisabled(selectedTimeSeries)} onChange={e => {
               setSelectedTimePeriod(e.target.value)
           }}>
               {frequency === 'daily' &&<option value="week">past week</option>}

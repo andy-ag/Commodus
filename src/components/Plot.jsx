@@ -8,10 +8,10 @@ export default function Plot({data, plotId, timePeriod, frequency, setDownloadDa
         let layout = { autosize: true };
     
         if (plotId.includes('raw') || plotId.includes('ma')) {
-            layout.xaxis = { title: '' };
+            layout.xaxis = { title: 'Date' };
             layout.yaxis = { title: 'Price, USD' };
         } else if (plotId.includes('acf') || plotId.includes('pacf')) {
-            layout.xaxis = { title: 'Lags' };
+            layout.xaxis = { title: 'Lag' };
             layout.yaxis = { title: 'Value' };
         } else if (plotId.includes('delay')) {
             layout.xaxis = { title: `Price (t - ${selectedTau})` };
