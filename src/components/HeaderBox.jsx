@@ -4,7 +4,7 @@ import './HeaderBox.css'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
-export default function HeaderBox({ text, add, fav, apiParams, removeFromFavourites=null }) {
+export default function HeaderBox({ text, add, fav, apiParams, removeFromFavourites=null, isStandalone}) {
     const [isFav, setFav] = useState(fav)
     const token = localStorage.getItem('token')
     async function handleFav() {
@@ -53,7 +53,7 @@ export default function HeaderBox({ text, add, fav, apiParams, removeFromFavouri
         <div className="header-box d-flex justify-content-between align-items-center mt-3">
             <h1>{text}</h1>
             {add && (
-                isFav ? <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquareMinus} onClick={handleFav}/> : <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquarePlus} onClick={handleFav}/>
+                isStandalone ? (isFav ? <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquareMinus} onClick={handleFav}/> : <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquarePlus} onClick={handleFav}/>) : <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquareMinus} onClick={handleFav}/>
             )}
         </div>
     )

@@ -84,7 +84,7 @@ export default function CommodityPage({ params: externalParams = null, data: ext
         <>
             <div className="grid-container">
                 <div className="header-wrapper">
-                    <HeaderBox text={variable} add={true} fav={isFav} apiParams={params} removeFromFavourites={removeFromFavourites}/>
+                    <HeaderBox text={variable} add={true} fav={isStandalone ? isFav : false} apiParams={params} removeFromFavourites={removeFromFavourites} isStandalone={isStandalone}/>
                 </div>
                 <p className="frequency">({data.frequency} data)</p>
                 <Carousel params={params} frequency={data.frequency}>
