@@ -1,6 +1,6 @@
 const techniques = {
     "Time series": {
-      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Time_series'>raw time series</a> data is the original set of values, captured in a  time-ordered sequence. This is the most direct representation of the data, and many analyses start with this raw format. Depending on the nature of the data, the raw time series can reveal trends, patterns, and outliers that may not be apparent in processed or summarized data, and can provide an intuitive feel for what steps to take next.",
+      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Time_series'>raw time series</a> data is the original set of values, captured as a time-ordered sequence. This is the most direct representation of the data, and many analyses start with this basic format. Depending on the nature of the data, the time series can reveal trends, patterns, and outliers that may not be apparent in processed or summarized data, and can provide an intuitive feel for what steps to take next.",
     },
     "Moving average": {
       "description": "A <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Moving_average'>moving average (MA)</a>, also sometimes referred to as a rolling window, is a widely used method for smoothing time series data to see higher-level trends over time. By calculating the average price over a specified period, the method helps to filter out noise and highlight the core underlying trend. Moving averages are commonly used in finance, economics, and weather forecasting.",
@@ -9,7 +9,7 @@ const techniques = {
       "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Autocorrelation'>autocorrelation function (ACF)</a> plots the measure of the correlation between the time series and a lagged version of itself. It is used to identify the presence of a repeating pattern in the data, one that may be otherwise be obscured by noise.",
     },
     "Partial autocorrelation function": {
-      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Partial_autocorrelation_function'>partial autocorrelation function (PACF)</a> gives the partial correlation of a time series with its own lagged values, controlling for the values of the time series at all shorter lags. It helps in identifying the order of an autoregressive model that can be fit to the data. For instance, in stock price prediction, the PACF can help determine how many previous days' prices you should consider when attempting to predict the current day's price.",
+      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Partial_autocorrelation_function'>partial autocorrelation function (PACF)</a> gives the partial correlation of a time series with its own lagged values, controlling for the values of the time series at all shorter lags. It helps in identifying the order of an autoregressive model that can be fitted to the data. For instance, in stock price prediction, the PACF can help determine how many previous days' prices you should consider when attempting to predict the current day's price.",
     },
     "Delay plot": {
       "description": "A <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Recurrence_plot'>delay plot</a> is a tool for visually inspecting a time-series for the potential presence of periodic, non-linear patterns. It plots the value at time t against the value at time t-x (where x is a chosen delay). If the plot exhibits a clear structure or pattern, it suggests that the time series is periodic or cyclic.",
@@ -42,7 +42,7 @@ const techniques = {
       "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test'>Augmented Dickey–Fuller (ADF) test</a> is used to check whether a time series is stationary (i.e. its properties do not depend on the time at which the series is observed).",
     },
     "ADF test p-value": {
-      "description": "The <a target='blank' rel='noopener noreferrer' href='https://https://en.wikipedia.org/wiki/P-value'>p-value</a> in the ADF test provides information about the time series' stationarity. If the p-value is less than a chosen significance level (e.g. 0.05), we reject the null hypothesis of the presence of a unit root. This means we can consider the time series to be stationary. The p-value is an important concept in statistical hypothesis testing",
+      "description": "The <a target='blank' rel='noopener noreferrer' href='//https://en.wikipedia.org/wiki/P-value'>p-value</a> in the ADF test provides information about the time series' stationarity. If the p-value is less than a chosen significance level (e.g. 0.05), we reject the null hypothesis of the presence of a unit root. This means we can consider the time series to be stationary. The p-value is an important concept in statistical hypothesis testing",
     },
   }
   
