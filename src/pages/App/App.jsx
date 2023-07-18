@@ -17,6 +17,7 @@ import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import RegisterPage from '../RegisterPage/RegisterPage';
 import SigninPage from '../SigninPage/SigninPage';
+import { set, get } from 'idb-keyval';
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -24,21 +25,28 @@ export default function App() {
 
   useEffect(() => {
     async function fetchCommodities() {
-      if (!commodities) {
-        try {
-            const response = await fetch('/api/commodities/index');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            setCommodities(data);
-        } catch (error) {
-            console.error('Fetching commodities failed:', error);
-        }
+      // Check cache
+      const storedCommodities = await get('commodities');
+
+      if (storedCommodities) {
+        setCommodities(storedCommodities);
       }
-    };
+
+      try {
+        console.log('Getting commodities')  
+        const response = await fetch('/api/commodities/index');
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          setCommodities(data);
+          set('commodities', data);
+      } catch (error) {
+          console.error('Fetching commodities failed:', error);
+      }
+    }
     fetchCommodities();
-}, [commodities]);
+}, []);
 
   return (
     <CommoditiesContext.Provider value={commodities}> 

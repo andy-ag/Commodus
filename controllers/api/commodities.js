@@ -14,6 +14,7 @@ async function index(req, res){
         let commodities = await Commodity.find({})
         // If data is more than a day old, make API call
         if (!commodities || commodities.length === 0 || Date.now() - new Date(commodities[0].updatedAt).getTime() > 24 * 60 * 60 * 1000) {
+            console.log('API path')
             commodities = []
             for (let commodity of commodityList) {
                 const entry = await getTimeSeries(commodity.apiParams);
@@ -24,6 +25,7 @@ async function index(req, res){
                     colNames: entry.colNames,
                     endDate: entry.endDate,
                     timeSeries: entry.timeSeries,
+                    analysisResult: {},
                   });
             }
             await Commodity.deleteMany({});
@@ -52,6 +54,7 @@ async function analyse(req, res){
     const commodityCode = decodeURIComponent(req.params.params)
     let commodity = await Commodity.findOne({apiParams: commodityCode});
     if (!commodity || !commodity.analysisResult || Date.now() - new Date(commodity.updatedAt).getTime() > 24 * 60 * 60 * 1000) {
+        console.log('API path')
         const timeSeriesData = await getTimeSeries(commodityCode);
         const python = spawn('/opt/homebrew/bin/python3', [pythonScriptPath]);
         python.stdin.write(JSON.stringify(timeSeriesData));
@@ -97,7 +100,6 @@ async function analyse(req, res){
                             colNames: timeSeriesData.colNames,
                             endDate: timeSeriesData.endDate,
                             timeSeries: timeSeriesData.timeSeries,
-                            analysisResult: outputData,
                         });
                     }
                     res.json(outputData);
@@ -107,6 +109,7 @@ async function analyse(req, res){
                 }
         }});
     } else {
+        console.log('DB path')
         res.json(commodity.analysisResult);
     }
 }
