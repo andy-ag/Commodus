@@ -82,10 +82,21 @@ export default function ComparePage() {
                     secondary: 'white',
                 },
             });
-            const res = await fetch(`/api/commodities/compare/${encodeURIComponent(selectedCommodity1.apiParams)},${encodeURIComponent(selectedCommodity2.apiParams)}`);
-            const data = await res.json();
-            setStats(data);
-            toast.dismiss(compareToastId);
+            try {
+                const res = await fetch(`/api/commodities/compare/${encodeURIComponent(selectedCommodity1.apiParams)},${encodeURIComponent(selectedCommodity2.apiParams)}`);
+                const data = await res.json();
+                setStats(data);
+                toast.dismiss(compareToastId);
+            } catch (error) {
+                console.log('Error comparing commodities:', error);
+                toast.error('Error comparing commodities', {
+                    iconTheme: {
+                        primary: '#CE2D4F',
+                        secondary: 'white',
+                    },
+                });
+            }
+            
         }
     };
 
