@@ -38,7 +38,17 @@ export default function App() {
           if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
           }
-          const data = await response.json();
+          let data = await response.json();
+
+          const customOrder = ['LBMA/GOLD', 'LBMA/SILVER', 'OPEC/ORB'];
+
+          let customOrderCommodities = data.filter(commodity => customOrder.includes(commodity._doc.apiParams));
+          let otherCommodities = data.filter(commodity => !customOrder.includes(commodity._doc.apiParams));
+
+          customOrderCommodities.sort((a, b) => customOrder.indexOf(a._doc.apiParams) - customOrder.indexOf(b._doc.apiParams));
+          otherCommodities.sort((a, b) => a._doc.name.localeCompare(b._doc.name));
+
+          data = [...customOrderCommodities, ...otherCommodities];
           setCommodities(data);
           set('commodities', data);
       } catch (error) {

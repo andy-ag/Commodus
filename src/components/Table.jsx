@@ -36,7 +36,7 @@ export default function Table({commodities}) {
             <thead>
                 <tr>
                     <th className='text-start'>Name</th>
-                    <th className='text-end'>Price</th>
+                    <th className='text-end'>Price (USD)</th>
                     <th className='text-start'>Day</th>
                     <th className='text-start'>Week</th>
                     <th className='text-start'>Month</th>
