@@ -27,9 +27,9 @@
   }
 
 .modal-body a{
-    color: var(--deepblue) !important;
+    color: #EF8636 !important;
 }  
 
 .modal-body a:hover{
-    color: var(--blue-1) !important;
+    color: var(--deepblue) !important;
 }  

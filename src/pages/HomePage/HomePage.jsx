@@ -10,7 +10,7 @@ export default function HomePage({commodities}) {
 
   useEffect(() => {
     if (isLoading) {
-      toastIdRef.current = toast.loading('Getting latest data (this may take a while)', {
+      toastIdRef.current = toast.loading('Getting latest data', {
         iconTheme: {
           primary: 'var(--accent)',
           secondary: 'white',
