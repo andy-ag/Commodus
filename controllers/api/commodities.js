@@ -59,7 +59,7 @@ async function analyse(req, res){
         
         // Different Python spawn syntax for local & Heroku
         // const python = spawn('/opt/homebrew/bin/python3', [pythonScriptPath]);
-        const python = spawn('python', [compareScriptPath]);
+        const python = spawn('python', [pythonScriptPath]);
 
         python.stdin.write(JSON.stringify(timeSeriesData));
         python.stdin.end(); 
