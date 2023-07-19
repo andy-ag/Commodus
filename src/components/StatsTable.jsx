@@ -39,8 +39,12 @@ export default function StatsTable({stats}) {
                             </th>
                         </tr>
                         <tr>
-                            <th className='text-center'>Test statistic</th>
-                            <th colSpan="3" className='text-center'>Critical values</th>
+                            <th className='text-center'>
+                            <InfoBox selectedAnalysis="Statistical testing" /> Test statistic
+                            </th>
+                            <th colSpan="3" className='text-center'>
+                            <InfoBox selectedAnalysis="Critical values" /> Critical values
+                            </th>
                         </tr>
                         <tr>
                             <th className='text-center'></th>

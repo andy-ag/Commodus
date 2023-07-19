@@ -48,6 +48,6 @@
   }
   
   a:hover {
-    color: var(--deepblue);
+    color: var(--deepblue) !important;
   }
   

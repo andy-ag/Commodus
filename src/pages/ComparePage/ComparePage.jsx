@@ -103,7 +103,7 @@ export default function ComparePage() {
     return (
         <div>
             <div className="d-flex justify-content-center mb-4">
-                        <HeaderBox text={'Compare'} add={false} fav={false}/>
+                        <HeaderBox text={'Compare'} add={false} fav={false} info={true}/>
                     </div> 
             <div className="d-flex justify-content-center my-4 gap-2 align-items-center">
                 <select className="form-select compare-form" onChange={handleCommodityChange1}>

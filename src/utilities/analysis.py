@@ -54,7 +54,7 @@ statistics = {
     "Standard deviation": std_dev,
     "Variance": variance,
     "ADF test statistic": adf_result[0],
-    "ADF test p-value": adf_result[1]
+    "p-value": adf_result[1]
 }
 
 # Compute delay plot values

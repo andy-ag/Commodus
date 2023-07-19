@@ -12,6 +12,12 @@
     right: 2px;
 }
 
+.info-box-container {
+    position: absolute; 
+    top: -2px;
+    right: 2px;
+}
+
 .toggleSaveCommodity:hover {
     cursor: pointer;
 }

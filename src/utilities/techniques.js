@@ -9,7 +9,7 @@ const techniques = {
       "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Autocorrelation'>autocorrelation function (ACF)</a> plots the measure of the correlation between the time series and a lagged version of itself. It is used to identify the presence of a repeating pattern in the data, one that may be otherwise be obscured by noise.",
     },
     "Partial autocorrelation function": {
-      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Partial_autocorrelation_function'>partial autocorrelation function (PACF)</a> gives the partial correlation of a time series with its own lagged values, controlling for the values of the time series at all shorter lags. It helps in identifying the order of an autoregressive model that can be fitted to the data. For instance, in stock price prediction, the PACF can help determine how many previous days' prices you should consider when attempting to predict the current day's price.",
+      "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Partial_autocorrelation_function'>partial autocorrelation function (PACF)</a> gives the partial correlation of a time series with its own lagged values, controlling for the values of the time series at all shorter lags. It is particularly useful in the identification of the order of an autoregressive model. The PACF helps us understand the direct relationship between an observation and its lag, which can provide insights into the underlying structure and dynamics of the time series.",
     },
     "Delay plot": {
       "description": "A <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Recurrence_plot'>delay plot</a> is a tool for visually inspecting a time-series for the potential presence of periodic, non-linear patterns. It plots the value at time t against the value at time t-x (where x is a chosen delay). If the plot exhibits a clear structure or pattern, it suggests that the time series is periodic or cyclic.",
@@ -18,10 +18,10 @@ const techniques = {
       "description": "<a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Granger_causality'>Granger causality</a> is a statistical concept applied in the field of time-series forecasting. If a signal x1 is said to 'Granger-cause' a signal x2, then past values of x1 contain information that helps predict future values of x2 (without necessarily causing the change in x2 directly). This concept is widely used in econometrics to test whether one time series can be useful in forecasting another.",
     },
     "Cointegration": {
-      "description": "<a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Cointegration'>Cointegration</a> is a statistical property of time series that share dynamics in the long-term. It is a tool for testing the relationship between non-stationary time series data. For example, if two stocks are cointegrated, it means they move together over the long run, and this relationship can be exploited for pair trading strategies.",
-    },
+      "description": "<a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Cointegration'>Cointegration</a> is a statistical property of two or more time series that indicates a shared long-term trend. This means that while the individual series themselves may be non-stationary (i.e., their statistical properties change over time), a linear combination of them is stationary. This implies a stable, long-term relationship between the series. Cointegration is a fundamental concept in the analysis and modelling of non-stationary time series data.",
+    },    
     "Correlation": {
-      "description": "<a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Correlation'>Correlation</a> is a statistical measure that describes the degree to which two variables are linearly associated. It is used in a wide variety of fields as a simple way of examining the relationship between variables. For instance, in finance, the correlation between the price of different stocks could be used to diversify a portfolio.",
+      "description": "<a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Correlation'>Correlation</a> is a statistical measure that describes the degree to which two variables move in relation to each other. If the correlation is positive, the variables tend to increase or decrease together, while if it's negative, one variable tends to increase when the other decreases. Correlation can be used to summarize the strength and direction of linear relationships between pairs of variables, and is often a reasonable starting point for deeper analysis.",
     },
     "Mutual information": {
       "description": "<a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Mutual_information'>Mutual information</a> is a measure of the mutual dependence between two variables. Unlike correlation, which only captures linear relationships, mutual information can capture non-linear dependencies between variables. It is used in a wide range of fields including machine learning, statistics, and information theory.",
@@ -41,10 +41,20 @@ const techniques = {
     "ADF test statistic": {
       "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test'>Augmented Dickey–Fuller (ADF) test</a> is used to check whether a time series is stationary (i.e. its properties do not depend on the time at which the series is observed).",
     },
-    "ADF test p-value": {
+    "p-value": {
       "description": "The <a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/P-value'>p-value</a> is a statistical measure that helps us understand the significance of our results. It is used in the context of hypothesis testing to help us make decisions - if the p-value is less than a chosen significance level (e.g., 0.05), we reject the null hypothesis. The smaller the p-value, the stronger the evidence that we should reject the null hypothesis. It is a critical concept in statistical hypothesis testing.",
+    },
+    "Critical values": {
+      "description": "<a target='blank' rel='noopener noreferrer' href='https://en.wikipedia.org/wiki/Critical_value'>Critical values</a> are points at the extremes of a given probability distribution, and are used to test statistical hypotheses. They divide the range of a probability distribution into acceptance and rejection regions, by confidence level. If a calculated test statistic falls beyond a chosen critical value, we reject the null hypothesis. Critical values are a core concept in statistical hypothesis testing.",
+    },
+    "All commodities": {
+      "description": "The table below displays the latest information gathered from the NASDAQ commodities API. The service offers daily data for Gold, Silver, and the OPEC reference basket, and monthly data for all other commodities. To see time series plots for a given commodity, as well as a suite of exploratory data analysis options, please click its name in the table.",
+    },
+    "Compare": {
+      "description": "To view overlayed plots of two commodities, select them using the drop-down lists. Please note that the plot will only display once both commodities have been chosen. To run a suite of statistical tests exploring the relationship between the chosen commodities, click the 'Analyse' button. If you have changed either of the selected commodities, please click the button again to update the analysis.",
     },
   }
   
   module.exports = techniques  
+  
   

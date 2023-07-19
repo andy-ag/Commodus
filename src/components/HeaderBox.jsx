@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquarePlus, faSquareMinus } from '@fortawesome/free-solid-svg-icons'
 import './HeaderBox.css'
+import InfoBox from './InfoBox'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
-export default function HeaderBox({ text, add, fav, apiParams, removeFromFavourites=null, isStandalone}) {
+export default function HeaderBox({ text, add, fav, apiParams, removeFromFavourites=null, isStandalone, info=false}) {
     const [isFav, setFav] = useState(fav)
     const token = localStorage.getItem('token')
     async function handleFav() {
@@ -55,6 +56,7 @@ export default function HeaderBox({ text, add, fav, apiParams, removeFromFavouri
             {add && (
                 isStandalone ? (isFav ? <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquareMinus} onClick={handleFav}/> : <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquarePlus} onClick={handleFav}/>) : <FontAwesomeIcon className="toggleSaveCommodity" icon={faSquareMinus} onClick={handleFav}/>
             )}
+            {info && <div className="info-box-container"><InfoBox selectedAnalysis={text} /></div>}
         </div>
     )
 }

@@ -40,7 +40,7 @@ export default function HomePage({commodities}) {
   return (
       <main>
         <div className="d-flex flex-column align-items-center">
-            <HeaderBox text={'All commodities'} add={false} fav={false}/>
+            <HeaderBox text={'All commodities'} add={false} fav={false} info={true}/>
             <Table commodities={commodities}/>
         </div>
       </main>

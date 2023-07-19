@@ -100,7 +100,7 @@ export default function DashboardPage() {
     return (
       <>
         <HeaderBox text={'Your dashboard'} add={false} fav={false} apiParams={null}/>
-        <h2 className="mt-5 w-50">There's nothing here! You can save any number of commodities for quick and convenient access by clicking on the plus icon next to their name.</h2>
+        <h2 className="mt-5 w-50">There's nothing here! You can save any number of commodities for quick and convenient access by clicking on the plus icon next to their name on their respective detail page.</h2>
       </>
       )
   }
