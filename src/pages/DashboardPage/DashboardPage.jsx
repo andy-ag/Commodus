@@ -49,7 +49,6 @@ export default function DashboardPage() {
         });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const userCommodities = await response.json();
-        console.log('Commodities -> ', userCommodities)
         if (userCommodities != null){
           if (userCommodities.length > 0) {
             setLoading(true);

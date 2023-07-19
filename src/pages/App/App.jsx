@@ -33,7 +33,6 @@ export default function App() {
       }
 
       try {
-        console.log('Getting commodities')  
         const response = await fetch('/api/commodities/index');
           if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
