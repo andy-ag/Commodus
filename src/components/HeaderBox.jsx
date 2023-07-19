@@ -41,7 +41,7 @@ export default function HeaderBox({ text, add, fav, apiParams, removeFromFavouri
             }
         } catch (error) {
             console.error(`Error adding commodity to dashboard: ${error.message}`);
-            toast.error('Error adding commodity to dashboard', {
+            toast.error('You must be logged in to add a commodity to your dashboard', {
                 iconTheme: {
                     primary: '#CE2D4F',
                     secondary: 'white',
