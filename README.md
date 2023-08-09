@@ -90,20 +90,25 @@ After thinking of the underlying idea, I came up with a core list of features th
 
 After deciding on the appropriate feature set, I produced wireframes and an ERD. The app ended up matching the wireframe almost identically, and the ERD only needed minor tweaks to accommodate the specific implementation of the desired functionality that I ended up with.
 
-Landing page:
+Landing page - <a href="https://i.imgur.com/tD50gJQ.png" target="_blank" rel="noopener noreferrer">wireframe</a> / <a href="https://i.imgur.com/hXDb5bZ.png" target="_blank" rel="noopener noreferrer">final</a>:
 
-<img src="./readme_assets/home_wf.png" alt="" width="300"/> <img src="./readme_assets/home_f.png" alt="" width="300"/>
+<!-- <img src="./readme_assets/home_wf.png" alt="" width="300"/> <img src="./readme_assets/home_f.png" alt="" width="300"/> -->
+<img src="https://i.imgur.com/tD50gJQ.png" alt="" width="300"/> <img src="https://i.imgur.com/hXDb5bZ.png" alt="" width="300"/>
 
-Commodity detail:
+Commodity detail - <a href="https://i.imgur.com/N2aPXJp.png" target="_blank" rel="noopener noreferrer">wireframe</a> / <a href="https://i.imgur.com/xOvfRp4.png" target="_blank" rel="noopener noreferrer">final</a>:
 
-<img src="./readme_assets/detail_wf.png" alt="" width="300"/> <img src="./readme_assets/detail_f.png" alt="" width="300"/>
+<!-- <img src="./readme_assets/detail_wf.png" alt="" width="300"/> <img src="./readme_assets/detail_f.png" alt="" width="300"/> -->
+<img src="https://i.imgur.com/N2aPXJp.png" alt="" width="300"/> <img src="https://i.imgur.com/xOvfRp4.png" alt="" width="300"/>
 
-Dashboard:
+Dashboard - <a href="https://i.imgur.com/yhW0tcv.png" target="_blank" rel="noopener noreferrer">wireframe</a> / <a href="https://i.imgur.com/TyS3QKJ.png" target="_blank" rel="noopener noreferrer">final</a> / <a href="https://i.imgur.com/colFteF.png" target="_blank" rel="noopener noreferrer">final (cont.)</a>
 
-<img src="./readme_assets/dashboard_wf.png" alt="" width="300"/> 
+<!-- <img src="./readme_assets/dashboard_wf.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/yhW0tcv.png" alt="" width="300"/> 
 
-<img src="./readme_assets/dashboard_f_1.png" alt="" width="300"/>
-<img src="./readme_assets/dashboard_f_2.png" alt="" width="300"/>
+<!-- <img src="./readme_assets/dashboard_f_1.png" alt="" width="300"/>
+<img src="./readme_assets/dashboard_f_2.png" alt="" width="300"/> -->
+<img src="https://i.imgur.com/TyS3QKJ.png" alt="" width="300"/>
+<img src="https://i.imgur.com/colFteF.png" alt="" width="300"/>
 
 ## Build process
 The first order of business was setting up a skeleton for the back-end, with user authentication using JSON Web Tokens.
@@ -822,40 +827,57 @@ export default function InfoBox({ selectedAnalysis }) {
 
 A set of screenshots displaying the aforementioned elements of the commodity analysis page can be found below.
 
-Page load - Python analysis script is being run
 
-<img src="./readme_assets/crunching.png" alt="" width="300"/> 
+<a href="https://i.imgur.com/DAKG0WQ.png" target="_blank" rel="noopener noreferrer">Page load - Python analysis script is being run</a>
 
-Page loaded
-
-<img src="./readme_assets/detail_close.png" alt="" width="300"/> 
-
-Download icon clicked
-
-<img src="./readme_assets/download.png" alt="" width="300"/> 
-
-Different plot selected from drop-down
-
-<img src="./readme_assets/pacf.png" alt="" width="300"/> 
-
-Info icon clicked, InfoBox modal displayed
-
-<img src="./readme_assets/pacf_info.png" alt="" width="300"/> 
-
-Add to / remove from dashboard UI
-
-<img src="./readme_assets/add.png" alt="" width="300"/> 
-
-<img src="./readme_assets/added.png" alt="" width="300"/> 
-
-<img src="./readme_assets/remove.png" alt="" width="300"/> 
-
-<img src="./readme_assets/removed.png" alt="" width="300"/> 
+<!-- <img src="./readme_assets/crunching.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/DAKG0WQ.png" alt="" width="300"/> 
 
 
-Stats table below plot
+<a href="https://i.imgur.com/g5w3Mt0.png" target="_blank" rel="noopener noreferrer">Page loaded</a>
 
-<img src="./readme_assets/detail_stats.png" alt="" width="300"/> 
+<!-- <img src="./readme_assets/detail_close.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/g5w3Mt0.png" alt="" width="300"/> 
+
+
+<a href="https://i.imgur.com/ijiPzz5.png" target="_blank" rel="noopener noreferrer">Download icon clicked</a>
+
+<!-- <img src="./readme_assets/download.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/ijiPzz5.png" alt="" width="300"/> 
+
+
+<a href="https://i.imgur.com/bMLTBWx.png" target="_blank" rel="noopener noreferrer">Different plot selected from drop-down</a>
+
+<!-- <img src="./readme_assets/pacf.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/bMLTBWx.png" alt="" width="300"/> 
+
+
+<a href="https://i.imgur.com/EB3N2Av.png" target="_blank" rel="noopener noreferrer">Info icon clicked, InfoBox modal displayed</a>
+
+<!-- <img src="./readme_assets/pacf_info.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/EB3N2Av.png" alt="" width="300"/> 
+
+Add to / remove from dashboard UI (<a href="https://i.imgur.com/6phmy6q.png" target="_blank" rel="noopener noreferrer">1</a>, <a href="https://i.imgur.com/ZmdOCje.png" target="_blank" rel="noopener noreferrer">2</a>, <a href="https://i.imgur.com/LFHj9nN.png" target="_blank" rel="noopener noreferrer">3</a>, <a href="https://i.imgur.com/fJOblyD.png" target="_blank" rel="noopener noreferrer">4</a>)
+
+
+<!-- <img src="./readme_assets/add.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/6phmy6q.png" alt="" width="300"/> 
+
+<!-- <img src="./readme_assets/added.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/ZmdOCje.png" alt="" width="300"/> 
+
+<!-- <img src="./readme_assets/remove.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/LFHj9nN.png" alt="" width="300"/> 
+
+<!-- <img src="./readme_assets/removed.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/fJOblyD.png" alt="" width="300"/> 
+
+
+
+<a href="https://i.imgur.com/auumPyj.png" target="_blank" rel="noopener noreferrer">Stats table below plot</a>
+
+<!-- <img src="./readme_assets/detail_stats.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/auumPyj.png" alt="" width="300"/> 
 
 After the analysis page was complete, I created the Dashboard, which is essentially a scrollable list of CommodityPage components, displaying the same information as the analysis page, but for all of the user’s added commodities in one place. 
 
@@ -865,29 +887,41 @@ I wrote a separate script and controller function for the comparison, but since 
 
 Screenshots showcasing the functionality of the Compare page can be found below.
 
-Page loaded
 
-<img src="./readme_assets/compare.png" alt="" width="300"/> 
+<a href="https://i.imgur.com/IUOZN0b.png" target="_blank" rel="noopener noreferrer">Page loaded</a>
 
-Info icon clicked - InfoBox modal displayed
+<!-- <img src="./readme_assets/compare.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/IUOZN0b.png" alt="" width="300"/> 
 
-<img src="./readme_assets/compare_info.png" alt="" width="300"/> 
 
-Commodities selected
+<a href="https://i.imgur.com/54bqKsc.png" target="_blank" rel="noopener noreferrer">Info icon clicked - InfoBox modal displayed</a>
 
-<img src="./readme_assets/dual_graph.png" alt="" width="300"/> 
+<!-- <img src="./readme_assets/compare_info.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/54bqKsc.png" alt="" width="300"/> 
 
-‘Analyse’ button clicked
 
-<img src="./readme_assets/compare_crunching.png" alt="" width="300"/> 
+<a href="https://i.imgur.com/UQji2pN.png" target="_blank" rel="noopener noreferrer">Commodities selected</a>
 
-Results of analysis displayed
+<!-- <img src="./readme_assets/dual_graph.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/UQji2pN.png" alt="" width="300"/> 
 
-<img src="./readme_assets/compare_stats.png" alt="" width="300"/> 
 
-Example InfoBox - Engle-Granger cointegration test
+<a href="https://i.imgur.com/oTkalMO.png" target="_blank" rel="noopener noreferrer">‘Analyse’ button clicked</a>
 
-<img src="./readme_assets/cointegration_info.png" alt="" width="300"/> 
+<!-- <img src="./readme_assets/compare_crunching.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/oTkalMO.png" alt="" width="300"/> 
+
+
+<a href="https://i.imgur.com/VFRzTSl.png" target="_blank" rel="noopener noreferrer">Results of analysis displayed</a>
+
+<!-- <img src="./readme_assets/compare_stats.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/VFRzTSl.png" alt="" width="300"/> 
+
+
+<a href="https://i.imgur.com/sW3gFmd.png" target="_blank" rel="noopener noreferrer">Example InfoBox - Engle-Granger cointegration test</a>
+
+<!-- <img src="./readme_assets/cointegration_info.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/sW3gFmd.png" alt="" width="300"/> 
 
 Having completed the Compare page, all the core functionality of the app was done. The outstanding tasks were quality-of-life improvements. I added the FAQ, Privacy Policy, Terms of Service and Contact pages to inform the users of what the app sets out to do, and how their personal data is treated.
 
@@ -935,19 +969,27 @@ async function deleteAccount(req, res){
 }
 ```
 
-Settings page
+<a href="https://i.imgur.com/Xq5GECL.png" target="_blank" rel="noopener noreferrer">Settings page</a>
 
-<img src="./readme_assets/settings.png" alt="" width="300"/> 
 
-Account deletion confirmation modal
+<!-- <img src="./readme_assets/settings.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/Xq5GECL.png" alt="" width="300"/> 
 
-<img src="./readme_assets/confirm_delete.png" alt="" width="300"/> 
 
-Example - email change
+<a href="https://i.imgur.com/n7k2Z1p.png" target="_blank" rel="noopener noreferrer">Account deletion confirmation modal</a>
 
-<img src="./readme_assets/change_email.png" alt="" width="300"/> 
 
-<img src="./readme_assets/email_changed.png" alt="" width="300"/> 
+<!-- <img src="./readme_assets/confirm_delete.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/n7k2Z1p.png" alt="" width="300"/> 
+
+Example - email change (<a href="https://i.imgur.com/bMlKoPN.png" target="_blank" rel="noopener noreferrer">1</a>, <a href="https://i.imgur.com/OlhGXD7.png" target="_blank" rel="noopener noreferrer">2</a>)
+
+
+<!-- <img src="./readme_assets/change_email.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/bMlKoPN.png" alt="" width="300"/> 
+
+<!-- <img src="./readme_assets/email_changed.png" alt="" width="300"/>  -->
+<img src="https://i.imgur.com/OlhGXD7.png" alt="" width="300"/> 
 
 The final (and pleasantly simple) step was to deploy the project to Heroku. The only app-specific action that I had to take was setting up a requirements.txt file with my Python dependencies in the project’s root folder, and adding a Python module to the Heroku project, so it knew to set up the virtual environment with these packages installed.
 
